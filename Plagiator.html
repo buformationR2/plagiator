@@ -203,7 +203,7 @@ C&#39;est bien ainsi qu&#39;il fallait procéder
 
 Il s&#39;agit d&#39;un emprunt à un texte écrit par une certaine Anne-Claire N. Sur &lt;a href=&quot;https://www.elsevier.com/fr-fr/connect/nutrition/microplastiques-dans-notre-alimentation-un-focus-sur-la-sante-intestinale&quot; target=&quot;_blank&quot;&gt;un site d&#39;Elsevier dédié à de la vulgarisation (Elsevier Connect)&lt;/a&gt;
 
-Peut-être pas une excellente source d&#39;ailleurs. Le nom de l&#39;autrice n&#39;est d&#39;ailleurs pas connu. Peut-être faudrait-il songer à en changer. Il est sans doute un peu tard pour cela. &quot;Concentrons-nous sur l&#39;essentiel&quot;, te répond Camille. On n&#39;a plus le temps d&#39;avaluer toutes tes références
+Peut-être pas une excellente source d&#39;ailleurs. Le nom de l&#39;autrice n&#39;est pas vraiment connu comme étant celui d&#39;une scientifique. Peut-être faudrait-il songer à en changer. Il est sans doute un peu tard pour cela. &quot;Concentrons-nous sur l&#39;essentiel&quot;, te répond Camille. On n&#39;a plus le temps d&#39;avaluer toutes tes références
 
 [[suite|question5]]
 
@@ -216,7 +216,7 @@ Tu as d&#39;abord essayé de mettre le texte en entier dans le moteur de recherc
 
 Il s&#39;agit d&#39;un emprunt à un texte écrit par une certaine Anne-Claire N. Sur &lt;a href=&quot;https://www.elsevier.com/fr-fr/connect/nutrition/microplastiques-dans-notre-alimentation-un-focus-sur-la-sante-intestinale&quot; target=&quot;_blank&quot;&gt;un site d&#39;Elsevier dédié à de la vulgarisation (Elsevier Connect)&lt;/a&gt;
 
-Peut-être pas une excellente source d&#39;ailleurs. Le nom de l&#39;autrice n&#39;est d&#39;ailleurs pas connu. Peut-être faudrait-il songer à en changer. Il est sans doute un peu tard pour cela. &quot;Concentrons-nous sur l&#39;essentiel&quot;, te dis-tu.
+Peut-être pas une excellente source d&#39;ailleurs. Le nom de l&#39;autrice n&#39;est pas connu comme celui d&#39;une experte sur le sujet. Peut-être faudrait-il songer à en changer. Il est sans doute un peu tard pour cela. &quot;Concentrons-nous sur l&#39;essentiel&quot;, te dis-tu.
 
 Cette fois, tu est décidée : pour gagner du temps, essayons de voir si [[Camille|choix du genre]] peut t&#39;aider. 
 
@@ -243,7 +243,7 @@ N&#39;aurais-tu pas un meilleur choix à faire ?
 -qui a écrit la phrase suivante : &quot;Dans l&#39;environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique&quot; ?
 
  &lt;&lt;linkreplace &quot;...&quot; t8n&gt;&gt;\ 
-L&#39;intelligence artificielle ne met qu&#39;une seconde avant de t&#39;envoyer sa réponse : 
+L&#39;intelligence artificielle générative ne met qu&#39;une seconde avant de t&#39;envoyer sa réponse : 
 
 - La phrase &quot;Dans l&#39;environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique&quot; ne peut être attribuée à un auteur spécifique, car elle décrit un processus scientifique généralement accepté. Elle pourrait être le résultat de la synthèse d&#39;informations provenant de différents chercheurs, scientifiques, ou experts dans le domaine de la pollution plastique et de la dégradation environnementale.
 &lt;&lt;/linkreplace&gt;&gt; 
@@ -323,10 +323,25 @@ Et encore, on a pas fait le tour de tout ce qui va pas dans ton mémoire.
   &lt;&lt;/linkreplace&gt;&gt;
 </tw-passagedata><tw-passagedata pid="17" name="note_page_faux" tags="" position="550,150" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="" position="550,275" size="100,100"></tw-passagedata><tw-passagedata pid="19" name="date_faux" tags="" position="550,400" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="" position="25,150" size="100,100">&lt;&lt;set $name to prompt(&quot;Choisis ton pseudo&quot;, &quot;Mimi&quot;)&gt;&gt;
 
+En parlant de toi, on dit plutôt
+* &lt;&lt;checkbox &quot;$pseudo_feminin&quot; false true autocheck&gt;&gt; Il/Lui?
+* &lt;&lt;checkbox &quot;$pseudo_masculin&quot; false true autocheck&gt;&gt; Elle?
+
 [[suite|Blue Monday]]</tw-passagedata><tw-passagedata pid="21" name="Blue Monday" tags="cafeteria" position="25,275" size="100,100">&lt;audio id=&quot;audioPlayer&quot; controls&gt;
   &lt;source src=&quot;sons/bruit_restaurant.wav&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
+
+&lt;&lt;if $pseudo_feminin&gt;&gt;
+    &lt;&lt;set $prp to &quot;elle&quot;&gt;&gt;
+    &lt;&lt;set $prp2 to &quot;e&quot;&gt;&gt;
+    &lt;&lt;set $prp3 to &quot;celle-ci&quot;&gt;&gt;
+&lt;&lt;elseif $camille_masculin&gt;&gt;
+    &lt;&lt;set $prp to &quot;il&quot;&gt;&gt;
+    &lt;&lt;set $prp2 to &quot;&quot;&gt;&gt;
+    &lt;&lt;set $prp3 to &quot;celui-ci&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 
 @@color:black;
 Lundi 20 janvier, à la caféteria du département de sciences environnementales. C&#39;est &quot;blue monday&quot;, c&#39;est à dire en théorie le jour le plus déprimant de l&#39;année et il faut bien dire que ça ne commence pas très fort pour toi. Il pleut dehors, la machine à café est en panne et surtout tu viens de recevoir un mauvais signal de l&#39;un de tes enseignants. 
