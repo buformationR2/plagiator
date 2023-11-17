@@ -4,4 +4,4 @@ Il a été conçu dans le cadre du bloc d'apprentissage RESOUDRE au moyen du log
 
 Pour jouer au jeu, cliquer sur [ce lien](https://damienbelveze.github.io/plagiator/Plagiator.html)
 
-Pour envoyer des commentaires sur le jeu 
+Pour envoyer des commentaires sur le jeu aller dans la page [commentaires et propositions](commentaires-et-propositions-de-modifications.md)
