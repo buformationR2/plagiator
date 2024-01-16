@@ -173,7 +173,7 @@ body[data-tags~="admin"] a:hover { color: lime; }
 }
 
 .right-box {
-    background-color: #b1f8f8;
+  	background-color: #b1f8f8;
     color: #000; /* Set the background color */
     padding: 10px; /* Add some padding for spacing */
     border: 0px solid #ccc; /* Add a border for visual separation */
@@ -440,11 +440,10 @@ En parlant de toi, on dit plutôt
 
 Si tu ne veux pas choisir, le reste de l&#39;histoire se fera au féminin neutre.
 
-[[suite|Blue Monday]]</tw-passagedata><tw-passagedata pid="21" name="Blue Monday" tags="cafeteria" position="25,275" size="100,100">&lt;audio id=&quot;audioPlayer&quot; controls&gt;
+[[suite|Blue Monday]]</tw-passagedata><tw-passagedata pid="21" name="Blue Monday" tags="cafeteria hideui" position="25,275" size="100,100">&lt;audio id=&quot;audioPlayer&quot; controls&gt;
   &lt;source src=&quot;sons/bruit_restaurant.wav&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
-
 &lt;&lt;if $pseudo_feminin eq true&gt;&gt;
     &lt;&lt;set $prp to &quot;elle&quot;&gt;&gt;
     &lt;&lt;set $prp2 to &quot;e&quot;&gt;&gt;
@@ -463,60 +462,73 @@ Si tu ne veux pas choisir, le reste de l&#39;histoire se fera au féminin neutre
     	&lt;&lt;set $prp3 to &quot;celle-ci&quot;&gt;&gt;
     	&lt;&lt;set $prp4 to &quot;ve&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
 &lt;&lt;if $admin eq 4672 &gt;&gt;[[admin1|médias]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $admin eq 4672 &gt;&gt;[[admin2|dialogues]]&lt;&lt;/if&gt;&gt;
-
 @@color:black;
 Lundi 20 janvier, à la caféteria du département de sciences environnementales. C&#39;est &quot;blue monday&quot;, c&#39;est à dire en théorie le jour le plus déprimant de l&#39;année et il faut bien dire que ça ne commence pas très fort pour toi. Tu étais déjà bien déprimé$prp2, et voilà qu&#39;il se met à pleuvoir  dehors ; la machine à café est en panne et surtout tu viens de recevoir un mauvais signal de l&#39;un de tes enseignants. 
 Arnold, un étudiant du même groupe que le vôtre avance à grands pas vers toi ; lui semble plutôt sous pression, limite excité.
 @@
 
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
+&lt;script&gt;
+(function () {
+var i=0;
+	$(document).keyup(function (e) {
+    	document.getElementById(i).style.display=&quot;block&quot;;
+    	i++;
+        window.scrollTo(0, document.body.scrollHeight);
+	});
+}());
+&lt;/script&gt;
+
+  @@color:white;
+  Tapez sur n&#39;importe quelle touche pour afficher les dialogues.
+
+&lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
   @@color:green;   
 - Hey salut $name ! T’as déposé sur l’espace cours de Madame Green ton devoir sur les microplastiques ? 
 @@
-&lt;&lt;/linkreplace&gt;&gt;     
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\      
+   &lt;/div&gt;
+&lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;  
 @@color:black;
-Aucun répit décidémment. D&#39;emblée il attaque sur le sujet qui t&#39;inquiète le plus depuis la veille. 
-Tu décides de lui dire la vérité : 
 - Oui, je l’ai déposé, mais je ne comprends pas, j’ai reçu un mail de la prof pour me dire que le logiciel anti-plagiat de l’université, Plagiator, avait détecté du plagiat sur mon devoir. @@
-&lt;&lt;/linkreplace&gt;&gt;     
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
+&lt;/div&gt;     
+&lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
   @@color:green;
 - Ah bon, mais qu’est-ce que ça veut dire ? Tu as copié ou tu n’as pas cité tes sources ? Mais alors, tu n’auras pas la moyenne ?” @@
-&lt;&lt;/linkreplace&gt;&gt;    
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  @@color:black;
+&lt;/div&gt;
+&lt;div id=&quot;3&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
+@@color:black;
 - Je ne sais pas trop, la prof me laisse 24 heures pour me rattraper et retravailler le devoir.@@
-&lt;&lt;/linkreplace&gt;&gt;
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
+&lt;/div&gt;
+&lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
    @@color:green;
 - Ouah, le stress. Tu vas devoir refaire tout le travail en fait ? J&#39;aimerais pas être à ta place...@@
-&lt;&lt;/linkreplace&gt;&gt;
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
-@@color:black;
+&lt;/div&gt;
+&lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
+ @@color:black;
 - Oui, bon si tu n&#39;as rien de plus constructif à me dire, autant qu&#39;on en reste là... Merci beaucoup, je suis bien flippé.e maintenant.@@
-&lt;&lt;/linkreplace&gt;&gt;
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
+&lt;/div&gt;
+&lt;div id=&quot;6&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
   @@color:green;
 - Attends je voulais pas en rajouter, mais c&#39;est vrai que c&#39;est chaud et il te reste plus beaucoup de temps. Tiens, je pense que, tu devrais en parler à Camille. C&#39;est LA personne qui pourrait t&#39;aider à gérer ça. Sur un truc de ce genre, je l&#39;ai fait l&#39;an dernier et ça m&#39;a carrément sauvé la mise.@@
-&lt;&lt;/linkreplace&gt;&gt;
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
+&lt;/div&gt;
+&lt;div id=&quot;7&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt; 
 @@color:black;
 - Ouais, merci pour le tuyau; je vais voir. @@
- &lt;&lt;/linkreplace&gt;&gt;
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
+&lt;/div&gt;
+&lt;div id=&quot;8&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt; 
    @@color:green;
 Tu me tiens au courant ? @@
-&lt;&lt;/linkreplace&gt;&gt;
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\ @@color:black; 
-- Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.@@
-&lt;&lt;/linkreplace&gt;&gt;
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
+&lt;/div&gt;
+&lt;div id=&quot;9&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 @@color:black; 
+- Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.@@
+&lt;/div&gt;
+&lt;div id=&quot;10&quot; style=&quot;display:none&quot;&gt;
+  @@color:black; 
 Tu as maintenant une décision à prendre : soit tu vas voir [[Camille|choix du genre]], soit tu décides de prendre un peu de temps pour revoir l&#39;ensemble de ton travail et [[identifier les points les plus problématiques|révision]] @@
-&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="" position="775,25" size="100,100">Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de ton texte est un style dit &quot;auteur-date&quot;. En ne mettant pas cette mention entre parenthèses (auteur, date) à la fin de la phrase et avant le point, je pense que le lien ne se fera pas de façon assez claire avec la référence dans la bibliographie.
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="" position="775,25" size="100,100">Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de ton texte est un style dit &quot;auteur-date&quot;. En ne mettant pas cette mention entre parenthèses (auteur, date) à la fin de la phrase et avant le point, je pense que le lien ne se fera pas de façon assez claire avec la référence dans la bibliographie.
 
 [[qu&#39;est-ce que tu en penses|images]]</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="" position="775,150" size="100,100">Je pense que c&#39;est la bonne forme en effet, dit Camille. 
 Tu as tout intérêt à rester dans le même style que celui que tu as spontanément utilisé depuis le début, le style &quot;auteur-date&quot;. Donc dans l&#39;appel de citation qui apparaît à la fin de la phrase, pas de titre (il sera mentionné en biblio, avec toutes les autres informations indispensables), juste le nom de l&#39;auteur et la date. Et si tu cites plusieurs documents d&#39;un même auteur qui ont été publiés la même année, tu fais suivre la date d&#39;une lettre (Tartampion, 2017a, Tartampion2017b, etc.)
