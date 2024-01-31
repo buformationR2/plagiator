@@ -228,7 +228,7 @@ choisis [[ton pseudo]]
 &lt;&lt;/if&gt;&gt;
 
 
-Camille est un$pr2 étudiant$pr2 en Master de Droit que tu as rencontré$pr2 en même temps que Rodrigo au cours d&#39;une soirée bien arrosée. Connaissant Rodrigo, tu te dis qu&#39;il en est sans doute tombé amoureux, mais tu reconnais qu&#39;$pr a l&#39;air de s&#39;y connaître dans le domaine du droit d&#39;auteur et de la propriété intellectuelle. Tu penses que tu pourrais lui faire confiance, à condition qu&#39;$pr accepte de t&#39;aider bien sûr. 
+Camille est un$pr2 étudiant$pr2 en Master de Droit que tu as rencontré$pr2 en même temps que Marc au cours d&#39;une soirée bien arrosée. Connaissant Marc, tu te dis qu&#39;il en est sans doute tombé amoureux, mais tu reconnais qu&#39;$pr a l&#39;air de s&#39;y connaître dans le domaine du droit d&#39;auteur et de la propriété intellectuelle. Tu penses que tu pourrais lui faire confiance, à condition qu&#39;$pr accepte de t&#39;aider bien sûr. 
 Par chance, tu as noté son numéro de téléphone sur ton smartphone.  
 Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><tw-passagedata pid="3" name="choix du genre" tags="" position="275,25" size="100,100">Quel genre souhaites-tu donner à Camille?
 * &lt;&lt;checkbox &quot;$camille_feminin&quot; false true autocheck&gt;&gt; Féminin?
@@ -435,21 +435,41 @@ Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé
 - [[Il manque le titre du document ?|manque_titre_document]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]@@
  &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="11" name="question5" tags="" position="650,25" size="100,100">Camille tourne quelques pages absorbé!pr2 par sa tâche et soudainement son doigt se fige pointant un passage au milieu d&#39;un feuillet“
+</tw-passagedata><tw-passagedata pid="11" name="question5" tags="" position="650,25" size="100,100">&lt;script&gt;
+    (function () {
+    var i=0;
+        $(document).keyup(function (e) {
+            document.getElementById(i).style.display=&quot;block&quot;;
+            i++;
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    }());
+&lt;/script&gt;
 
--Là, c&#39;est ça que j&#39;avais noté !
+Camille tourne quelques pages absorbé!pr2 par sa tâche et soudainement son doigt se fige pointant un passage au milieu d&#39;un feuillet“
 
-J&#39;hésite entre trois formulations possibles de ce passage. Laquelle te semble la meilleure à toi, celle que tu as proposée : 
+&lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+    @@color:green; 
+-Là, c&#39;est ça que j&#39;avais noté !@@
 
+J&#39;hésite entre trois formulations possibles de ce passage. Laquelle te semble la meilleure à toi, celle que tu as proposée :@@
+&lt;/div&gt;
+&lt;div id=&quot;1&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
 [[Selon la thèse de Kedzierski écrite en 2017|formulation1]] :  Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des “microplastiques”.
-
+@@
+&lt;/div&gt;
+&lt;div id=&quot;2&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
 ou bien l&#39;une de celles-ci : 
-
+@@color:black;
 « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”. »  [[(Kedzierski, 2017|formulation2]])
-
+@@
+&lt;/div&gt;
+&lt;div id=&quot;3&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
+@@color:black;
 « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”. »  [[(Pollutions du milieu littoral par les microplastiques : Méthodes d’évaluation par Mikaël Kedzierski, publié en 2017)|formulation3]]. 
-</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="" position="400,25" size="100,100">&lt;&lt;set $score to $score+2&gt;&gt;
-&lt;script&gt;
+@@
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="" position="400,25" size="100,100">&lt;script&gt;
     (function () {
     var i=0;
         $(document).keyup(function (e) {
@@ -479,7 +499,8 @@ Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que
 @@
 &lt;/div&gt;
 
-&lt;&lt;set $visite_auteur_manque to true&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="" position="400,150" size="100,100">&lt;script&gt;
+&lt;&lt;set $visite_auteur_manque to true&gt;&gt;
+&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="" position="400,150" size="100,100">&lt;script&gt;
     (function () {
     var i=0;
         $(document).keyup(function (e) {
@@ -1227,23 +1248,23 @@ Hey salut $name ! T’as déposé sur l’espace cours de Madame Green ton devoi
 &lt;/div&gt;
 &lt;div id=&quot;3&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 @@color:black;
-- Je ne sais pas trop, la prof me laisse 24 heures pour me rattraper et retravailler le devoir.@@
+Je ne sais pas trop, la prof me laisse 24 heures pour me rattraper et retravailler le devoir.@@
 &lt;/div&gt;
 &lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
    @@color:green;
-- Ouah, le stress. Tu vas devoir refaire tout le travail en fait ? J&#39;aimerais pas être à ta place...@@
+Ouah, le stress. Tu vas devoir refaire tout le travail en fait ? J&#39;aimerais pas être à ta place...@@
 &lt;/div&gt;
 &lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
  @@color:black;
-- Oui, bon si tu n&#39;as rien de plus constructif à me dire, autant qu&#39;on en reste là... Merci beaucoup, je suis bien flippé.e maintenant.@@
+Oui, bon si tu n&#39;as rien de plus constructif à me dire, autant qu&#39;on en reste là... Merci beaucoup, je suis bien flippé$prp2 maintenant.@@
 &lt;/div&gt;
 &lt;div id=&quot;6&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
   @@color:green;
-- Attends je voulais pas en rajouter, mais c&#39;est vrai que c&#39;est chaud et il te reste plus beaucoup de temps. Tiens, je pense que, tu devrais en parler à Camille. C&#39;est LA personne qui pourrait t&#39;aider à gérer ça. Sur un truc de ce genre, je l&#39;ai fait l&#39;an dernier et ça m&#39;a carrément sauvé la mise.@@
+Attends je voulais pas en rajouter, mais c&#39;est vrai que c&#39;est chaud et il te reste plus beaucoup de temps. Tiens, je pense que, tu devrais en parler à Camille. C&#39;est LA personne qui pourrait t&#39;aider à gérer ça. Sur un truc de ce genre, je l&#39;ai fait l&#39;an dernier et ça m&#39;a carrément sauvé la mise.@@
 &lt;/div&gt;
 &lt;div id=&quot;7&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt; 
 @@color:black;
-- Ouais, merci pour le tuyau; je vais voir. @@
+Ouais, merci pour le tuyau; je vais voir. @@
 &lt;/div&gt;
 &lt;div id=&quot;8&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt; 
    @@color:green;
@@ -1251,7 +1272,7 @@ Tu me tiens au courant ? @@
 &lt;/div&gt;
 &lt;div id=&quot;9&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 @@color:black; 
-- Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.@@
+Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.@@
 &lt;/div&gt;
 &lt;div id=&quot;10&quot; style=&quot;display:none&quot;&gt;
   @@color:black; 
