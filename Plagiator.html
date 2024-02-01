@@ -239,45 +239,59 @@ Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><t
 
 [[continuer|genre]] 
 
-</tw-passagedata><tw-passagedata pid="4" name="révision" tags="" position="650,150" size="100,100">/* 
-&lt;div class=&quot;hour&quot;&gt;20 janvier 2022 8:35:07&lt;/div&gt;  
-affichage de l&#39;heure avec la police Digital Numbers
-*/
+</tw-passagedata><tw-passagedata pid="4" name="révision" tags="" position="650,150" size="100,100">&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
 
-&lt;img src=&quot;images/time_8_35.PNG&quot;&gt;
-
-&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
-
-- Bon alors, voyons ça
-
-Avec Camille à tes côtés, tu fais défiler sur ton écran les quarante pages du mémoire à rendre. Tu n&#39;auras jamais le temps de corriger toute seul l&#39;ensemble des passages problématiques, mais tu peux t&#39;attaquer au plus gros et espérer que Mme Green n&#39;ira pas trop chercher la petite bête. 
-
-Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
-
-&quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;
-
-Comment gérer ça ? 
-
-
-	&lt;&lt;else&gt;&gt;
+    &lt;script&gt;
+        (function () {
+        var i=0;
+            $(document).keyup(function (e) {
+                document.getElementById(i).style.display=&quot;block&quot;;
+                i++;
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+        }());
+    &lt;/script&gt;
     
+    &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+     @@color:green; Bon alors, voyons ça@@
+    &lt;/div&gt;
+    
+    &lt;div id=&quot;1&quot;  style=&quot;display:none&quot;&gt;
     Avec Camille à tes côtés, tu fais défiler sur ton écran les quarante pages du mémoire à rendre. Tu n&#39;auras jamais le temps de corriger toute seul l&#39;ensemble des passages problématiques, mais tu peux t&#39;attaquer au plus gros et espérer que Mme Green n&#39;ira pas trop chercher la petite bête. 
-
-Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
-
-&quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;
-
-Comment gérer ça ? 
-
+    &lt;/div&gt;
+    
+    &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+    @@color:green; Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
+    
+    &quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;@@
+    &lt;/div&gt;
+    
+    Comment gérer ça ? 
+    
+    
+&lt;&lt;else&gt;&gt;
+        
+        Avec Camille à tes côtés, tu fais défiler sur ton écran les quarante pages du mémoire à rendre. Tu n&#39;auras jamais le temps de corriger toute seul l&#39;ensemble des passages problématiques, mais tu peux t&#39;attaquer au plus gros et espérer que Mme Green n&#39;ira pas trop chercher la petite bête. 
+    
+    Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
+    
+    &quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;
+    
+    Comment gérer ça ? 
+    
 &lt;&lt;/if&gt;&gt;
-
-- [[faire une recherche dans Google sur les gyres piégeurs de déchet ?|recherche_simple]]
--  [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre guillemets ?|guillemets]]
-- [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
-- [[Prendre une phrase au hasard et demander à ChatGPT qui l&#39;a écrite|ChatGPT]]
-
-
+    
+    - [[faire une recherche dans Google sur les gyres piégeurs de déchet ?|recherche_simple]]
+    -  [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre guillemets ?|guillemets]]
+    - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
+    - [[Prendre une phrase au hasard et demander à ChatGPT qui l&#39;a écrite|ChatGPT]]
+    
+    
 &lt;&lt;set $visite_revision to true&gt;&gt;
+    
+    
+    
+    
 
 
 
@@ -398,32 +412,35 @@ Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-   @@color:green;   
-   Salut, ça va $name, pas trop stressé$prp2 ?
-    @@
+ @@color:green;  Salut, ça va $name, pas trop stressé$prp2 ?@@
 &lt;/div&gt;
+
 &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;  
-    @@color:black;
-    ça ira mieux ce soir, en attendant je stresse bien là. On s&#39;est parlé hier et franchement j&#39;ai pas réussi à avancer depuis. J&#39;avais hâte qu&#39;on en parle.  @@
-&lt;/div&gt;     
+ @@color:black; ça ira mieux ce soir, en attendant je stresse bien là. On s&#39;est parlé hier et franchement j&#39;ai pas réussi à avancer depuis. J&#39;avais hâte qu&#39;on en parle.  @@
+&lt;/div&gt;
+
 &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-      @@color:green; ça tombe bien j&#39;avais un peu de temps cet après-midi, tu as bien fait de m&#39;appeler. J&#39;ai jeté un coup d&#39;oeil à ton travail et j&#39;ai repéré des trucs qui vont pas. @@
+ @@color:green; ça tombe bien j&#39;avais un peu de temps cet après-midi, tu as bien fait de m&#39;appeler. J&#39;ai jeté un coup d&#39;oeil à ton travail et j&#39;ai repéré des trucs qui vont pas. @@
 &lt;/div&gt;
+
 &lt;div id=&quot;3&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;  quoi par exemple ?@@
+ @@color:black;  quoi par exemple ?@@
 &lt;/div&gt;
- &lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
- @@color:green; Par exemple, page 8, je lis : 
-« Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”.» (2017)@@
+
+&lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+ @@color:green; Par exemple, page 8, je lis : « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”.» (2017)@@
 &lt;/div&gt;
+
 &lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black; oui, et ?@@
+ @@color:black; oui, et ?@@
 &lt;/div&gt;
+
 &lt;div id=&quot;6&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;  tu n&#39;as pas une petite idée de ce qui ne va pas ?@@
+ @@color:black;  tu n&#39;as pas une petite idée de ce qui ne va pas ?@@
 &lt;/div&gt;
+
 &lt;div id=&quot;7&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
+ @@color:black;
 - [[Il manque l’auteur ?|auteur_manque]]
 - [[Il faut mettre la citation en italique ?|citation_italique]]
 - [[Il manque le titre du document ?|manque_titre_document]]
