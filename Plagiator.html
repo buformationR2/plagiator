@@ -245,6 +245,7 @@ Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><t
         (function () {
         var i=0;
             $(document).keyup(function (e) {
+              if(document.getElementById(i) != null){
                 document.getElementById(i).style.display=&quot;block&quot;;
                 i++;
                 window.scrollTo(0, document.body.scrollHeight);
@@ -296,18 +297,18 @@ Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><t
 
 
 </tw-passagedata><tw-passagedata pid="5" name="appel_camille" tags="" position="275,275" size="100,100">Tu composes le numéro de Camille. Le téléphone met un certain temps à sonner avant que $pr3 réponde.
-
 &lt;script&gt;
-    (function () {
-    var i=0;
-        $(document).keyup(function (e) {
-            document.getElementById(i).style.display=&quot;block&quot;;
-            i++;
-            window.scrollTo(0, document.body.scrollHeight);
-        });
-    }());
-&lt;/script&gt;
-    
+(function () {
+var i=0;
+    $(document).keyup(function (e) {
+        if(document.getElementById(i) != null){
+          document.getElementById(i).style.display=&quot;block&quot;;
+          i++;
+          window.scrollTo(0, document.body.scrollHeight);
+        }
+    });
+}());
+&lt;/script&gt;   
     
  &lt;div id=&quot;0&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;  
     @@color:black;
@@ -401,14 +402,16 @@ Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé
 </tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room" position="275,400" size="100,100">@@color:black; Camille et toi vous êtes donné rendez-vous dans le Hall des langues orientales. Il y a des tables, des prises pour l&#39;ordinateur et l&#39;affluence, surtout à cette heure, est disons...modérée. Vous allez pouvoir vous parler en toute tranquillité.@@
 
 &lt;script&gt;
-    (function () {
-    var i=0;
-        $(document).keyup(function (e) {
-            document.getElementById(i).style.display=&quot;block&quot;;
-            i++;
-            window.scrollTo(0, document.body.scrollHeight);
-        });
-    }());
+(function () {
+var i=0;
+    $(document).keyup(function (e) {
+        if(document.getElementById(i) != null){
+          document.getElementById(i).style.display=&quot;block&quot;;
+          i++;
+          window.scrollTo(0, document.body.scrollHeight);
+        }
+    });
+}());
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
@@ -450,6 +453,7 @@ Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -484,6 +488,7 @@ ou bien l&#39;une de celles-ci :
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -515,6 +520,7 @@ Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -538,6 +544,7 @@ Attends, euh...
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -561,6 +568,7 @@ Non, ça n’est pas nécessaire de mentionner ici le titre du document. Je pens
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -583,6 +591,7 @@ mentionner le type de document n’apporte rien et n’est pas obligatoire. Je p
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -640,6 +649,7 @@ Et encore, on a pas fait le tour de tout ce qui va pas dans ton mémoire.
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -666,6 +676,7 @@ Je vois. On peut dire du coup que [[c’est une façon abrégée de mentionner l
     (function () {
     var i=0;
         $(document).keyup(function (e) {
+          if(document.getElementById(i) != null){
             document.getElementById(i).style.display=&quot;block&quot;;
             i++;
             window.scrollTo(0, document.body.scrollHeight);
@@ -1235,14 +1246,15 @@ Arnold, un étudiant du même groupe que le vôtre avance à grands pas vers toi
 &lt;script&gt;
 (function () {
 var i=0;
-	$(document).keyup(function (e) {
-    	document.getElementById(i).style.display=&quot;block&quot;;
-    	i++;
-        window.scrollTo(0, document.body.scrollHeight);
-	});
+    $(document).keyup(function (e) {
+        if(document.getElementById(i) != null){
+          document.getElementById(i).style.display=&quot;block&quot;;
+          i++;
+          window.scrollTo(0, document.body.scrollHeight);
+        }
+    });
 }());
 &lt;/script&gt;
-
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
   @@color:green;   
