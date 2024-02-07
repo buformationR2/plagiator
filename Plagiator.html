@@ -111,9 +111,8 @@ th {
 }
 
 
-th, td {
-  padding-right: 30px;
-  padding-left:30p
+table {
+  border-spacing: 10px;
 }
 
 body[data-tags~="plagiator"]{
@@ -346,7 +345,7 @@ function scrollToDiv(divId) {
         block: "start"
       });
     }
-  }</script><tw-tag name="admin" color="green"></tw-tag><tw-tag name="cafeteria" color="none"></tw-tag><tw-tag name="bibliotheque" color="none"></tw-tag><tw-passagedata pid="1" name="début" tags="" position="25,25" size="100,100"> &lt;div class=&quot;row&quot;&gt;
+  }</script><tw-tag name="admin" color="green"></tw-tag><tw-tag name="cafeteria" color="none"></tw-tag><tw-tag name="bibliotheque" color="none"></tw-tag><tw-passagedata pid="1" name="début" tags="" position="25,50" size="100,100"> &lt;div class=&quot;row&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
     &lt;br&gt;
         &lt;img src=&quot;images/université.jpg&quot; alt=&quot;photo de l&#39;entrée d&#39;une université&quot; width=&quot;400px&quot;&gt;
@@ -363,7 +362,7 @@ choisis [[ton pseudo]]
 
 
 
- </tw-passagedata><tw-passagedata pid="2" name="genre" tags="" position="275,150" size="100,100">&lt;&lt;nobr&gt;&gt;
+ </tw-passagedata><tw-passagedata pid="2" name="genre" tags="" position="275,175" size="100,100">&lt;&lt;nobr&gt;&gt;
   &lt;&lt;if $camille_feminin&gt;&gt;
     &lt;&lt;set $prc to &quot;elle&quot;&gt;&gt;
     &lt;&lt;set $prc2 to &quot;e&quot;&gt;&gt;
@@ -392,9 +391,9 @@ choisis [[ton pseudo]]
 &lt;&lt;/nobr&gt;&gt;  
 Camille est un$prc2 étudiant$prc2 en Master de Droit que tu as rencontré$prc2 en même temps que Marc au cours d&#39;une soirée bien arrosée. Connaissant Marc, tu te dis qu&#39;il en est sans doute tombé amoureux, mais tu reconnais qu&#39;$prc a l&#39;air de s&#39;y connaître dans le domaine du droit d&#39;auteur et de la propriété intellectuelle. Tu penses que tu pourrais lui faire confiance, à condition qu&#39;$prc accepte de t&#39;aider bien sûr. 
 Par chance, tu as noté son numéro de téléphone sur ton smartphone.  
-Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><tw-passagedata pid="3" name="choix du genre" tags="" position="275,25" size="100,100">&lt;div class=&quot;row&quot;&gt;
+Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><tw-passagedata pid="3" name="choix du genre" tags="" position="275,50" size="100,100">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;column&quot;&gt;
-&lt;img src=&quot;images/genres.png&quot; alt=&quot;silhouette d&#39;un homme et d&#39;une femme (tête uniquement)&quot; width=&quot;400px&quot;&gt;
+&lt;img src=&quot;images/genre.jpg&quot; alt=&quot;silhouette d&#39;un homme et d&#39;une femme (tête uniquement)&quot; width=&quot;400px&quot;&gt;
    &lt;/div&gt;
    &lt;div class=&quot;column&quot;&gt;
 Quel genre souhaites-tu donner à Camille?
@@ -404,7 +403,7 @@ Quel genre souhaites-tu donner à Camille?
 &lt;/div&gt;   
 [[continuer|genre]] 
 
-</tw-passagedata><tw-passagedata pid="4" name="révision" tags="" position="650,150" size="100,100">&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="révision" tags="" position="650,175" size="100,100">&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -477,7 +476,7 @@ Quel genre souhaites-tu donner à Camille?
 
 
 
-</tw-passagedata><tw-passagedata pid="5" name="appel_camille" tags="cafeteria" position="275,275" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="5" name="appel_camille" tags="cafeteria" position="275,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -530,7 +529,7 @@ Quel genre souhaites-tu donner à Camille?
  &lt;div id=&quot;7&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 [[continuer|Camille_rendez-vous1]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="guillemets" tags="" position="150,150" size="100,100">&lt;&lt;if $appel_citation_ok eq true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="guillemets" tags="" position="150,175" size="100,100">&lt;&lt;if $appel_citation_ok eq true&gt;&gt;
 
 Camille hoche la tête d&#39;un air satisfait. 
 C&#39;est bien ainsi qu&#39;il fallait procéder
@@ -576,7 +575,7 @@ N&#39;aurais-tu pas un meilleur choix à faire ?
 
 -  [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre guillemets ?|guillemets]]
 - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
-- [[Prendre une phrase au hasard et demander à ChatGPT qui l&#39;a écrite|ChatGPT]]</tw-passagedata><tw-passagedata pid="9" name="ChatGPT" tags="" position="150,25" size="100,100">Tu prends au hasard une phrase du texte et tu demandes à ChatGPT qui l&#39;a écrite : 
+- [[Prendre une phrase au hasard et demander à ChatGPT qui l&#39;a écrite|ChatGPT]]</tw-passagedata><tw-passagedata pid="9" name="ChatGPT" tags="" position="150,50" size="100,100">Tu prends au hasard une phrase du texte et tu demandes à ChatGPT qui l&#39;a écrite : 
 
 -qui a écrit la phrase suivante : &quot;Dans l&#39;environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique&quot; ?
 
@@ -593,7 +592,9 @@ Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé
 - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
 
 &lt;&lt;/linkreplace&gt;&gt; 
-</tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room" position="275,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room" position="275,425" size="100,100">&lt;&lt;audio &quot;flute&quot; volume 1 fadeout&gt;&gt;
+
+&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -659,7 +660,7 @@ tu n&#39;as pas une petite idée de ce qui ne va pas ?
 - [[Il manque le titre du document ?|manque_titre_document]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation|preciser_type]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="11" name="question5" tags="" position="650,25" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="11" name="question5" tags="" position="650,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -712,7 +713,7 @@ ou bien l&#39;une de celles-ci :
 « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”. »  [[(Pollutions du milieu littoral par les microplastiques : Méthodes d’évaluation par Mikaël Kedzierski, publié en 2017)|formulation3]]. 
 @@
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="chinese_room" position="400,25" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="chinese_room" position="400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -758,7 +759,7 @@ Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que
   &lt;/div&gt;
 
 &lt;&lt;set $visite_auteur_manque to true&gt;&gt;
-&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="chinese_room" position="400,150" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="chinese_room" position="400,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -798,7 +799,7 @@ Attends, euh...
 - [[Il manque le titre du document ?|manque_titre_document]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="manque_titre_document" tags="chinese_room" position="400,275" size="100,100">&lt;&lt;set $manque_titre_document to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="manque_titre_document" tags="chinese_room" position="400,300" size="100,100">&lt;&lt;set $manque_titre_document to true&gt;&gt;
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -878,7 +879,7 @@ mentionner le type de document n’apporte rien et n’est pas obligatoire. Je p
 - [[Il faut mettre la citation en italique ?|citation_italique]]
 - [[Il manque le titre du document ?|manque_titre_document]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="appel_citation_ok" tags="chinese_room" position="525,25" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="appel_citation_ok" tags="chinese_room" position="525,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -925,7 +926,7 @@ sinon, [[laisse la continuer|suite_camille]], elle est vraiment capable de t&#39
   
   
 
-</tw-passagedata><tw-passagedata pid="17" name="note_page_faux" tags="chinese_room" position="525,150" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="17" name="note_page_faux" tags="chinese_room" position="525,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -968,7 +969,7 @@ Comme ça tu peux faire le lien entre une assertion de ton texte et le document 
 @@color:black;
 Je vois. On peut dire du coup que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="chinese_room" position="525,275" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="chinese_room" position="525,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1039,11 +1040,11 @@ Mais ce n&#39;est pas la seule fonction de cet espace entre parenthèses. Normal
 @@color:black;
 - ah, je vois. En fait c’est comme [[une façon abrégée de mentionner la source de la citation quand j’écris.|appel_citation_ok]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="" position="25,150" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="" position="25,175" size="100,100">
 &lt;&lt;set $name to prompt(&quot;Choisis ton pseudo&quot;, &quot;Mimi&quot;)&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;column&quot;&gt;
-&lt;img src=&quot;images/genres.png&quot; alt=&quot;silhouette d&#39;un homme et d&#39;une femme (tête uniquement)&quot; width=&quot;400px&quot;&gt;
+&lt;img src=&quot;images/genre.jpg&quot; alt=&quot;silhouette d&#39;un homme et d&#39;une femme (tête uniquement)&quot; width=&quot;400px&quot;&gt;
    &lt;/div&gt;
    &lt;div class=&quot;column&quot;&gt;
 En parlant de toi, on dit plutôt
@@ -1056,7 +1057,7 @@ Si tu ne veux pas choisir, le reste de l&#39;histoire se fera au féminin neutre
     &lt;/div&gt;
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="21" name="règles" tags="" position="25,275" size="100,100">Dans ce jeu, tu tu peux interagir de plusieurs manières : 
+</tw-passagedata><tw-passagedata pid="21" name="règles" tags="" position="25,300" size="100,100">Dans ce jeu, tu tu peux interagir de plusieurs manières : 
 
 - en cliquant sur un lien (mots en bleu)
 - en fournissant une réponse à une question
@@ -1085,11 +1086,6 @@ Tes choix ont différents types de conséquences :
 - tu prends un chemin plutôt qu&#39;un autre (les questions peuvent différer)
 - une bonne réponse améliore ton score, une mauvaise réponse ne te donne pas de point supplémentaire
 
-Tu es libre d&#39;utiliser les sons d&#39;ambiance ou pas, ils n&#39;ont pas de caractère informatif. Voici par exemple le bruit que Plagiator fait quand il détecte un plagiat.
-&lt;audio id=&quot;audioPlayer&quot; controls&gt;
-  &lt;source src=&quot;sons/plagiator.wav&quot; type=&quot;audio/mpeg&quot;&gt;
-  Your browser does not support the audio element.
-&lt;/audio&gt;
 
 A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 &lt;&lt;nobr&gt;&gt;
@@ -1116,7 +1112,7 @@ A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 [[continuer|Blue Monday]]
 
 
-</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="" position="775,25" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1153,7 +1149,7 @@ Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de
 @@color:green;
 [[qu&#39;est-ce que tu en penses|images]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="" position="775,150" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1189,7 +1185,7 @@ Tu as tout intérêt à rester dans le même style que celui que tu as spontané
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
 [[qu&#39;est-ce que tu en penses|images]] 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="formulation3" tags="" position="775,275" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="formulation3" tags="" position="775,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1234,7 +1230,7 @@ Je te suis là-dessus, je me note qu&#39;il faut que je corrige ce passage.
 [[bon est-ce qu&#39;on est bon là ?|images]]
 @@
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="25" name="images" tags="chinese_room" position="900,25" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="25" name="images" tags="chinese_room" position="900,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1276,7 +1272,9 @@ Camille disparaît rapidement de ta vie te laissant à ton désarroi.
 Il ne te reste plus qu&#39;à relire ton travail avec les instructions que t&#39;as laissées Camille et à tout remettre d&#39;aplomb. 
 
 Avec l&#39;emploi du temps que tu as aujourd&#39;hui, ça ne sera pas possible avant [[17h|bibliothèque]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque" position="900,200" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque" position="900,175" size="100,100">&lt;&lt;audio &quot;bibliotheque&quot; volume 1 fadeout&gt;&gt;
+
+&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1331,209 +1329,8 @@ Plagiator semble poser un problème en termes de droit sur les images.
 
 
 
-</tw-passagedata><tw-passagedata pid="27" name="probleme_image" tags="" position="0,800" size="100,100">Tu réfléchis et soudain une idée te vient : 
-comme pour une citation non sourcée, le fait que tu n&#39;aies pas l&#39;origine de cette photo, c&#39;est ça qui doit poser problème !
+</tw-passagedata><tw-passagedata pid="27" name="Blue Monday" tags="cafeteria hideui" position="25,425" size="100,100">&lt;&lt;audio &quot;cafeteria&quot; volume 1 fadeout&gt;&gt;
 
-Mais comment retrouver le contexte de cette photo ? 
-
-une brève recherche dans ton moteur de recherche préféré te donne trois piste s: 
-
-[[Google image]] (https://images.google.fr)
-[[Tineye]] (https://tineye.com)
-[[Fotoforensics]] (https://fotoforensics.com)
-[[exifviewer]](https://onlineexifviewer.com)
-</tw-passagedata><tw-passagedata pid="28" name="Google image" tags="" position="150,775" size="100,100">Tu te retrouves avec un grand nombre de résultats et de pages web différentes issues de plusieurs sites qui ont réutilisé cette photo. Pas de doute, elle a voyagé sur la Toile avant d&#39;illustrer ton travail !
-
-Tu te doutes bien néanmoins que c&#39;est sur le site qui a publié pour la première fois cette photo que tu as le plus de chances de trouver le nom du photographe qu&#39;il convient de citer ici. 
-
-Mais comment ranger ces résultats par ordre chronologique pour trouver le plus ancien ? 
-
-mmh, pas facile : tu ne vois pas d&#39;option de tri qui permettrait de faire apparaître en premier les publications les plus anciennes de cette photo. 
-
-Tu peux quand même tenter ta chance avec cet outil : choisis le résultat qui te paraît le plus ancien et note la date de publication de l&#39;article originel dans laquelle cette image est apparue.
-
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\   
-
-&lt;&lt;set $date_journal to prompt(&quot;inscris la date au format JJ/MM/AAAA&quot;, &quot;01/01/1970&quot;)&gt;&gt;
-
-&lt;&lt;if $date_journal eq &quot;20/08/2020&quot; &gt;&gt;
-Bien vu ! [[passe à l&#39;étape suivante]]
-&lt;&lt;else&gt;&gt;
-tu n&#39;y es pas encore, pourquoi ne pas essayer [[Tineye]] cette fois ?
-&lt;&lt;/if&gt;&gt;
-
-
-Peut-être peux-tu trouver un autre outil qui ferait cela en parmi les autres proposés : 
-
-[[Fotoforensics]] (https://fotoforensics.com)
-[[Tineye]] (https://tineye.com)
-[[exifviewer]](https://onlineexifviewer.com)
-
-&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Tineye" tags="" position="150,675" size="100,100">voici un mode d&#39;emploi de l&#39;outil.
-
-&lt;!-- prévoir un screento gif pour montrer comment ça fonctionne (https://www.screentogif.com/) et charger le GIF ici --&gt;
-
-Sers t-en pour retrouver la page dans laquelle, selon l&#39;index de Tineye, la photo a été publiée pour la première fois. 
-
-inscris la date de publication de l&#39;article dans le format JJ/MM/AAAA pour aller plus loin.
-
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\   
-
-&lt;&lt;set $date_journal to prompt(&quot;inscris la date au format JJ/MM/AAAA&quot;, &quot;01/01/1970&quot;)&gt;&gt;
-
-&lt;&lt;if $date_journal eq &quot;20/08/2020&quot; &gt;&gt;
-Bien vu ! [[passe à l&#39;étape suivante]]
-&lt;&lt;else&gt;&gt;
-tu n&#39;y es pas encore, revois le mode d&#39;emploi de [[Tineye]] et retente ta chance.
-&lt;&lt;/if&gt;&gt;
-
-&lt;!-- convertir date en date unix
-date --date=&#39;$date_journal 07:21:22 -0000&#39; +&quot;%s&quot; --&gt;
-
-&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="Fotoforensics" tags="" position="150,1025" size="100,100">Après avoir accédé au site, tu charges l&#39;image, puis tu sélectionnes tour à tour dans le menu de gauche plusieurs options. 
-La plus curieuse te donne cet aperçu de ta photo : 
-
-&lt;img src=&quot;images/photo1_ela.png&quot;&gt;
-
-Après un peu de lecture complémentaire, tu comprends que cet outil permet de repérer des photos qui ont été truquées (on y ajouté ou enlevé des éléments par rapport à ce que tu cherches). 
-
-C&#39;est intéressant, mais ce n&#39;est pas ce dont tu as besoin maintenant. 
-
-si tu veux néanmoins en savoir plus sur cet outil , tu peux aller sur [[cette page|ELA]], sinon tente à nouveau ta chance dans l&#39;un des services suivants ; 
-
-[[Google image]] (https://images.google.fr)
-[[Tineye]] (https://tineye.com)
-[[exifviewer]](https://onlineexifviewer.com)</tw-passagedata><tw-passagedata pid="31" name="exifviewer" tags="" position="150,900" size="100,100">tu importes la photo dans &lt;a href=&quot;https://onlineexifviewer.com&quot; target=&quot;_blank&quot;&gt;cet outil&lt;/a&gt;, et...
-
-...à vrai dire il ne se passe pas grand chose
-
-Si tu veux savoir à quoi dans certains cas peut te servir cet outil, dans ce cas [[lis la notice|exifviewer utilisation]], sinon, tu peux passer ton chemin et tenter une nouvelle fois ta chance avec un autre outil :
-
-[[Fotoforensics]] (https://fotoforensics.com)
-[[Tineye]] (https://tineye.com)</tw-passagedata><tw-passagedata pid="32" name="ELA" tags="" position="275,1025" size="100,100">&lt;!-- décrire fonctionnement et utilité exifviewer --&gt;
-
-Intéressant ; maintenant que ta curiosité est assouvie, il te reste à trouver l&#39;outil qui va te permettre de remplir la tâche que tu t&#39;es assignée : [[trouver le contexte originel de publication de l&#39;image|Fotoforensics]]. </tw-passagedata><tw-passagedata pid="33" name="passe à l&#39;étape suivante" tags="" position="275,800" size="100,100">La légende de l&#39;article indique : 
-
-&lt;span class=&quot;article-media-legend&quot;&gt;Le scientifique Edgar Dusacre, membre de l&amp;#039;association &amp;quot;4P Shore &amp;amp; Seas&amp;quot; montre des débris de microplastiques collectés sur la plage de Contis-les-Bains, dans les Landes&lt;/span&gt;
-&lt;span class=&quot;article-media-copyright&quot;&gt;&amp;copy; AFP/MEHDI FEDOUACH&lt;/span&gt;
-
-Edgar Dusacre, le nom te dit quelque chose. Tu regardes rapidement dans ta biblio, et en effet, tu t&#39;aperçois que tu as référencé un article de ce chercheur dont le titre est : 
-
-*Devenir et effets des microplastiques, nanoplastiques et additifs issus de la dégradation des engins de pêche au cours de leur cycle de vie. Étude dans le golfe de Gascogne*
-
-Ce serait bien si tu pouvais conserver cette photo dans ton mémoire, mais ça semble poser problème à Plagiator. 
-Quelle raison vois-tu à cela : 
-
-[[Tu n&#39;as pas indiqué l&#39;auteur de la photo en légende de l&#39;image]]
-[[Tu n&#39;as pas demandé le droit de reproduire la photo dans ton travail au photographe]]
-[[Tu n&#39;as pas mis &quot;tous droits réservés&quot; sous la photo à côté du nom du photographe]]
-
-Tu peux aussi décider, puisque cette photo semble poser problème, de chercher une autre [[photo équivalente]]. 
-
-                                    </tw-passagedata><tw-passagedata pid="34" name="exifviewer utilisation" tags="" position="275,900" size="100,100">&lt;!-- décrire fonctionnement et utilité exifviewer --&gt;
-
-Intéressant ; maintenant que ta curiosité est assouvie, il te reste à trouver l&#39;outil qui va te permettre de remplir la tâche que tu t&#39;es assignée : [[trouver le contexte originel de publication de l&#39;image|exifviewer]]. </tw-passagedata><tw-passagedata pid="35" name="Tu n&#39;as pas indiqué l&#39;auteur de la photo en légende de l&#39;image" tags="" position="400,775" size="100,100">Allez, un copier-coller et c&#39;est fait. 
-Maintenant le nom du photographe apparaît bien en légende sous la photo.
-
-Zou, on passe à l&#39;[[étape suivante|publication]]
-
-&lt;&lt;set $plagiator_faute_1 to true&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="Tu n&#39;as pas demandé le droit de reproduire la photo dans ton travail au photographe" tags="" position="400,900" size="100,100">Il te faut 15 minutes pour trouver le mail du photographue sur le web. Puis le surlendemain, tu reçois la réponse suivante : 
-
-&quot;Ch$prp5 $name,
-
-Votre mémoire est un travail académique et en tant que tel couvert par l&#39;exception pédagogique. Dans ce cadre, vous pouvez réutiliser ma photo en mentionnant que j&#39;en suis l&#39;auteur. Si vous décidez en revanche d&#39;exposer votre travail sur la Toile à partir d&#39;un site personnel, les règles sont différentes, dans ce cas, je vous invite à contacter...&quot; suit une adresse de mail de contact, à laquelle tu ne prêtes pas attention, car en effet, tu n&#39;as pas l&#39;intention de publier ce travail avec cette photo sur ton blog sur lequel tu n&#39;as d&#39;ailleurs rien écrit depuis un an. 
-
-C&#39;est ok, tu mets en légende le nom du photographe avec la mention &quot;tous droits réservés&quot; et tu passes à l&#39;[[étape suivante|publication]]</tw-passagedata><tw-passagedata pid="37" name="Tu n&#39;as pas mis &quot;tous droits réservés&quot; sous la photo à côté du nom du photographe" tags="" position="400,1025" size="100,100">Allez, un copier-coller et c&#39;est fait, tu as ajouté le mention &quot;tous droits réservés&quot; 
-Maintenant le nom du photographe apparaît bien en légende sous la photo à côté de ses droits.
-
-Zou, on passe à l&#39;[[étape suivante|publication]]
-
-&lt;&lt;set $plagiator_faute_1 to true&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="publication" tags="" position="525,900" size="100,100">Bien, il ne te reste plus maintenant qu&#39;à envoyer le résultat de ton travail à Mme Green et à espérer que ton oeuvre cette fois passe le test du Plagiator. 
-
-[[Suivant|envoi]]</tw-passagedata><tw-passagedata pid="39" name="photo équivalente" tags="" position="525,1025" size="100,100">En cherchant des images sur ton moteur de recherche préféré, tu tombes &lt;a href=&quot;https://image.ifremer.fr/data/00618/73039&quot; target=&quot;_blank&quot;&gt;sur cette vue d&#39;une plage bretonne&lt;/a&gt;. Cette photo t&#39;intéresse parce que l&#39;été dernier, justement tu t&#39;y es baigné$prp2 sur l&#39;une de ces plages du Finistère avec quelques amis. 
-Tu avais déjà été saisi$prp2 par la quantité de plastique qu&#39;on pouvait y trouver et tu te dis que cette expérience n&#39;a pas compté pour rien dans le choix de ton sujet de recherche. Que deviennent tous ces détritus de plastique quand ils se décomposent en particules qui sont ensuite ingérées par les poissons, et que devenons-nous quand nous pêchons et mangeons ces mêmes poissons ? 
-
-Tu regardes le texte qui accompagne l&#39;image et tu vois qu&#39;on t&#39;indique comment citer cette image : 
-
-&quot;Mamaca Emina (2019). Débris de micro-plastiques sur une plage du Finistère. Ifremer. https://image.ifremer.fr/data/00618/73039/&quot;
-
-Tout y est : l&#39;auteur, la date, le titre et le lien vers le site où l&#39;on trouve cette image sur le web. 
-Tu remarques aussi ce logo sur la même page : 
-
-&lt;img src=&quot;images/licence_ifremer.png&quot;&gt;
-
-Sais-tu ce que cela signifie en terme de réutilisation de la photo : 
-
-[[C&#39;est une licence creative commons qui t&#39;autorise a utiliser cette image à condition d&#39;en citer la source (auteur, titre, lien)|cc_by]]
-[[C&#39;est une licence creative commons qui t&#39;autorise à reproduire l&#39;image, à condition d&#39;y mettre en légende le même logo|logo_cc_by]]
-[[C&#39;est une licence creative commons qui signifie que l&#39;image est libre de droit et que tu peux en faire ce que tu veux|libre_droit]]
-
-
-
-
-
-</tw-passagedata><tw-passagedata pid="40" name="cc_by" tags="" position="675,1025" size="100,100">Tu décides donc de remplacer l&#39;image d&#39;Edgard Dusacre par cette image rencontrée sur le site de l&#39;Ifremer, mais à ce moment tu tu dis : 
-
--Ok, j&#39;ai eu de la chance, je suis tombé par hasard sur cette photo avec cette licence, mais comment faire des recherches pour ne trouver que des images de ce type réutilisables gratuitement ?
-
-coche les moteurs de recherche qui permettent de trouver ce type d&#39;image : 
-
-
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
-&lt;&lt;checkbox &quot;$google&quot; false true&gt;&gt; Google Images
-&lt;&lt;checkbox &quot;$getty&quot; false true&gt;&gt; Getty Images
-&lt;&lt;checkbox &quot;$wikimedia&quot; false true&gt;&gt; Wikimedia
-&lt;&lt;checkbox &quot;$flickr&quot; false true&gt;&gt; Flickr
-&lt;&lt;checkbox &quot;$dalle&quot; false true&gt;&gt; Dall-E
-&lt;&lt;/linkreplace&gt;&gt;
-
-&lt;&lt;linkreplace &quot;@@font-family: &#39;Symbola&#39;; &amp;#128073; @@&quot; t8n&gt;&gt;\  
-
-&lt;&lt;if $google and $flickr and $wikimedia&gt;&gt;&quot;en effet, il existe sur ces moteurs de recherche un filtre qui permet de sélectionner uniquement des images réutilisables. Tu peux passer à l&#39;[[étape suivante|envoi]]&quot;
-&lt;&lt;elseif $getty&gt;&gt;&quot;Getty permet d&#39;accéder à des images réutilisables, mais uniquement en payant, ce n&#39;est pas ce qu&#39;on cherche ici.&quot;
-&lt;&lt;elseif $dalle&gt;&gt;&quot;Dall-E ne permet pas de trouver des images sous licence libre mais de créer des images- avec une intelligence artificielle, Ce n&#39;est pas conseillé dans un travail académique. [[recommence|cc_by]]&quot;
-&lt;&lt;else&gt;&gt;&quot;ta réponse n&#39;est pas complète, plusieurs réponses sont valides. [[recommence|cc_by]].&quot;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/linkreplace&gt;&gt;
-
-</tw-passagedata><tw-passagedata pid="41" name="logo_cc_by" tags="" position="650,775" size="100,100">Tu ajoutes les 5 caractères CC-by: sous la photo et tu décides de ne pas t&#39;attarder davantage sur la question, passe à l&#39;[[étape suivante|envoi]]
-
-&lt;&lt;set $error_cc_by to true&gt;&gt;
-
-</tw-passagedata><tw-passagedata pid="42" name="libre_droit" tags="" position="525,775" size="100,100">Libre de droit ! C&#39;est tout à fait ce dont tu avais besoin. 
-Alors, c&#39;est décidé : tu choisis cette image et tu l&#39;importes dans ton document avec juste en légendre la phrase &quot;plastique visible sur une plage du Finistère en 2019&quot;.
-
-Il est temps de passer à l&#39;[[étape suivante|envoi]]</tw-passagedata><tw-passagedata pid="43" name="envoi" tags="" position="850,950" size="100,100">Histoire à continuer
-
-[[fin de l&#39;histoire]]
-
-&lt;&lt;if $admin eq 4672 &gt;&gt;[[admin|dialogues]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="image proposition 1" tags="" position="650,900" size="100,100">Tu scrutes l&#39;image de la page 16
-
-&lt;img src=&quot;images/microplastiques_photo1.jpg&quot; width=&quot;900px&quot;&gt;
-
-Qu&#39;est-ce qui peut bien [[poser problème dans cette image|probleme_image]] ? </tw-passagedata><tw-passagedata pid="45" name="fin de l&#39;histoire" tags="" position="775,800" size="100,100">
-Voici la fin du parcours, $name
-
-Vous avez un score de $score
-
-
-Quelques rappels concernant les erreurs que vous avez faites :
-
-&lt;&lt;if $manque_titre_document eq true&gt;&gt;
-
-Un appel de citation dans un style author-date ne comporte que le nom ou les noms des auteurs et la date de publication du document
-
-&lt;&lt;/if&gt;&gt;
-
-Télécharger cette page en PDF en cliquant sur le lien ci-dessous et envoyez la à votre enseignant via Moodle.
-
-&lt;button onclick=&quot;window.print()&quot;&gt;Imprimer le score&lt;/button&gt;
-
-</tw-passagedata><tw-passagedata pid="46" name="Blue Monday" tags="cafeteria hideui" position="25,400" size="100,100">&lt;audio id=&quot;audioPlayer&quot; controls&gt;
-  &lt;source src=&quot;sons/bruit_restaurant.wav&quot; type=&quot;audio/mpeg&quot;&gt;
-  Your browser does not support the audio element.
-&lt;/audio&gt;
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
     i = 0;
@@ -1586,7 +1383,7 @@ Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.@@
 &lt;/div&gt;
 &lt;div id=&quot;11&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Tu as maintenant une décision à prendre : soit tu vas voir [[Camille|choix du genre]], soit tu décides de prendre un peu de temps pour revoir l&#39;ensemble de ton travail et [[identifier les points les plus problématiques|révision]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="image proposition 2" tags="bibliotheque" position="1025,25" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="image proposition 2" tags="bibliotheque" position="1025,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1620,7 +1417,7 @@ Tu scrutes l&#39;image de la page 18
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Qu&#39;est-ce qui peut bien [[poser problème dans cette image|probleme_image2]] ? 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="probleme_image2" tags="bibliotheque" position="1025,150" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="probleme_image2" tags="bibliotheque" position="1025,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1656,7 +1453,7 @@ Tu envisages les trois possibilités suivantes :
 - 3. L&#39;Image n&#39;est pas assez illustrative du contexte (Cette partie traite de microplastiques qui ne sont pas visibles à l&#39;oeil nu. Il faut donc replacer l&#39;image dans la partie précédente. [[C&#39;est ça qui cloche|deplacement image]]
 
 Laquelle choisis-tu ? 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="pixellisation" tags="bibliotheque" position="1025,275" size="100,100">&lt;div class=&quot;history-box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="pixellisation" tags="bibliotheque" position="1025,300" size="100,100">&lt;div class=&quot;history-box&quot;&gt;
 En réduisant un peu la taille de l&#39;image, ça ne se verra plus.
 Toi qui pensais que Plagiator ne s&#39;occupait que de droit d&#39;auteur. Apparemment, ça gère aussi l&#39;esthétique du travail. Quelle malédiction. 
 Allez zou, on envoie ça au machin et ce sera terminé. 
@@ -1666,7 +1463,7 @@ As-tu encore besoin d&#39;une [[dernière révision]] ?
 &lt;/div&gt;
 
 &lt;&lt;set $score to $score-2&gt;&gt;
-&lt;&lt;set $pixellisation to true&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="sourceimage1" tags="bibliotheque" position="1150,25" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $pixellisation to true&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="sourceimage1" tags="bibliotheque" position="1150,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1737,7 +1534,7 @@ Oui, bien sûr, tu peux utiliser la recherche inverse d&#39;images pour ça
 @@
 &lt;/div&gt;
 
-&lt;&lt;set $score to $score+1&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="source_image2" tags="bibliotheque" position="1150,150" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $score to $score+1&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="source_image2" tags="bibliotheque" position="1150,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1785,7 +1582,7 @@ Dans quel journal trouve t-on cette image publiée pour la première fois ?
 - [[Le Monde|mauvais journal]]
 - [[Courrier International|courrier international]]
 - [[Sciences et Vie|mauvais journal]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="deplacement image" tags="bibliotheque" position="900,325" size="100,100">&lt;div class=&quot;history-box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="deplacement image" tags="bibliotheque" position="900,300" size="100,100">&lt;div class=&quot;history-box&quot;&gt;
 Tu pensais n&#39;en avoir que pour un instant, mais le déplacement de l&#39;image dans le traitement de texte te prend plus de temps que prévu ; l&#39;image dans son nouveau contexte déstructure un paragraphe. C&#39;est un vrai casse-tête à gérer. Enfin, au bout d&#39;une demie-heure, tu arrives enfin à régler le problème.
 Voilà, c&#39;est fait, elle est désormais placée au bon endroit. 
 
@@ -1795,7 +1592,7 @@ A moins que tu n&#39;aies le temps pour une [[ultime révision|dernière révisi
 
 &lt;&lt;set $score to $score-2&gt;&gt;
 &lt;&lt;set $déplacement to true&gt;&gt;
-</tw-passagedata><tw-passagedata pid="53" name="suite_camille" tags="chinese_room" position="650,275" size="100,100">  &lt;&lt;set $appel_citation_ok to true &gt;&gt;
+</tw-passagedata><tw-passagedata pid="34" name="suite_camille" tags="chinese_room" position="650,300" size="100,100">  &lt;&lt;set $appel_citation_ok to true &gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -1840,16 +1637,18 @@ Camille est peu sensible à ton accablement. Visiblement son esprit regarde [[d�
 
 
 
-</tw-passagedata><tw-passagedata pid="54" name="genialy" tags="" position="650,400" size="100,100">
+</tw-passagedata><tw-passagedata pid="35" name="genialy" tags="" position="650,425" size="100,100">
 [[retour|suite_camille]]
 
 &lt;div style=&quot;width: 100%;&quot;&gt;&lt;div style=&quot;position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;&quot;&gt;&lt;iframe title=&quot;normes bibliographiques : appels de citation&quot; frameborder=&quot;0&quot; width=&quot;1200px&quot; height=&quot;675px&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot; src=&quot;https://view.genial.ly/63593787c0d9eb0018030d54&quot; type=&quot;text/html&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; scrolling=&quot;yes&quot; allownetworking=&quot;all&quot;&gt;&lt;/iframe&gt; &lt;/div&gt; &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="55" name="mauvais journal" tags="bibliotheque" position="1150,275" size="100,100">&lt;div class=&quot;history-box&quot;&gt;
+</tw-passagedata><tw-passagedata pid="36" name="mauvais journal" tags="bibliotheque" position="1150,300" size="100,100">&lt;div class=&quot;history-box&quot;&gt;
 Manifestement c&#39;est une erreur, [[recommence|source_image2]].
 &lt;/div&gt;
 
-&lt;&lt;set $score to $score-1&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="courrier international" tags="courrier" position="1275,275" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $mauvaisjournal to true&gt;&gt;
+
+&lt;&lt;set $score to $score-1&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="courrier international" tags="bibliotheque" position="1275,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1936,7 +1735,7 @@ Une étudiante, visiblement énervée par le bruit de votre discussion, vous jet
 &lt;/div&gt;
 
 
-&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="licence libre" tags="study_room" position="1275,400" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="licence libre" tags="study_room" position="900,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -2032,7 +1831,12 @@ Alex quitte la salle. Il ne te reste plus qu&#39;à exploiter les informations q
 
 
 
-</tw-passagedata><tw-passagedata pid="58" name="sélection_image" tags="" position="1275,525" size="100,100">Après quelques recherches, tu trouves sur des sites différents trois images qui pourraient illustrer ton propos, mais il reste la question des droits de reproduction à gérer.
+</tw-passagedata><tw-passagedata pid="39" name="sélection_image" tags="" position="1150,425" size="100,100">Les différentes conditions de réutilisation des images placées sous creative commons sont symbolisées par des icones. 
+Au bout d&#39;un certain temps, tu penses avoir compris quelle icone représente telle ou telle condition et tu es capable de relier les icones à leur signification.
+
+&lt;iframe src=&quot;https://app.Lumi.education/api/v1/run/pc7QXO/embed&quot; width=&quot;816&quot; height=&quot;720&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot; allow=&quot;geolocation *; microphone *; camera *; midi *; encrypted-media *&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://app.Lumi.education/api/v1/h5p/core/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot; /&gt;
+
+Après quelques recherches sur le web, tu trouves sur des sites différents trois images qui pourraient illustrer ton propos, mais il reste la question des droits de reproduction à gérer.
 
 &lt;table&gt;
 &lt;tr&gt;
@@ -2052,7 +1856,7 @@ Quelle image peux-tu utiliser pour illustrer ton devoir sur les microplastiques
  &lt;&lt;checkbox &quot;$microplastiques_2&quot; false true autocheck&gt;&gt; image n°2
  &lt;&lt;checkbox &quot;$microplastiques_3&quot; false true autocheck&gt;&gt; image n°3
  
- [[étape suivante]]</tw-passagedata><tw-passagedata pid="59" name="dernière révision" tags="" position="1150,400" size="100,100">De retour dans la grande salle de lecture, tu fais le bilan de ton travail. 
+ [[étape suivante]]</tw-passagedata><tw-passagedata pid="40" name="dernière révision" tags="" position="775,425" size="100,100">De retour dans la grande salle de lecture, tu fais le bilan de ton travail. 
 Un lourd travail, qui aura occupé toute ta journée.
 Tu te dis que si tu avais suivi d&#39;emblée la bonne méthode qui consiste à utiliser un logiciel pour gérer tes citations. On t&#39;a parlé de Zotero. Peut-être devrais-tu y consacrer une heure ou deux, ça t&#39;évitera sans doute de vivre une nouvelle fois ce stress bibliographique. 
 
@@ -2074,7 +1878,7 @@ Il te semble qu&#39;il manque quelque chose à cette référence.
 
 
 
-</tw-passagedata><tw-passagedata pid="60" name="soumettre" tags="coffee_shop" position="825,525" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="41" name="soumettre" tags="coffee_shop" position="1400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -2120,18 +1924,31 @@ Alors ? Est-ce que tu as eu le temps de revoir tout ce qu&#39;on avait listé co
 D&#39;accord, merci. On n&#39;a pas le temps de vérifier une dernière fois. J&#39;espère que tu as bien suivi mes indications. Car une fois soumis à Plagiator, on ne peux plus rien modifier. Le système ne prévoit pas de troisième chance. 
 &lt;/div&gt;
 &lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus qu&#39;à appuyer sur le bouton soumettre. J&#39;y vais ? 
+Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus qu&#39;à appuyer sur le bouton soumettre. J&#39;y vais ? Allez, je clique ici...
 &lt;/div&gt;
-&lt;div id=&quot;6&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-[[Go !]]
-&lt;/div&gt;
+&lt;div id=&quot;6&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
+ &lt;&lt;nobr&gt;&gt;  
+   &lt;&lt;button&quot;Avertissement&quot;&gt;&gt;
+      &lt;&lt;script&gt;&gt;
+          UI.alert(&quot;$Plagiator: Vous êtes sur le point de soumettre votre devoir à Plagiator&quot;)
+       &lt;&lt;/script&gt;&gt;
+   &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/nobr&gt;&gt;
+ &lt;/div&gt;
+ &lt;div id=&quot;7&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+   [[C&#39;est parti! |Go !]]
+   &lt;/div&gt;
+
 
  &lt;&lt;if $reference_answer eq &quot;ok&quot;&gt;&gt;
 	&lt;&lt;set $score to $score+2&gt;&gt;
     &lt;&lt;elseif $reference_answer eq &quot;bad&quot;&gt;&gt;
        &lt;&lt;set $score to $score-1&gt;&gt;
     &lt;&lt;else&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="Go !" tags="plagiator" position="1025,650" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Go !" tags="plagiator" position="1275,425" size="100,100">
+&lt;&lt;audio &quot;plagiator&quot; volume 1 fadeout&gt;&gt;
+
+&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -2164,15 +1981,15 @@ Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus
  &lt;/div&gt;
  &lt;&lt;if $score gte 5&gt;&gt;
      &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:purple;Attends... je crois qu&#39;on a le résultat en appuyant [[sur ce bouton|good_result]]@@
+Attends... je crois qu&#39;on a le résultat en appuyant [[sur ce bouton|good_result]]
      &lt;/div&gt;
  &lt;&lt;else&gt;&gt;
        &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:red;Attends... je crois qu&#39;on a le résultat en appuyant [[sur ce bouton|bad_result]]@@
+Attends... je crois qu&#39;on a le résultat en appuyant [[sur ce bouton|bad_result]]
      &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
  
-</tw-passagedata><tw-passagedata pid="62" name="étape suivante" tags="" position="1150,525" size="100,100">Il est temps de retrouver Camille au café où elle a ses habitudes. C&#39;est dansl le quartier de l&#39;Université, ça ne devrait pas être loin d&#39;ici. 
+</tw-passagedata><tw-passagedata pid="43" name="étape suivante" tags="" position="1025,425" size="100,100">Il est temps de retrouver Camille au café où elle a ses habitudes. C&#39;est dansl le quartier de l&#39;Université, ça ne devrait pas être loin d&#39;ici. 
 
 [[Allons retrouver Camille|soumettre]]
 Non, faisons plutôt une [[dernière révision]]
@@ -2183,12 +2000,7 @@ Non, faisons plutôt une [[dernière révision]]
     &lt;&lt;set $score to $score - 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
  
- </tw-passagedata><tw-passagedata pid="63" name="sur ce bouton" tags="" position="1350,850" size="100,100">Résultat
-
-Ton score
-
-
-    </tw-passagedata><tw-passagedata pid="64" name="suite_référence" tags="" position="1275,650" size="100,100">&lt;&lt;if $reference eq &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ».Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique, 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; &gt;&gt; 
+ </tw-passagedata><tw-passagedata pid="44" name="suite_référence" tags="" position="1275,175" size="100,100">&lt;&lt;if $reference eq &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ».Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique, 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; &gt;&gt; 
 
 &lt;&lt;set $reference_answer to &quot;ok&quot;&gt;&gt;
 
@@ -2197,17 +2009,47 @@ Ton score
 &lt;&lt;/if&gt;&gt;
 Il est temps maintenant de retrouver Camille au [[rendez-vous|soumettre]] qu&#39;$prc2 t&#39;a fixé
 
-</tw-passagedata><tw-passagedata pid="65" name="restitue la référence complète" tags="" position="1150,650" size="100,100">&lt;&lt;set $reference to prompt(&quot;référence&quot;, &quot;&quot;)&gt;&gt;
+</tw-passagedata><tw-passagedata pid="45" name="restitue la référence complète" tags="" position="1275,300" size="100,100">&lt;&lt;set $reference to prompt(&quot;référence&quot;, &quot;&quot;)&gt;&gt;
 
-[[zou|suite_référence]]</tw-passagedata><tw-passagedata pid="66" name="good_result" tags="" position="700,650" size="100,100">&lt;img src=&quot;gifs/right.gif&quot; autoplay&gt;
+
+[[zou|suite_référence]]</tw-passagedata><tw-passagedata pid="46" name="good_result" tags="" position="1400,300" size="100,100">&lt;img src=&quot;gifs/right.gif&quot; autoplay&gt;
 
 Bien joué ! 
+
+ton score est à $score
+
 Plagiator semble ne relever qu&#39;un faible nombre d&#39;erreurs d&#39;attribution
 C&#39;est sans doute encore trop. Mais pour toi, c&#39;était une initiation et heureusement que tu as pu compter sur Alex et Camille pour t&#39;aider. 
 
 N&#39;oublie pas aussi que les bibliothécaires sont à ta disposition pour t&#39;aider à réaliser de la recherche d&#39;information et seront de bon conseil pour exploiter cette information correctement dans tes travaux à venir. 
 
-[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="67" name="bad_result" tags="" position="700,525" size="100,100">&lt;img src=&quot;gifs/wrong.gif&quot; autoplay&gt;
+!Erreurs commises et explications
+
+&lt;&lt;if $mauvaisjournal eq true&gt;&gt;
+    Vous n&#39;avez pas identifié la bonne source de l&#39;image. Pour savoir comment faire une recherche inverse d&#39;images, revoyez la démonstration de Camille.
+   &lt;iframe width=&quot;720&quot; height=&quot;530&quot; src=&quot;https://video.univ-rennes1.fr/permalink/v12688a2cf90fdq6k73v/iframe/&quot; allowfullscreen=&quot;allowfullscreen&quot; allow=&quot;autoplay&quot;&gt;
+   &lt;/iframe&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pixellisation eq true&gt;&gt;
+     Vous avez répondu que l&#39;image était problématique parce que sa résolution laissait à désirer.
+     Une image qui pixellise, ce n&#39;est pas terrible pour l&#39;esthétique et il vaut mieux trouver des images en grand format qu&#39;on peut éventuellement réduire. Mais pour ce qui nous concerne, cela n&#39;a rien à voir avec les droits d&#39;auteur. Plagiator ne s&#39;occupe que de cet aspect en lien avec la citation
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $déplacement eq true&gt;&gt;
+     Vous avez répondu que l&#39;image était problématique parce que pas à sa place.
+     Plagiator ne s&#39;occupe pas du lien entre la figure et le texte, mais vérifie que vous avez le droit de reproduire la figure. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $reference_answer eq &quot;bad&quot;&gt;&gt;
+Le style Chicago dont le schéma vous était fourni impose de présenter les informations de la référence comme suit : 
+&lt;strong&gt;Prénom Nom, Prénom Nom, Prénom Nom et Prénom Nom. « titre ». @@color:red;titre du journal@@ vol, nᵒ (date): pages. URL.&lt;/strong&gt;
+
+C&#39;est le titre du journal qui manquait. On pouvait le retrouver en interrogeant un moteur de recherche comme Google Scholar (https://scholar.google.fr) à partir du titre de l&#39;article, ce qui permettait d&#39;accéder à la base de données Science Direct qui héberge le journal &quot;Cahiers de Nutrition et Diététique&quot;
+
+La référence complète (en style Chicago) s&#39;écrit de la manière suivante : 
+
+Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.
+&lt;&lt;/if&gt;&gt;
+
+[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="47" name="bad_result" tags="" position="1400,175" size="100,100">&lt;img src=&quot;gifs/wrong.gif&quot; autoplay&gt;
 
 Plagiator a repéré un niveau d&#39;erreurs d&#39;attributions qui est supérieur à ce qu&#39;il peut tolérer. 
 Il ne te reste plus qu&#39;à aller voir Mme Green en espérant qu&#39;elle se montre compréhensive ; 24 heures pour tout corriger ; était-ce suffisant ? 
@@ -2217,7 +2059,37 @@ En tout cas sois plus attenti$prp4 à la manière dont tu cites les textes et cr
 
 Ton score est $score. 
 
-[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="68" name="StorySubtitle" tags="" position="25,525" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="69" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="70" name="crédits" tags="" position="500,550" size="100,100">!Crédits
+!Erreurs commises et explications
+
+&lt;&lt;if $mauvaisjournal eq true&gt;&gt;
+    Vous n&#39;avez pas identifié la bonne source de l&#39;image. Pour savoir comment faire une recherche inverse d&#39;images, revoyez la démonstration de Camille.
+   &lt;iframe width=&quot;720&quot; height=&quot;530&quot; src=&quot;https://video.univ-rennes1.fr/permalink/v12688a2cf90fdq6k73v/iframe/&quot; allowfullscreen=&quot;allowfullscreen&quot; allow=&quot;autoplay&quot;&gt;
+   &lt;/iframe&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pixellisation eq true&gt;&gt;
+     Vous avez répondu que l&#39;image était problématique parce que sa résolution laissait à désirer.
+     Une image qui pixellise, ce n&#39;est pas terrible pour l&#39;esthétique et il vaut mieux trouver des images en grand format qu&#39;on peut éventuellement réduire. Mais pour ce qui nous concerne, cela n&#39;a rien à voir avec les droits d&#39;auteur. Plagiator ne s&#39;occupe que de cet aspect en lien avec la citation
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $déplacement eq true&gt;&gt;
+     Vous avez répondu que l&#39;image était problématique parce que pas à sa place.
+     Plagiator ne s&#39;occupe pas du lien entre la figure et le texte, mais vérifie que vous avez le droit de reproduire la figure. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $reference_answer eq &quot;bad&quot;&gt;&gt;
+
+Le style Chicago dont le schéma vous était fourni impose de présenter les informations de la référence comme suit : 
+
+&lt;strong&gt;Prénom Nom, Prénom Nom, Prénom Nom et Prénom Nom. « titre ». @@color:red;titre du journal@@ vol, nᵒ (date): pages. URL.&lt;/strong&gt;
+
+C&#39;est le titre du journal qui manquait. On pouvait le retrouver en interrogeant un moteur de recherche comme Google Scholar (https://scholar.google.fr) à partir du titre de l&#39;article, ce qui permettait d&#39;accéder à la base de données Science Direct qui héberge le journal &quot;Cahiers de Nutrition et Diététique&quot;
+
+La référence complète (en style Chicago) s&#39;écrit de la manière suivante : 
+
+Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.
+&lt;&lt;/if&gt;&gt;
+
+
+
+[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="25,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="" position="1400,425" size="100,100">!Crédits
 
 !!Images
 
@@ -2235,6 +2107,8 @@ Ton score est $score.
 &lt;tr&gt;&lt;td&gt;&lt;img src=&quot;images/coffee_shop.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.flickr.com/photos/ilovememphis/4596453826/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Memphis CVB, Window Seat (cc:by-sa-nc)&lt;/td&gt;&lt;/tr&gt;
 
 &lt;tr&gt;&lt;td&gt;&lt;img src=&quot;images/université.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:University_of_Life_Sciences,_Economics,_Prague.jpg&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Packa, University of Life Sciences, Economics, Prague (cc:by-sa)&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;images/genre.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://flic.kr/p/dXjLWZ&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dushan Hanuska, Man and Woman (cc:by-sa)&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 !!Gifs
@@ -2245,9 +2119,29 @@ Ton score est $score.
 
 &lt;tr&gt;&lt;td&gt;&lt;img src=&quot;gifs/decouragement.gif&quot; autoplay width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://gifer.com/fr/amj/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Al Pacino in Dog Days&lt;a href=&quot;https://gifer.com/fr/p/tos&quot; target=&quot;_blank&quot;&gt;Licence Gipher&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
-!!Autres
+!!Sons
+
+Les sons utilisés proviennent du site FreeSound
+
+-Plagiator : https://freesound.org/people/neopolitansixth/sounds/559272/
+-Flute chinoise : https://freesound.org/people/iluppai/sounds/180239/
+-bibliothèque : https://freesound.org/people/el_mar/sounds/170797/
+
+
+!!Portraits
 
 Les portraits (Camille, Alex) ont été générés depuis le site https://www.thispersondoesnotexist.com
+
+</tw-passagedata><tw-passagedata pid="51" name="StoryMenu" tags="" position="275,550" size="100,100"></tw-passagedata><tw-passagedata pid="52" name="StoryInit" tags="" position="400,550" size="100,100">&lt;&lt;cacheaudio &quot;cafeteria&quot; &quot;sons/bruit_restaurant.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;plagiator&quot; &quot;sons/plagiator.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;bibliotheque&quot; &quot;sons/library.m4a&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;flute&quot; &quot;sons/chinese_flute.wav&quot;&gt;&gt;
+
+  &lt;source src=&quot;sons/plagiator.wav&quot; type=&quot;audio/mpeg&quot;&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;
+
+
 
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
