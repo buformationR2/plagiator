@@ -173,6 +173,17 @@ body[data-tags~="study_room"]{
     position: absolute;
 } 
 
+body[data-tags~="gyres"]{
+  	z-index to -1;  
+    content:'';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/gyres.jpg");
+    background-size: cover;
+    position: absolute;
+} 
 
 body[data-tags~="bibliotheque"]{
   	z-index to -1;  
@@ -412,9 +423,7 @@ Quel genre souhaites-tu donner à Camille?
 &lt;/div&gt;   
 [[continuer|genre]] 
 
-</tw-passagedata><tw-passagedata pid="4" name="révision" tags="hideui" position="650,175" size="100,100">&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
-
-&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="révision" tags="gyres" position="650,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -441,41 +450,47 @@ Quel genre souhaites-tu donner à Camille?
   }
 }());
 &lt;/script&gt;
-    
+
+&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
     &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-     @@color:green; Bon alors, voyons ça@@
+     Bon alors, voyons ça
     &lt;/div&gt;
     
-    &lt;div id=&quot;1&quot;  style=&quot;display:none&quot;&gt;
+    &lt;div id=&quot;1&quot;  class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
     Avec Camille à tes côtés, tu fais défiler sur ton écran les quarante pages du mémoire à rendre. Tu n&#39;auras jamais le temps de corriger toute seul l&#39;ensemble des passages problématiques, mais tu peux t&#39;attaquer au plus gros et espérer que Mme Green n&#39;ira pas trop chercher la petite bête. 
     &lt;/div&gt;
     
     &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-    @@color:green; Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
-    
+  Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
+@@ color:black;   
     &quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;@@
-    &lt;/div&gt;
+
     
     Comment gérer ça ? 
-    
+&lt;/div&gt;   
     
 &lt;&lt;else&gt;&gt;
-        
-    tu fais défiler sur ton écran les quarante pages du mémoire à rendre. Tu n&#39;auras jamais le temps de corriger toute seul l&#39;ensemble des passages problématiques, mais tu peux t&#39;attaquer au plus gros et espérer que Mme Green n&#39;ira pas trop chercher la petite bête. 
-    
+
+&lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
+ tu fais défiler sur ton écran les quarante pages du mémoire à rendre. Tu n&#39;auras jamais le temps de corriger toute seul l&#39;ensemble des passages problématiques, mais tu peux t&#39;attaquer au plus gros et espérer que Mme Green n&#39;ira pas trop chercher la petite bête. 
+ &lt;/div&gt;
+ 
+ &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;   
     Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
-    
-    &quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;
-    
+@@color:black;   
+    &quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;@@
+&lt;/div&gt;
+&lt;div id=&quot;2&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;  
     Comment gérer ça ? 
-    
+ &lt;/div&gt;   
 &lt;&lt;/if&gt;&gt;
-    
+
+&lt;div id=&quot;3&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
     - [[faire une recherche dans Google sur les gyres piégeurs de déchet ?|recherche_simple]]
     -  [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre guillemets ?|guillemets]]
     - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
     - [[Prendre une phrase au hasard et demander à ChatGPT qui l&#39;a écrite|ChatGPT]]
-    
+  &lt;/div&gt;  
     
 &lt;&lt;set $visite_revision to true&gt;&gt;
     
@@ -538,30 +553,63 @@ Quel genre souhaites-tu donner à Camille?
  &lt;div id=&quot;7&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 [[continuer|Camille_rendez-vous1]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="guillemets" tags="" position="150,175" size="100,100">&lt;&lt;if $appel_citation_ok eq true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="guillemets" tags="gyres" position="150,175" size="100,100">&lt;&lt;if $appel_citation_ok eq true&gt;&gt;
 
+&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;script&gt;
+(function () {
+  var i = 0;
+
+  $(document).keyup(function (e) {
+    var currentDiv = document.getElementById(i.toString()); // Convert the number to string
+
+    if (currentDiv !== null) {
+      currentDiv.style.display = &quot;block&quot;;
+      scrollToDiv(i.toString());
+      i++;
+    }
+  });
+
+  function scrollToDiv(divId) {
+    var targetElement = document.getElementById(divId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: &#39;smooth&#39;,
+        block: &#39;start&#39;
+      });
+    }
+  }
+}());
+&lt;/script&gt;
+
+&lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Camille hoche la tête d&#39;un air satisfait. 
 C&#39;est bien ainsi qu&#39;il fallait procéder
-
+&lt;/div&gt;
+&lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
 Il s&#39;agit d&#39;un emprunt à un texte écrit par une certaine Anne-Claire N. Sur &lt;a href=&quot;https://www.elsevier.com/fr-fr/connect/nutrition/microplastiques-dans-notre-alimentation-un-focus-sur-la-sante-intestinale&quot; target=&quot;_blank&quot;&gt;un site d&#39;Elsevier dédié à de la vulgarisation (Elsevier Connect)&lt;/a&gt;
-
+&lt;/div&gt;
+&lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
 Peut-être pas une excellente source d&#39;ailleurs. Le nom de l&#39;autrice n&#39;est pas vraiment connu comme étant celui d&#39;une scientifique. Peut-être faudrait-il songer à en changer. Il est sans doute un peu tard pour cela. &quot;Concentrons-nous sur l&#39;essentiel&quot;, te répond Camille. On n&#39;a plus le temps d&#39;avaluer toutes tes références
 
 [[suite|question5]]
-
+&lt;/div&gt;
 	&lt;&lt;else&gt;&gt;
 
-
+&lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Bingo ! 
 
 Tu as d&#39;abord essayé de mettre le texte en entier dans le moteur de recherche, mais tu as du faire une erreur de syntaxe en recopiant un mot, donc ça ne fonctionne pas. Tu as recommencé avec une simple phrase (&quot;Dans l&#39;environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique&quot;) et tu obtiens un seul résultat : le bon. 
-
+&lt;/div&gt;
+&lt;div id=&quot;1&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Il s&#39;agit d&#39;un emprunt à un texte écrit par une certaine Anne-Claire N. Sur &lt;a href=&quot;https://www.elsevier.com/fr-fr/connect/nutrition/microplastiques-dans-notre-alimentation-un-focus-sur-la-sante-intestinale&quot; target=&quot;_blank&quot;&gt;un site d&#39;Elsevier dédié à de la vulgarisation (Elsevier Connect)&lt;/a&gt;
-
+&lt;/div&gt;
+&lt;div id=&quot;2&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Peut-être pas une excellente source d&#39;ailleurs. Le nom de l&#39;autrice n&#39;est pas connu comme celui d&#39;une experte sur le sujet. Peut-être faudrait-il songer à en changer. Il est sans doute un peu tard pour cela. &quot;Concentrons-nous sur l&#39;essentiel&quot;, te dis-tu.
 
 Cette fois, tu est décidée : pour gagner du temps, essayons de voir si [[Camille|choix du genre]] peut t&#39;aider. 
-
+&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;!-- si l&#39;élève est passé par appel_citation_ok, le renvoyer à la question 5, sinon à choix du genre --&gt;
@@ -669,7 +717,7 @@ tu n&#39;as pas une petite idée de ce qui ne va pas ?
 - [[Il manque le titre du document ?|manque_titre_document]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation|preciser_type]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="11" name="question5" tags="" position="650,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="11" name="question5" tags="chinese_room" position="650,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -698,29 +746,25 @@ tu n&#39;as pas une petite idée de ce qui ne va pas ?
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
-Camille tourne quelques pages absorbé!pr2 par sa tâche et soudainement son doigt se fige pointant un passage au milieu d&#39;un feuillet“
+Camille tourne quelques pages absorbé$prc2 par sa tâche et soudainement son doigt se fige pointant un passage au milieu d&#39;un feuillet“
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-    @@color:green; 
--Là, c&#39;est ça que j&#39;avais noté !@@
-
-J&#39;hésite entre trois formulations possibles de ce passage. Laquelle te semble la meilleure à toi, celle que tu as proposée :@@
+-Là, c&#39;est ça que j&#39;avais noté !
+Un$prp2 étudiant$prp2 de première année comme toi pourrait hésiter entre trois formulations possibles de ce passage. Laquelle te semble la meilleure à toi, celle que tu as proposée :
 &lt;/div&gt;
+
 &lt;div id=&quot;2&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
 [[Selon la thèse de Kedzierski écrite en 2017|formulation1]] :  Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des “microplastiques”.
-@@
 &lt;/div&gt;
+
 &lt;div id=&quot;3&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
 ou bien l&#39;une de celles-ci : 
-@@color:black;
 « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”. »  [[(Kedzierski, 2017|formulation2]])
-@@
 &lt;/div&gt;
+
 &lt;div id=&quot;4&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”. »  [[(Pollutions du milieu littoral par les microplastiques : Méthodes d’évaluation par Mikaël Kedzierski, publié en 2017)|formulation3]]. 
-@@
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="chinese_room hideui" position="400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -808,7 +852,7 @@ Attends, euh...
 - [[Il manque le titre du document ?|manque_titre_document]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="manque_titre_document" tags="chinese_room hideui" position="400,300" size="100,100">&lt;&lt;set $manque_titre_document to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="manque_titre_document" tags="chinese_room" position="400,300" size="100,100">&lt;&lt;set $manque_titre_document to true&gt;&gt;
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -888,7 +932,7 @@ mentionner le type de document n’apporte rien et n’est pas obligatoire. Je p
 - [[Il faut mettre la citation en italique ?|citation_italique]]
 - [[Il manque le titre du document ?|manque_titre_document]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="appel_citation_ok" tags="chinese_room hideui" position="525,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="appel_citation_ok" tags="chinese_room" position="525,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1121,7 +1165,7 @@ A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 [[continuer|Blue Monday]]
 
 
-</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="hideui" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="hideui chinese_room" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1158,7 +1202,7 @@ Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de
 @@color:green;
 [[qu&#39;est-ce que tu en penses|images]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="hideui" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="hideui chinese_room" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1194,7 +1238,7 @@ Tu as tout intérêt à rester dans le même style que celui que tu as spontané
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
 [[qu&#39;est-ce que tu en penses|images]] 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="formulation3" tags="" position="775,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="formulation3" tags="chinese_room" position="775,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1239,7 +1283,7 @@ Je te suis là-dessus, je me note qu&#39;il faut que je corrige ce passage.
 [[bon est-ce qu&#39;on est bon là ?|images]]
 @@
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="25" name="images" tags="chinese_room hideui" position="900,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="25" name="images" tags="chinese_room" position="900,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1277,8 +1321,8 @@ Alors que tu cherches à repérer dans ton travail d&#39;autres passages qui pr�
 @@
 &lt;/div&gt;
 &lt;div id=&quot;2&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
-Camille disparaît rapidement de ta vie te laissant à ton désarroi. 
-Il ne te reste plus qu&#39;à relire ton travail avec les instructions que t&#39;as laissées Camille et à tout remettre d&#39;aplomb. 
+Camille disparaît rapidement de ta vue, te laissant à ton désarroi. 
+Il ne te reste plus qu&#39;à relire ton travail avec les instructions qu&#39;$prp t&#39;a laissées et à tout remettre d&#39;aplomb. 
 
 Avec l&#39;emploi du temps que tu as aujourd&#39;hui, ça ne sera pas possible avant [[17h|bibliothèque]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque hideui" position="900,175" size="100,100">&lt;&lt;audio &quot;bibliotheque&quot; volume 1 fadeout&gt;&gt;
@@ -1599,7 +1643,7 @@ A moins que tu n&#39;aies le temps pour une [[ultime révision|dernière révisi
 
 &lt;&lt;set $score to $score-2&gt;&gt;
 &lt;&lt;set $déplacement to true&gt;&gt;
-</tw-passagedata><tw-passagedata pid="34" name="suite_camille" tags="chinese_room hideui" position="650,300" size="100,100">  &lt;&lt;set $appel_citation_ok to true &gt;&gt;
+</tw-passagedata><tw-passagedata pid="34" name="suite_camille" tags="chinese_room" position="650,300" size="100,100">  &lt;&lt;set $appel_citation_ok to true &gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -1638,10 +1682,15 @@ Maintenant il faudrait que tu vérifies tous les appels de citation dans ton doc
 &lt;img src=&quot;gifs/decouragement.gif&quot; autoplay&gt;
 &lt;/div&gt;
 
-&lt;div id=&quot;2&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
+&lt;&lt;if def $visite_revision&gt;&gt;
+  &lt;div id=&quot;2&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Camille est peu sensible à ton accablement. Visiblement son esprit regarde [[déjà ailleurs|images]]
-&lt;/div&gt;
-
+  &lt;/div&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+Bon, il y a aussi tous ces passages qui ont été repérés par Plagiator comme étant des emprunts. J&#39;en ai vu un particulièrement qui était du pur plagiat. Franchement tu aurais pu t&#39;y prendre autrement. Attends, [[où c&#39;était déjà|révision]]
+  &lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 </tw-passagedata><tw-passagedata pid="35" name="genialy" tags="hideui" position="650,425" size="100,100">
@@ -2117,6 +2166,9 @@ Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Merci
 &lt;tr&gt;&lt;td&gt;&lt;img src=&quot;images/université.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:University_of_Life_Sciences,_Economics,_Prague.jpg&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Packa, University of Life Sciences, Economics, Prague (cc:by-sa)&lt;/td&gt;&lt;/tr&gt;
 
 &lt;tr&gt;&lt;td&gt;&lt;img src=&quot;images/genre.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://flic.kr/p/dXjLWZ&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dushan Hanuska, Man and Woman (cc:by-sa)&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;images/gyres.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://pixnio.com/fr/divers/junkyards-images/plastique-pollution-pacifique-gyre-ordures-timbre&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Hagerty Ryan, USFWS (cc:0)&lt;/td&gt;&lt;/tr&gt;
+
 &lt;/table&gt;
 
 !!Gifs
