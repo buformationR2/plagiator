@@ -345,7 +345,7 @@ function scrollToDiv(divId) {
         block: "start"
       });
     }
-  }</script><tw-tag name="admin" color="green"></tw-tag><tw-tag name="cafeteria" color="none"></tw-tag><tw-tag name="bibliotheque" color="none"></tw-tag><tw-passagedata pid="1" name="début" tags="" position="25,50" size="100,100"> &lt;div class=&quot;row&quot;&gt;
+  }</script><tw-tag name="admin" color="green"></tw-tag><tw-tag name="cafeteria" color="none"></tw-tag><tw-tag name="bibliotheque" color="none"></tw-tag><tw-tag name="hideui" color="purple"></tw-tag><tw-passagedata pid="1" name="début" tags="" position="25,50" size="100,100"> &lt;div class=&quot;row&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
     &lt;br&gt;
         &lt;img src=&quot;images/université.jpg&quot; alt=&quot;photo de l&#39;entrée d&#39;une université&quot; width=&quot;400px&quot;&gt;
@@ -379,13 +379,21 @@ choisis [[ton pseudo]]
     &lt;&lt;set $prc5 to &quot;le&quot;&gt;&gt;
     &lt;img src=&quot;images/camille_male.PNG&quot; width=300px &gt;
     /* image générée par &quot;this person does-not exist */
+   &lt;&lt;elseif $camille_iel&gt;&gt;
+    &lt;&lt;set $prc to &quot;iel&quot;&gt;&gt;
+    &lt;&lt;set $prc2 to &quot;.e&quot;&gt;&gt;
+    &lt;&lt;set $prc3 to &quot;cellui-ci&quot;&gt;&gt;
+    &lt;&lt;set $prc4 to &quot;f.ve&quot;&gt;&gt;
+    &lt;&lt;set $prc5 to &quot;la&quot;&gt;&gt;
+        &lt;img src=&quot;images/AI_student.png&quot; width=300px &gt;
+    /* image générée par Dall-E avec le prompt &quot;a portrait of an androgynous student with a turtleneck&quot; */
   &lt;&lt;else&gt;&gt;
     &lt;&lt;set $prc to &quot;elle&quot;&gt;&gt;
     &lt;&lt;set $prc2 to &quot;e&quot;&gt;&gt;
     &lt;&lt;set $prc3 to &quot;celle-ci&quot;&gt;&gt;
     &lt;&lt;set $prc4 to &quot;ve&quot;&gt;&gt;
     &lt;&lt;set $prc5 to &quot;la&quot;&gt;&gt;
-    &lt;img src=&quot;images/camille_female.PNG&quot; width=300px &gt;
+    &lt;img src=&quot;images/AI_student.png&quot; width=300px &gt;
     /* image générée par &quot;this person does-not exist */
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;  
@@ -397,13 +405,14 @@ Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><t
    &lt;/div&gt;
    &lt;div class=&quot;column&quot;&gt;
 Quel genre souhaites-tu donner à Camille?
- &lt;&lt;checkbox &quot;$camille_feminin&quot; false true autocheck&gt;&gt; Féminin?
- &lt;&lt;checkbox &quot;$camille_masculin&quot; false true autocheck&gt;&gt; Masculin?
+ &lt;&lt;checkbox &quot;$camille_feminin&quot; false true autocheck&gt;&gt; Féminin ?
+ &lt;&lt;checkbox &quot;$camille_masculin&quot; false true autocheck&gt;&gt; Masculin ?
+ &lt;&lt;checkbox &quot;$camille_iel&quot; false true autocheck&gt;&gt; Va pour iel !
    &lt;/div&gt;
 &lt;/div&gt;   
 [[continuer|genre]] 
 
-</tw-passagedata><tw-passagedata pid="4" name="révision" tags="" position="650,175" size="100,100">&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="révision" tags="hideui" position="650,175" size="100,100">&lt;&lt;if $visite_auteur_manque eq true&gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -476,7 +485,7 @@ Quel genre souhaites-tu donner à Camille?
 
 
 
-</tw-passagedata><tw-passagedata pid="5" name="appel_camille" tags="cafeteria" position="275,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="5" name="appel_camille" tags="cafeteria hideui" position="275,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -592,7 +601,7 @@ Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé
 - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
 
 &lt;&lt;/linkreplace&gt;&gt; 
-</tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room" position="275,425" size="100,100">&lt;&lt;audio &quot;flute&quot; volume 1 fadeout&gt;&gt;
+</tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room hideui" position="275,425" size="100,100">&lt;&lt;audio &quot;flute&quot; volume 1 fadeout&gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -713,7 +722,7 @@ ou bien l&#39;une de celles-ci :
 « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”. »  [[(Pollutions du milieu littoral par les microplastiques : Méthodes d’évaluation par Mikaël Kedzierski, publié en 2017)|formulation3]]. 
 @@
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="chinese_room" position="400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="chinese_room hideui" position="400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -748,7 +757,7 @@ Tu as raison, il manque donc l’auteur associé à cette date, 2017 le tout ent
   &lt;/div&gt;
   &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
   @@color:green;
-Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que c’est @@
+Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que c’est ? @@
   &lt;/div&gt;
   &lt;div id=&quot;2&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
 @@color:black;
@@ -759,7 +768,7 @@ Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que
   &lt;/div&gt;
 
 &lt;&lt;set $visite_auteur_manque to true&gt;&gt;
-&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="chinese_room" position="400,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="chinese_room hideui" position="400,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -799,7 +808,7 @@ Attends, euh...
 - [[Il manque le titre du document ?|manque_titre_document]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="manque_titre_document" tags="chinese_room" position="400,300" size="100,100">&lt;&lt;set $manque_titre_document to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="manque_titre_document" tags="chinese_room hideui" position="400,300" size="100,100">&lt;&lt;set $manque_titre_document to true&gt;&gt;
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -840,7 +849,7 @@ Non, ça n’est pas nécessaire de mentionner ici le titre du document. Je pens
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]
 @@
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="15" name="preciser_type" tags="chinese_room" position="400,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="15" name="preciser_type" tags="chinese_room hideui" position="400,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -879,7 +888,7 @@ mentionner le type de document n’apporte rien et n’est pas obligatoire. Je p
 - [[Il faut mettre la citation en italique ?|citation_italique]]
 - [[Il manque le titre du document ?|manque_titre_document]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="appel_citation_ok" tags="chinese_room" position="525,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="appel_citation_ok" tags="chinese_room hideui" position="525,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -926,7 +935,7 @@ sinon, [[laisse la continuer|suite_camille]], elle est vraiment capable de t&#39
   
   
 
-</tw-passagedata><tw-passagedata pid="17" name="note_page_faux" tags="chinese_room" position="525,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="17" name="note_page_faux" tags="chinese_room hideui" position="525,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -969,7 +978,7 @@ Comme ça tu peux faire le lien entre une assertion de ton texte et le document 
 @@color:black;
 Je vois. On peut dire du coup que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="chinese_room" position="525,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="chinese_room hideui" position="525,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1002,7 +1011,7 @@ Oui c&#39;est un lien vers la biblio à la fin de ton texte. mais ce n&#39;est p
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Oui, on peut dire aussi que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="date_faux" tags="chinese_room" position="525,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="date_faux" tags="chinese_room hideui" position="525,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1033,14 +1042,14 @@ Oui, on peut dire aussi que [[c’est une façon abrégée de mentionner la sour
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
 @@color:green;
 La date fait en effet référence à la publication du document qu&#39;on cite à cet endroit. 
-Mais ce n&#39;est pas la seule fonction de cet espace entre parenthèses. Normalement le lecteur devrait visualiser pas seulement quand la phrase a été écrite ou du moins publiée, mais aussi par qui. Or ici il manque le nom de l&#39;auteur du document cité. 
+mais ce n&#39;est pas la seule fonction de l&#39;appel de citation. Normalement le lecteur devrait visualiser pas seulement quand la phrase a été écrite ou du moins publiée, mais aussi par qui. Or ici il manque le nom de l&#39;auteur du document cité. 
 @@
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 @@color:black;
 - ah, je vois. En fait c’est comme [[une façon abrégée de mentionner la source de la citation quand j’écris.|appel_citation_ok]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="" position="25,175" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="hideui" position="25,175" size="100,100">
 &lt;&lt;set $name to prompt(&quot;Choisis ton pseudo&quot;, &quot;Mimi&quot;)&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;column&quot;&gt;
@@ -1112,7 +1121,7 @@ A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 [[continuer|Blue Monday]]
 
 
-</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="hideui" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1149,7 +1158,7 @@ Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de
 @@color:green;
 [[qu&#39;est-ce que tu en penses|images]]
 @@
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="hideui" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1230,7 +1239,7 @@ Je te suis là-dessus, je me note qu&#39;il faut que je corrige ce passage.
 [[bon est-ce qu&#39;on est bon là ?|images]]
 @@
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="25" name="images" tags="chinese_room" position="900,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="25" name="images" tags="chinese_room hideui" position="900,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1272,7 +1281,7 @@ Camille disparaît rapidement de ta vie te laissant à ton désarroi.
 Il ne te reste plus qu&#39;à relire ton travail avec les instructions que t&#39;as laissées Camille et à tout remettre d&#39;aplomb. 
 
 Avec l&#39;emploi du temps que tu as aujourd&#39;hui, ça ne sera pas possible avant [[17h|bibliothèque]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque" position="900,175" size="100,100">&lt;&lt;audio &quot;bibliotheque&quot; volume 1 fadeout&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque hideui" position="900,175" size="100,100">&lt;&lt;audio &quot;bibliotheque&quot; volume 1 fadeout&gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -1338,7 +1347,7 @@ Plagiator semble poser un problème en termes de droit sur les images.
 
 &lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Lundi 20 janvier, à la caféteria du département de sciences environnementales. C&#39;est &quot;blue monday&quot;, c&#39;est à dire en théorie le jour le plus déprimant de l&#39;année et il faut bien dire que ça ne commence pas très fort pour toi. Tu étais déjà bien déprimé$prp2, et voilà qu&#39;il se met à pleuvoir  dehors ; la machine à café est en panne et surtout tu viens de recevoir un mauvais signal de l&#39;un de tes enseignants. 
-Arnold, un étudiant du même groupe que le vôtre avance à grands pas vers toi ; lui semble plutôt sous pression, limite excité.
+Arnold, un étudiant du même groupe que le tien avance à grands pas vers toi ; lui semble plutôt sous pression, limite excité.
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
   @@color:green;   
@@ -1383,7 +1392,7 @@ Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.@@
 &lt;/div&gt;
 &lt;div id=&quot;11&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Tu as maintenant une décision à prendre : soit tu vas voir [[Camille|choix du genre]], soit tu décides de prendre un peu de temps pour revoir l&#39;ensemble de ton travail et [[identifier les points les plus problématiques|révision]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="image proposition 2" tags="bibliotheque" position="1025,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="image proposition 2" tags="bibliotheque hideui" position="1025,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1417,7 +1426,7 @@ Tu scrutes l&#39;image de la page 18
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Qu&#39;est-ce qui peut bien [[poser problème dans cette image|probleme_image2]] ? 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="probleme_image2" tags="bibliotheque" position="1025,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="probleme_image2" tags="bibliotheque hideui" position="1025,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1570,9 +1579,7 @@ Procède comme te l&#39;as montré Camille. A partir de l&#39;image que tu as da
 
 &lt;div id=&quot;1&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Procède comme te l&#39;as montré Camille. A partir de l&#39;image que tu as dans ton devoir (pour la télécharger clique sur le bouton ci-dessous). l&#39;image va s&#39;ouvrir dans un nouvel onglet.
-  &lt;a href=&quot;images/microplastiques_photo2.jpg&quot; download target=&quot;_blank&quot;&gt;faire un clic droit et télécharger sur le bureau
-  &lt;img src=&quot;images/jpg_icon.jpg&quot; alt=&quot;image à télécharger&quot; width=&quot;104&quot; height=&quot;142&quot;&gt;
-  &lt;/a&gt;
+  &lt;a href=&quot;images/microplastiques_photo2.jpg&quot; download target=&quot;_blank&quot;&gt;faire un clic droit et télécharger sur le bureau&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;div id=&quot;2&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
@@ -1592,7 +1599,7 @@ A moins que tu n&#39;aies le temps pour une [[ultime révision|dernière révisi
 
 &lt;&lt;set $score to $score-2&gt;&gt;
 &lt;&lt;set $déplacement to true&gt;&gt;
-</tw-passagedata><tw-passagedata pid="34" name="suite_camille" tags="chinese_room" position="650,300" size="100,100">  &lt;&lt;set $appel_citation_ok to true &gt;&gt;
+</tw-passagedata><tw-passagedata pid="34" name="suite_camille" tags="chinese_room hideui" position="650,300" size="100,100">  &lt;&lt;set $appel_citation_ok to true &gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -1637,7 +1644,7 @@ Camille est peu sensible à ton accablement. Visiblement son esprit regarde [[d�
 
 
 
-</tw-passagedata><tw-passagedata pid="35" name="genialy" tags="" position="650,425" size="100,100">
+</tw-passagedata><tw-passagedata pid="35" name="genialy" tags="hideui" position="650,425" size="100,100">
 [[retour|suite_camille]]
 
 &lt;div style=&quot;width: 100%;&quot;&gt;&lt;div style=&quot;position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;&quot;&gt;&lt;iframe title=&quot;normes bibliographiques : appels de citation&quot; frameborder=&quot;0&quot; width=&quot;1200px&quot; height=&quot;675px&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot; src=&quot;https://view.genial.ly/63593787c0d9eb0018030d54&quot; type=&quot;text/html&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; scrolling=&quot;yes&quot; allownetworking=&quot;all&quot;&gt;&lt;/iframe&gt; &lt;/div&gt; &lt;/div&gt;
@@ -1648,7 +1655,7 @@ Manifestement c&#39;est une erreur, [[recommence|source_image2]].
 
 &lt;&lt;set $mauvaisjournal to true&gt;&gt;
 
-&lt;&lt;set $score to $score-1&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="courrier international" tags="bibliotheque" position="1275,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $score to $score-1&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="courrier international" tags="bibliotheque hideui" position="1275,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1681,9 +1688,10 @@ Ok, maintenant que j&#39;ai la source, il faut que je la cite correctement. Qu&#
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
-Citer le nom du photographe et l’agence de presse qui gère les droits de la photo&lt;br&gt;
-Citer juste le nom du photographe&lt;br&gt; 
+Faut-il citer le nom du photographe et l’agence de presse qui gère les droits de la photo&lt;br&gt;
+...citer juste le nom du photographe&lt;br&gt; 
 ou citer le nom du journal ?
+Au bout d&#39;un moment, tu cesse de lire ton écran, tes yeux se perdent dans le vague puis fixent le plafond.
 &lt;/div&gt;
 
 &lt;div id=&quot;2&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
@@ -1706,8 +1714,8 @@ C&#39;est juste que je dois mettre la source d&#39;une image, là, avant de pass
 Je peux voir une minute ?
 &lt;/div&gt;
 &lt;div id=&quot;7&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-Pas de problème, c&#39;est là
-&lt;/div&gt;
+Pas de problème. Attends, je scrolle pour afficher le bon passage. Tiens, c&#39;est là
+&lt;/div&gt;.
 &lt;div id=&quot;8&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
 Aïe!
 &lt;/div&gt;
@@ -1735,7 +1743,7 @@ Une étudiante, visiblement énervée par le bruit de votre discussion, vous jet
 &lt;/div&gt;
 
 
-&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="licence libre" tags="study_room" position="900,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $score to $score+2&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="licence libre" tags="study_room hideui" position="900,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1831,7 +1839,7 @@ Alex quitte la salle. Il ne te reste plus qu&#39;à exploiter les informations q
 
 
 
-</tw-passagedata><tw-passagedata pid="39" name="sélection_image" tags="" position="1150,425" size="100,100">Les différentes conditions de réutilisation des images placées sous creative commons sont symbolisées par des icones. 
+</tw-passagedata><tw-passagedata pid="39" name="sélection_image" tags="hideui" position="1150,425" size="100,100">Les différentes conditions de réutilisation des images placées sous creative commons sont symbolisées par des icones. 
 Au bout d&#39;un certain temps, tu penses avoir compris quelle icone représente telle ou telle condition et tu es capable de relier les icones à leur signification.
 
 &lt;iframe src=&quot;https://app.Lumi.education/api/v1/run/pc7QXO/embed&quot; width=&quot;816&quot; height=&quot;720&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot; allow=&quot;geolocation *; microphone *; camera *; midi *; encrypted-media *&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://app.Lumi.education/api/v1/h5p/core/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot; /&gt;
@@ -1842,11 +1850,11 @@ Après quelques recherches sur le web, tu trouves sur des sites différents troi
 &lt;tr&gt;
   &lt;th&gt;&lt;/th&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;
 &lt;tr&gt;
-  &lt;td&gt;image 1&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/microplastiques_wales.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.walesartsreview.org/microplastic-pollution-a-macro-problem/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;td&gt;image 1&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/microplastiques_wales.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.walesartsreview.org/microplastic-pollution-a-macro-problem/&quot; alt=&quot;photo de détritus de plastique flottant dans les eaux&quot; target=&quot;_blank&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
-&lt;tr&gt;&lt;td&gt;image 2&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/microplastiques_wikimedia.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:%22microminimalism%22_or_%22the_secret_life_of_marine_microplastics_%22.jpg&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;image 2&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/microplastiques_wikimedia.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:%22microminimalism%22_or_%22the_secret_life_of_marine_microplastics_%22.jpg&quot; alt=&quot;photo de microplastiques disponible sur Wikimédia Commons&quot; target=&quot;_blank&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
-&lt;tr&gt;&lt;td&gt;image 3&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/bouteille_plastique.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.innovationnewsnetwork.com/australasian-countries-join-pact-for-innovation-in-plastic/4764/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;image 3&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/bouteille_plastique.jpg&quot; width=&quot;300px&quot; alt=&quot;photo de détritus en plastique flottant dans les eaux&quot; target=&quot;_blank&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.innovationnewsnetwork.com/australasian-countries-join-pact-for-innovation-in-plastic/4764/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
 &lt;/table&gt;
 
@@ -1878,7 +1886,7 @@ Il te semble qu&#39;il manque quelque chose à cette référence.
 
 
 
-</tw-passagedata><tw-passagedata pid="41" name="soumettre" tags="coffee_shop" position="1400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="41" name="soumettre" tags="coffee_shop hideui" position="1400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -1945,7 +1953,7 @@ Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus
     &lt;&lt;elseif $reference_answer eq &quot;bad&quot;&gt;&gt;
        &lt;&lt;set $score to $score-1&gt;&gt;
     &lt;&lt;else&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Go !" tags="plagiator" position="1275,425" size="100,100">
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Go !" tags="plagiator hideui" position="1275,425" size="100,100">
 &lt;&lt;audio &quot;plagiator&quot; volume 1 fadeout&gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
@@ -2000,7 +2008,7 @@ Non, faisons plutôt une [[dernière révision]]
     &lt;&lt;set $score to $score - 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
  
- </tw-passagedata><tw-passagedata pid="44" name="suite_référence" tags="" position="1275,175" size="100,100">&lt;&lt;if $reference eq &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ».Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique, 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.&quot; &gt;&gt; 
+ </tw-passagedata><tw-passagedata pid="44" name="suite_référence" tags="" position="1275,175" size="100,100">&lt;&lt;if $reference eq &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ».Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001&quot; || &quot;Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique, 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001&quot; &gt;&gt; 
 
 &lt;&lt;set $reference_answer to &quot;ok&quot;&gt;&gt;
 
@@ -2089,7 +2097,7 @@ Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Merci
 
 
 
-[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="25,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="" position="1400,425" size="100,100">!Crédits
+[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="25,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="hideui" position="1400,425" size="100,100">!Crédits
 
 !!Images
 
