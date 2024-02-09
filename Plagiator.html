@@ -2082,28 +2082,35 @@ N&#39;oublie pas aussi que les bibliothécaires sont à ta disposition pour t&#3
 
 !Erreurs commises et explications
 
-&lt;&lt;if $mauvaisjournal eq true&gt;&gt;
+&lt;&lt;if def $mauvaisjournal&gt;&gt;
     Vous n&#39;avez pas identifié la bonne source de l&#39;image. Pour savoir comment faire une recherche inverse d&#39;images, revoyez la démonstration de Camille.
    &lt;iframe width=&quot;720&quot; height=&quot;530&quot; src=&quot;https://video.univ-rennes1.fr/permalink/v12688a2cf90fdq6k73v/iframe/&quot; allowfullscreen=&quot;allowfullscreen&quot; allow=&quot;autoplay&quot;&gt;
    &lt;/iframe&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pixellisation eq true&gt;&gt;
+&lt;&lt;if def $pixellisation&gt;&gt;
      Vous avez répondu que l&#39;image était problématique parce que sa résolution laissait à désirer.
      Une image qui pixellise, ce n&#39;est pas terrible pour l&#39;esthétique et il vaut mieux trouver des images en grand format qu&#39;on peut éventuellement réduire. Mais pour ce qui nous concerne, cela n&#39;a rien à voir avec les droits d&#39;auteur. Plagiator ne s&#39;occupe que de cet aspect en lien avec la citation
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $déplacement eq true&gt;&gt;
+&lt;&lt;if def $déplacement&gt;&gt;
      Vous avez répondu que l&#39;image était problématique parce que pas à sa place.
      Plagiator ne s&#39;occupe pas du lien entre la figure et le texte, mais vérifie que vous avez le droit de reproduire la figure. 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $reference_answer eq &quot;bad&quot;&gt;&gt;
+
 Le style Chicago dont le schéma vous était fourni impose de présenter les informations de la référence comme suit : 
+
 &lt;strong&gt;Prénom Nom, Prénom Nom, Prénom Nom et Prénom Nom. « titre ». @@color:red;titre du journal@@ vol, nᵒ (date): pages. URL.&lt;/strong&gt;
 
 C&#39;est le titre du journal qui manquait. On pouvait le retrouver en interrogeant un moteur de recherche comme Google Scholar (https://scholar.google.fr) à partir du titre de l&#39;article, ce qui permettait d&#39;accéder à la base de données Science Direct qui héberge le journal &quot;Cahiers de Nutrition et Diététique&quot;
 
 La référence complète (en style Chicago) s&#39;écrit de la manière suivante : 
 
-Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.
+Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $microplastiques_1 eq true&gt;&gt;
+Cette image n&#39;est pas placée sous Creative Commons, le droit d&#39;auteur prévaut : il faut l&#39;autorisation de l&#39;auteur pour la reproduire dans ton travail
+&lt;&lt;elseif $microplastiques_3 eq true&gt;&gt;
+Cette image n&#39;est pas placée sous Creative Commons, le droit d&#39;auteur prévaut : il faut l&#39;autorisation de l&#39;auteur pour la reproduire dans ton travail
 &lt;&lt;/if&gt;&gt;
 
 [[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="47" name="bad_result" tags="" position="1400,175" size="100,100">&lt;img src=&quot;gifs/wrong.gif&quot; autoplay&gt;
@@ -2112,22 +2119,22 @@ Plagiator a repéré un niveau d&#39;erreurs d&#39;attributions qui est supérie
 Il ne te reste plus qu&#39;à aller voir Mme Green en espérant qu&#39;elle se montre compréhensive ; 24 heures pour tout corriger ; était-ce suffisant ? 
 Prépare-toi à vivre des moments difficiles. 
 
-En tout cas sois plus attenti$prp4 à la manière dont tu cites les textes et crédites les images à l&#39;avenir. 
+En tout cas sois plus attenti$prp4 à la manière dont tu cites les textes et crédite les images à l&#39;avenir. 
 
 Ton score est $score. 
 
 !Erreurs commises et explications
 
-&lt;&lt;if $mauvaisjournal eq true&gt;&gt;
+&lt;&lt;if def $mauvaisjournal&gt;&gt;
     Vous n&#39;avez pas identifié la bonne source de l&#39;image. Pour savoir comment faire une recherche inverse d&#39;images, revoyez la démonstration de Camille.
    &lt;iframe width=&quot;720&quot; height=&quot;530&quot; src=&quot;https://video.univ-rennes1.fr/permalink/v12688a2cf90fdq6k73v/iframe/&quot; allowfullscreen=&quot;allowfullscreen&quot; allow=&quot;autoplay&quot;&gt;
    &lt;/iframe&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $pixellisation eq true&gt;&gt;
+&lt;&lt;if def $pixellisation&gt;&gt;
      Vous avez répondu que l&#39;image était problématique parce que sa résolution laissait à désirer.
      Une image qui pixellise, ce n&#39;est pas terrible pour l&#39;esthétique et il vaut mieux trouver des images en grand format qu&#39;on peut éventuellement réduire. Mais pour ce qui nous concerne, cela n&#39;a rien à voir avec les droits d&#39;auteur. Plagiator ne s&#39;occupe que de cet aspect en lien avec la citation
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $déplacement eq true&gt;&gt;
+&lt;&lt;if def $déplacement&gt;&gt;
      Vous avez répondu que l&#39;image était problématique parce que pas à sa place.
      Plagiator ne s&#39;occupe pas du lien entre la figure et le texte, mais vérifie que vous avez le droit de reproduire la figure. 
 &lt;&lt;/if&gt;&gt;
@@ -2141,12 +2148,17 @@ C&#39;est le titre du journal qui manquait. On pouvait le retrouver en interroge
 
 La référence complète (en style Chicago) s&#39;écrit de la manière suivante : 
 
-Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001.
+Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Mercier-Bonin. « Microplastiques dans notre alimentation: un focus sur la santé intestinale ». Cahiers de Nutrition et de Diététique 57, nᵒ 4 (1 août 2022): 270‑83. https://doi.org/10.1016/j.cnd.2022.03.001
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $microplastiques_1 eq true&gt;&gt;
+Cette image n&#39;est pas placée sous Creative Commons, le droit d&#39;auteur prévaut : il faut l&#39;autorisation de l&#39;auteur pour la reproduire dans ton travail
+&lt;&lt;elseif $microplastiques_3 eq true&gt;&gt;
+Cette image n&#39;est pas placée sous Creative Commons, le droit d&#39;auteur prévaut : il faut l&#39;autorisation de l&#39;auteur pour la reproduire dans ton travail
 &lt;&lt;/if&gt;&gt;
 
 
 
-[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="25,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="hideui" position="1400,425" size="100,100">!Crédits
+[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="25,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="" position="1400,425" size="100,100">!Crédits
 
 !!Images
 
@@ -2173,33 +2185,92 @@ Fournier, Elora, Lucie Etienne-Mesmin, Stéphanie Blanquet-Diot, et Muriel Merci
 
 !!Gifs
 
-&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;gifs/wrong.gif&quot; autoplay width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://pixabay.com/gifs/error-failure-incorrect-wrong-pink-8660/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Susan Cipriano, &lt;a href=&quot;https://pixabay.com/service/license-summary&quot; target=&quot;_blank&quot;&gt;licence Pixabay&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;gifs/wrong.gif&quot; autoplay width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://pixabay.com/gifs/error-failure-incorrect-wrong-pink-8660/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;  Susan Cipriano, &lt;a href=&quot;https://pixabay.com/service/license-summary&quot; target=&quot;_blank&quot;&gt;licence Pixabay&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
-&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;gifs/right.gif&quot; autoplay width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://pixabay.com/gifs/checklist-done-check-clipboard-8193&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;GIF by Ekaterine Kantaria, &lt;a href=&quot;https://pixabay.com/service/license-summary&quot; target=&quot;_blank&quot;&gt;licence Pixabay&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;gifs/right.gif&quot; autoplay width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://pixabay.com/gifs/checklist-done-check-clipboard-8193&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;  GIF by Ekaterine Kantaria, &lt;a href=&quot;https://pixabay.com/service/license-summary&quot; target=&quot;_blank&quot;&gt;licence Pixabay&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
-&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;gifs/decouragement.gif&quot; autoplay width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://gifer.com/fr/amj/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Al Pacino in Dog Days&lt;a href=&quot;https://gifer.com/fr/p/tos&quot; target=&quot;_blank&quot;&gt;Licence Gipher&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;gifs/decouragement.gif&quot; autoplay width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://gifer.com/fr/amj/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;td&gt;  Al Pacino in Dog Days, &lt;a href=&quot;https://gifer.com/fr/p/tos&quot; target=&quot;_blank&quot;&gt;Licence Gipher&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
 !!Sons
 
 Les sons utilisés proviennent du site FreeSound
-
--Plagiator : https://freesound.org/people/neopolitansixth/sounds/559272/
--Flute chinoise : https://freesound.org/people/iluppai/sounds/180239/
--bibliothèque : https://freesound.org/people/el_mar/sounds/170797/
-
+&lt;table&gt;	
+	&lt;tr&gt;
+      &lt;td&gt;
+      	  &lt;audio controls autoplay&gt;
+            &lt;source src=&quot;sons/plagiator.wav&quot; type=&quot;audio/wav&quot;&gt;
+  Your browser does not support the audio element.
+           &lt;/audio&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+          &lt;a href=&quot;https://freesound.org/people/neopolitansixth/sounds/559272/&quot; target=&quot;_blank&quot; alt=&quot;son Plagiator&quot;&gt;Son Plagiator&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+             &lt;td&gt;
+      	  &lt;audio controls autoplay&gt;
+            &lt;source src=&quot;sons/chinese_flute.wav&quot; type=&quot;audio/wav&quot;&gt;
+  Your browser does not support the audio element.
+           &lt;/audio&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+          &lt;a href=&quot;https://freesound.org/people/iluppai/sounds/180239/&quot; target=&quot;_blank&quot; alt=&quot;son flûte chinoise&quot;&gt;Son flute chinoise&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+             &lt;td&gt;
+      	  &lt;audio controls autoplay&gt;
+            &lt;source src=&quot;sons/bruit_restaurant.wav&quot; type=&quot;audio/wav&quot;&gt;
+  Your browser does not support the audio element.
+           &lt;/audio&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+          &lt;a href=&quot;https://freesound.org/people/JulioUrbano/sounds/429513/&quot; target=&quot;_blank&quot; alt=&quot;son cafétéria&quot;&gt;bruit ambiant de la cafétéria&lt;/a&gt;
+          &lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td&gt;
+      	  &lt;audio controls autoplay&gt;
+            &lt;source src=&quot;sons/library.m4a&quot; type=&quot;audio/m4a&quot;&gt;
+  Your browser does not support the audio element.
+           &lt;/audio&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+          &lt;a href=&quot;https://freesound.org/people/el_mar/sounds/170797/&quot; target=&quot;_blank&quot; alt=&quot;son bibliothèque&quot;&gt;bruit ambiant de &lt;br&gt;la bibliothèque universitaire&lt;br&gt; de Delft&lt;/a&gt;
+          &lt;/td&gt;
+    &lt;/tr&gt;
+ &lt;/table&gt;
+ 
 
 !!Portraits
 
-Les portraits (Camille, Alex) ont été générés depuis le site https://www.thispersondoesnotexist.com
+&lt;table&gt;
+   &lt;tr&gt;
+     &lt;td&gt;
+       &lt;img src=&quot;images/camille_female.PNG&quot; width=&quot;300px&quot; alt=&quot;portrait Camille fille&quot;&gt;
+       &lt;/td&gt;
+       &lt;td&gt;
+             &lt;img src=&quot;images/camille_male.PNG&quot; width=&quot;300px&quot; alt=&quot;portrait Camille garçon&quot;&gt;
+         &lt;/td&gt;
+              &lt;td&gt;
+             &lt;img src=&quot;images/alex.jpg&quot; width=&quot;300px&quot; alt=&quot;portrait Alex&quot;&gt;
+         &lt;/td&gt;
+                       &lt;td&gt;
+             &lt;img src=&quot;images/AI_student.png&quot; width=&quot;300px&quot; alt=&quot;portrait étudiant androgyne&quot;&gt;
+         &lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/table&gt;
+         
 
-</tw-passagedata><tw-passagedata pid="51" name="StoryMenu" tags="" position="275,550" size="100,100"></tw-passagedata><tw-passagedata pid="52" name="StoryInit" tags="" position="400,550" size="100,100">&lt;&lt;cacheaudio &quot;cafeteria&quot; &quot;sons/bruit_restaurant.wav&quot;&gt;&gt;
+Les portraits (Camille, Alex) ont été générés depuis le site &lt;a href=&quot;https://www.thispersondoesnotexist.com&quot; target=&quot;_blank&quot; alt=&quot;lien vers le site ThisPersonDoesNotExist&quot;&gt;ThisPersonDoesNotExist&lt;/a&gt;
+Le portrait de l&#39;étudiant &quot;iel&quot; a été généré depuis &lt;a href=&quot;https://openai.com/dall-e-2&quot; target=&quot;_blank&quot; alt=&quot;lien vers le site Dall-E&quot;&gt;le site Dall-e&lt;/a&gt; avec le prompt &quot;a portrait of an androgynous student with a turtleneck&quot;
+
+</tw-passagedata><tw-passagedata pid="51" name="StoryInterface" tags="" position="275,550" size="100,100"></tw-passagedata><tw-passagedata pid="52" name="StoryInit" tags="" position="400,550" size="100,100">&lt;&lt;cacheaudio &quot;cafeteria&quot; &quot;sons/bruit_restaurant.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;plagiator&quot; &quot;sons/plagiator.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;bibliotheque&quot; &quot;sons/library.m4a&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;flute&quot; &quot;sons/chinese_flute.wav&quot;&gt;&gt;
 
-  &lt;source src=&quot;sons/plagiator.wav&quot; type=&quot;audio/mpeg&quot;&gt;
-  Your browser does not support the audio element.
-&lt;/audio&gt;
+
 
 
 
