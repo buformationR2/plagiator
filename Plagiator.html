@@ -230,6 +230,15 @@ body[data-tags~="admin"] a:hover { color: lime; }
   clear: both;
 }
 
+.inline-image {
+    /* Styles specific to the inline image */
+  height: 100px;  
+  width: 100px; /* Ensure the image doesn't exceed its container */
+  border-radius: 50px; /* Example: Add rounded corners to the image */ 
+  flex: 0;
+   
+}
+
 
 .left-box {
     background-color: #fff; /* Set the background color */
@@ -237,8 +246,7 @@ body[data-tags~="admin"] a:hover { color: lime; }
     padding: 10px; /* Add some padding for spacing */
     border: 0px solid #ccc; /* Add a border for visual separation */
     border-radius: 10px; /* Optional: Add rounded corners */
-    display: inline-block; /* Display as inline-block to fit content width */
-    text-align: left; /* Align the contents to the left */
+    display: flex;
 }
 
 .alex-box {
@@ -380,6 +388,7 @@ choisis [[ton pseudo]]
     &lt;&lt;set $prc3 to &quot;celle-ci&quot;&gt;&gt;
     &lt;&lt;set $prc4 to &quot;ve&quot;&gt;&gt;
     &lt;&lt;set $prc5 to &quot;la&quot;&gt;&gt;
+    &lt;&lt;set $img to &quot;images/camille_female.PNG&quot;&gt;&gt;
     &lt;img src=&quot;images/camille_female.PNG&quot; width=300px &gt;
     /* image générée par &quot;this person does-not exist */
   &lt;&lt;elseif $camille_masculin&gt;&gt;
@@ -388,6 +397,7 @@ choisis [[ton pseudo]]
     &lt;&lt;set $prc3 to &quot;celui-ci&quot;&gt;&gt;
     &lt;&lt;set $prc4 to &quot;f&quot;&gt;&gt;
     &lt;&lt;set $prc5 to &quot;le&quot;&gt;&gt;
+    &lt;&lt;set $img to &quot;images/camille_male.PNG&quot;&gt;&gt;
     &lt;img src=&quot;images/camille_male.PNG&quot; width=300px &gt;
     /* image générée par &quot;this person does-not exist */
    &lt;&lt;elseif $camille_iel&gt;&gt;
@@ -396,6 +406,7 @@ choisis [[ton pseudo]]
     &lt;&lt;set $prc3 to &quot;cellui-ci&quot;&gt;&gt;
     &lt;&lt;set $prc4 to &quot;f.ve&quot;&gt;&gt;
     &lt;&lt;set $prc5 to &quot;la&quot;&gt;&gt;
+    &lt;&lt;set $img to &quot;images/AI_student.png&quot;&gt;&gt;
         &lt;img src=&quot;images/AI_student.png&quot; width=300px &gt;
     /* image générée par Dall-E avec le prompt &quot;a portrait of an androgynous student with a turtleneck&quot; */
   &lt;&lt;else&gt;&gt;
@@ -461,12 +472,13 @@ Quel genre souhaites-tu donner à Camille?
     &lt;/div&gt;
     
     &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
   Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
 @@ color:black;   
     &quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;@@
 
     
-    Comment gérer ça ? 
+    Comment gérer ça ? &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;   
     
 &lt;&lt;else&gt;&gt;
@@ -475,7 +487,7 @@ Quel genre souhaites-tu donner à Camille?
  tu fais défiler sur ton écran les quarante pages du mémoire à rendre. Tu n&#39;auras jamais le temps de corriger toute seul l&#39;ensemble des passages problématiques, mais tu peux t&#39;attaquer au plus gros et espérer que Mme Green n&#39;ira pas trop chercher la petite bête. 
  &lt;/div&gt;
  
- &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;   
+ &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
     Tiens là par exemple, il y a ce paragraphe surligné par le détecteur, mais aucune référence du texte original n&#39;est indiquée :
 @@color:black;   
     &quot;Les déchets plastiques sont transportés par les rivières, les ruisseaux, les marées, le vent et suite aux catastrophes naturelles mais aussi par les activités de pêche et d’aquaculture. Leur accumulation excessive a engendré la formation de plusieurs gyres piégeurs de déchets dont le plus connu reste le grand gyre du Pacifique nord, dénommé le septième continent. Ce sont 79 000 tonnes de déchets plastiques flottants et s’étalant sur 1,6 millions de kilomètres carrés (soit plus de trois fois la taille de l’Espagne). Dans l’environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique formant des petites particules plastiques, les microplastiques secondaires, par opposition aux microplastiques primaires produits eux intentionnellement par l’Homme pour des usages variés (produits cosmétiques–gommages, peintures…). &quot;@@
@@ -536,19 +548,22 @@ Quel genre souhaites-tu donner à Camille?
     Salut Camille, quelqu’un m’a dit que tu pourrais peut-être m’aider...
  &lt;/div&gt;     
  &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-    Salut $name, oui, dis-moi, qu’est-ce que je peux faire pour toi ?
+   &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+   Salut $name, oui, dis-moi, qu’est-ce que je peux faire pour toi ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
  &lt;/div&gt;
  &lt;div id=&quot;3&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
     J’ai un souci de plagiat sur un devoir, je ne sais pas trop comment m’y prendre, je suis un peu perdu$prp2. Est-ce que tu aurais un moment pour m’aider ce midi ?
  &lt;/div&gt;
  &lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-    Bien sûr, je connais bien le sujet ! Je suis dispo après 13h, ça t’irait ?
+ &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+    Bien sûr, je connais bien le sujet ! Je suis dispo après 13h, ça t’irait ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
  &lt;/div&gt;
  &lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
     Oui super, merci beaucoup ! Je peux t’envoyer dès maintenant mon devoir pour que tu aies le temps d’y jeter un coup d&#39;œil ?
  &lt;/div&gt;
  &lt;div id=&quot;6&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-    Ok, on fait comme ça. À tout à l’heure !
+  &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+    Ok, on fait comme ça. À tout à l’heure !&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
  &lt;/div&gt;
  &lt;div id=&quot;7&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 [[continuer|Camille_rendez-vous1]]
@@ -684,7 +699,8 @@ Camille et toi vous êtes donné rendez-vous dans le Hall des langues orientales
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-Salut, ça va $name, pas trop stressé$prp2 ?
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Salut, ça va $name, pas trop stressé$prp2 ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;2&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;  
@@ -692,7 +708,8 @@ Salut, ça va $name, pas trop stressé$prp2 ?
 &lt;/div&gt;
 
 &lt;div id=&quot;3&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-ça tombe bien j&#39;avais un peu de temps cet après-midi, tu as bien fait de m&#39;appeler. J&#39;ai jeté un coup d&#39;oeil à ton travail et j&#39;ai repéré des trucs qui vont pas. 
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+ça tombe bien j&#39;avais un peu de temps cet après-midi, tu as bien fait de m&#39;appeler. J&#39;ai jeté un coup d&#39;oeil à ton travail et j&#39;ai repéré des trucs qui vont pas. &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;4&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
@@ -700,7 +717,8 @@ quoi par exemple ?
 &lt;/div&gt;
 
 &lt;div id=&quot;5&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-Par exemple, page 8, je lis : « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”.» (2017)
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Par exemple, page 8, je lis : « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”.» (2017) &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;6&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
@@ -708,7 +726,8 @@ oui, et ?
 &lt;/div&gt;
 
 &lt;div id=&quot;7&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-tu n&#39;as pas une petite idée de ce qui ne va pas ?
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+tu n&#39;as pas une petite idée de ce qui ne va pas ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;8&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
@@ -750,8 +769,10 @@ Camille tourne quelques pages absorbé$prc2 par sa tâche et soudainement son do
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
--Là, c&#39;est ça que j&#39;avais noté !
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Là, c&#39;est ça que j&#39;avais noté !
 Un$prp2 étudiant$prp2 de première année comme toi pourrait hésiter entre trois formulations possibles de ce passage. Laquelle te semble la meilleure à toi, celle que tu as proposée :
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;2&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
@@ -795,20 +816,19 @@ ou bien l&#39;une de celles-ci :
 &lt;/script&gt;
 
   &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-  @@color:green;
-Tu as raison, il manque donc l’auteur associé à cette date, 2017 le tout entre parenthèses.
-  @@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Tu as raison, il manque donc l’auteur associé à cette date, 2017 le tout entre parenthèses.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
+  
   &lt;/div&gt;
   &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-  @@color:green;
-Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que c’est ? @@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que c’est ? &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
   &lt;/div&gt;
   &lt;div id=&quot;2&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 [[Je dirais que c’est une façon abrégée de mentionner la source de la citation quand j’écris.|appel_citation_ok]]
 [[C’est comme une note de bas de page|note_page_faux]]
 [[Ca fait le lien avec la référence complète en fin de travail, dans la bibliographie|lien_biblio]]
-[[C’est pour dater la phrase de l’auteur|date_faux]]@@
+[[C’est pour dater la phrase de l’auteur|date_faux]]
   &lt;/div&gt;
 
 &lt;&lt;set $visite_auteur_manque to true&gt;&gt;
@@ -841,17 +861,15 @@ Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
-Non, on ne présente pas les citations en italique. Je pensais plutôt à un élément après la citation
-@@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Non, on ne présente pas les citations en italique. Je pensais plutôt à un élément après la citation&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
+
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 Attends, euh...
 - [[Il manque l’auteur ?|auteur_manque]]
 - [[Il manque le titre du document ?|manque_titre_document]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]
-@@
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="manque_titre_document" tags="chinese_room" position="400,300" size="100,100">&lt;&lt;set $manque_titre_document to true&gt;&gt;
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -882,16 +900,13 @@ Attends, euh...
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
-Non, ça n’est pas nécessaire de mentionner ici le titre du document. Je pensais à autre chose…
-@@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Non, ça n’est pas nécessaire de mentionner ici le titre du document. Je pensais à autre chose…&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 - [[Il manque l’auteur ?|auteur_manque]]
 - [[Il faut mettre la citation en italique ?|citation_italique]]
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]
-@@
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="15" name="preciser_type" tags="chinese_room hideui" position="400,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -922,16 +937,14 @@ Non, ça n’est pas nécessaire de mentionner ici le titre du document. Je pens
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 mentionner le type de document n’apporte rien et n’est pas obligatoire. Je pensais à autre chose…
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 - [[Il manque l’auteur ?|auteur_manque]]
 - [[Il faut mettre la citation en italique ?|citation_italique]]
 - [[Il manque le titre du document ?|manque_titre_document]]
-@@
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="appel_citation_ok" tags="chinese_room" position="525,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -961,9 +974,9 @@ mentionner le type de document n’apporte rien et n’est pas obligatoire. Je p
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Bon, je vois que t’as compris ce que c’est qu’un appel de citation. Tiens, voici un schéma avec les différentes grandes méthodes de présentation d’appel de citation
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
@@ -1008,20 +1021,18 @@ sinon, [[laisse la continuer|suite_camille]], elle est vraiment capable de t&#39
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Je ne dirais pas une note de bas de page parce qu&#39;en fait, ça ne crée pas de note de bas de page techniquement. Enfin, pas dans le style biblio que tu as choisi semble t-il...
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 mais certes, ça renvoie à une référence dans la bibliographie. 
 Comme ça tu peux faire le lien entre une assertion de ton texte et le document scientifique qui le soutient. 
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;2&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 Je vois. On peut dire du coup que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]
-@@
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="chinese_room hideui" position="525,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -1051,10 +1062,12 @@ Je vois. On peut dire du coup que [[c’est une façon abrégée de mentionner l
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-Oui c&#39;est un lien vers la biblio à la fin de ton texte. mais ce n&#39;est pas que cela. Grâce à ces informations entre parenthèses, le lecteur peut d&#39;emblée saisir le contexte de la citation ou de l&#39;idée qui a été reproduite ici : qui l&#39;a émise et quand il ou elle l&#39;a publiée. ça aide à se repérer et à savoir qui pense quoi.
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Oui c&#39;est un lien vers la biblio à la fin de ton texte. mais ce n&#39;est pas que cela. Grâce à ces informations entre parenthèses, le lecteur peut d&#39;emblée saisir le contexte de la citation ou de l&#39;idée qui a été reproduite ici : qui l&#39;a émise et quand il ou elle l&#39;a publiée. ça aide à se repérer et à savoir qui pense quoi.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-Oui, on peut dire aussi que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+On peut dire aussi que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="date_faux" tags="chinese_room hideui" position="525,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -1084,15 +1097,15 @@ Oui, on peut dire aussi que [[c’est une façon abrégée de mentionner la sour
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 La date fait en effet référence à la publication du document qu&#39;on cite à cet endroit. 
 mais ce n&#39;est pas la seule fonction de l&#39;appel de citation. Normalement le lecteur devrait visualiser pas seulement quand la phrase a été écrite ou du moins publiée, mais aussi par qui. Or ici il manque le nom de l&#39;auteur du document cité. 
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 - ah, je vois. En fait c’est comme [[une façon abrégée de mentionner la source de la citation quand j’écris.|appel_citation_ok]]
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="hideui" position="25,175" size="100,100">
 &lt;&lt;set $name to prompt(&quot;Choisis ton pseudo&quot;, &quot;Mimi&quot;)&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
@@ -1194,14 +1207,14 @@ A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;  
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de ton texte est un style dit &quot;auteur-date&quot;. En ne mettant pas cette mention entre parenthèses (auteur, date) à la fin de la phrase et avant le point, je pense que le lien ne se fera pas de façon assez claire avec la référence dans la bibliographie.
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 [[qu&#39;est-ce que tu en penses|images]]
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="hideui chinese_room" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -1231,13 +1244,16 @@ Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
  Je pense que c&#39;est la bonne forme en effet, dit Camille. 
 Tu as tout intérêt à rester dans le même style que celui que tu as spontanément utilisé depuis le début, le style &quot;auteur-date&quot;. Donc dans l&#39;appel de citation qui apparaît à la fin de la phrase, pas de titre (il sera mentionné en biblio, avec toutes les autres informations indispensables), juste le nom de l&#39;auteur et la date. Et si tu cites plusieurs documents d&#39;un même auteur qui ont été publiés la même année, tu fais suivre la date d&#39;une lettre @@color:red; (Tartampion, 2017a, Tartampion2017b, etc.)@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 [[qu&#39;est-ce que tu en penses|images]] 
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="formulation3" tags="chinese_room" position="775,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
@@ -1267,21 +1283,17 @@ Tu as tout intérêt à rester dans le même style que celui que tu as spontané
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Je pense que cette formulation n&#39;est pas très académique...
 Dans la mesure où le titre apparaît en biblio, le lien se fait seulement sur l&#39;auteur et la date à mon avis. Maintenant si l&#39;auteur a écrit plusieurs ouvrages que tu cites la même année, on peut faire suivre la date de lettres : 2007a, 2007b, 2007c
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
--OK, OK, j&#39;ai pigé l&#39;idée ! 
+OK, OK, j&#39;ai pigé l&#39;idée ! 
 Je te suis là-dessus, je me note qu&#39;il faut que je corrige ce passage.
-@@
 &lt;/div&gt;
 &lt;div id=&quot;2&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 [[bon est-ce qu&#39;on est bon là ?|images]]
-@@
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="25" name="images" tags="chinese_room" position="900,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
@@ -1316,15 +1328,23 @@ Alors que tu cherches à repérer dans ton travail d&#39;autres passages qui pr�
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
-- oulà, j&#39;ai rendez-vous avec Marc, il doit m&#39;attendre déjà depuis cinq minutes. Désolé$prc2, il faut que je te quitte. Mais je crois que tu as déjà pas mal de pistes avec ce qu&#39;on s&#39;est dit pour corriger le tir. Allez, bonnes chances et tiens-moi au courant !
-@@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+oulà, j&#39;ai rendez-vous avec Marc, il doit m&#39;attendre déjà depuis cinq minutes. Désolé$prc2, il faut que je te quitte. Mais je crois que tu as déjà pas mal de pistes avec ce qu&#39;on s&#39;est dit pour corriger le tir. Allez, bonnes chances et tiens-moi au courant !
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
-&lt;div id=&quot;2&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
-Camille disparaît rapidement de ta vue, te laissant à ton désarroi. 
+&lt;div id=&quot;2&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
+On peut se revoir en fin de journée ? S&#39;il te plaît !!
+ &lt;/div&gt;
+&lt;div id=&quot;3&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Ok OK, disons alors... rendez-vous au Café Le Négociant, vers 17h30... ça te va ? 
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
+&lt;/div&gt;
+&lt;div id=&quot;4&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
+Tu acquièces après quoi Camille disparaît rapidement de ta vue, te laissant seul$pr2 face à ton désarroi. 
 Il ne te reste plus qu&#39;à relire ton travail avec les instructions qu&#39;$prp t&#39;a laissées et à tout remettre d&#39;aplomb. 
 
-Avec l&#39;emploi du temps que tu as aujourd&#39;hui, ça ne sera pas possible avant [[17h|bibliothèque]]
+Avec l&#39;emploi du temps que tu as ce matin, ça ne sera pas possible avant [[14h|bibliothèque]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque hideui" position="900,175" size="100,100">&lt;&lt;audio &quot;bibliotheque&quot; volume 1 fadeout&gt;&gt;
 
 &lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
@@ -1391,48 +1411,43 @@ Plagiator semble poser un problème en termes de droit sur les images.
 
 &lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Lundi 20 janvier, à la caféteria du département de sciences environnementales. C&#39;est &quot;blue monday&quot;, c&#39;est à dire en théorie le jour le plus déprimant de l&#39;année et il faut bien dire que ça ne commence pas très fort pour toi. Tu étais déjà bien déprimé$prp2, et voilà qu&#39;il se met à pleuvoir  dehors ; la machine à café est en panne et surtout tu viens de recevoir un mauvais signal de l&#39;un de tes enseignants. 
-Arnold, un étudiant du même groupe que le tien avance à grands pas vers toi ; lui semble plutôt sous pression, limite excité.
+Amalith, un étudiant du même groupe que le tien avance à grands pas vers toi ; lui semble plutôt sous pression, limite excité.
 &lt;/div&gt;
-&lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-  @@color:green;   
-Hey salut $name ! T’as déposé sur l’espace cours de Madame Green ton devoir sur les microplastiques ? 
-@@
-   &lt;/div&gt;
+&lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt; 
+  &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;Hey salut $name ! T’as déposé sur l’espace cours de Madame Green ton devoir sur les microplastiques ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
+&lt;/div&gt;
 &lt;div id=&quot;2&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;  
-@@color:black;
-- Oui, je l’ai déposé, mais je ne comprends pas, j’ai reçu un mail de la prof pour me dire que le logiciel anti-plagiat de l’université, Plagiator, avait détecté du plagiat sur mon devoir. @@
+Oui, je l’ai déposé, mais je ne comprends pas, j’ai reçu un mail de la prof pour me dire que le logiciel anti-plagiat de l’université, Plagiator, avait détecté du plagiat sur mon devoir. 
 &lt;/div&gt;     
 &lt;div id=&quot;3&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-  @@color:green;
-- Ah bon, mais qu’est-ce que ça veut dire ? Tu as copié ou tu n’as pas cité tes sources ? Mais alors, tu n’auras pas la moyenne ?” @@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Ah bon, mais qu’est-ce que ça veut dire ? Tu as copié ou tu n’as pas cité tes sources ? Mais alors, tu n’auras pas la moyenne ?”&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div id=&quot;4&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
-Je ne sais pas trop, la prof me laisse 24 heures pour me rattraper et retravailler le devoir.@@
+Je ne sais pas trop, la prof me laisse 24 heures pour me rattraper et retravailler le devoir.
 &lt;/div&gt;
 &lt;div id=&quot;5&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-   @@color:green;
-Ouah, le stress. Tu vas devoir refaire tout le travail en fait ? J&#39;aimerais pas être à ta place...@@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Ouah, le stress. Tu vas devoir refaire tout le travail en fait ? J&#39;aimerais pas être à ta place...&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div id=&quot;6&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
  @@color:black;
 Oui, bon si tu n&#39;as rien de plus constructif à me dire, autant qu&#39;on en reste là... Merci beaucoup, je suis bien flippé$prp2 maintenant.@@
 &lt;/div&gt;
 &lt;div id=&quot;7&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-  @@color:green;
-Attends je voulais pas en rajouter, mais c&#39;est vrai que c&#39;est chaud et il te reste plus beaucoup de temps. Tiens, je pense que, tu devrais en parler à Camille. C&#39;est LA personne qui pourrait t&#39;aider à gérer ça. Sur un truc de ce genre, je l&#39;ai fait l&#39;an dernier et ça m&#39;a carrément sauvé la mise.@@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Attends je voulais pas en rajouter, mais c&#39;est vrai que c&#39;est chaud et il te reste plus beaucoup de temps. Tiens, je pense que, tu devrais en parler à Camille. C&#39;est LA personne qui pourrait t&#39;aider à gérer ça. Sur un truc de ce genre, je l&#39;ai fait l&#39;an dernier et ça m&#39;a carrément sauvé la mise.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div id=&quot;8&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt; 
-@@color:black;
-Ouais, merci pour le tuyau; je vais voir. @@
+
+Ouais, merci pour le tuyau; je vais voir. 
 &lt;/div&gt;
 &lt;div id=&quot;9&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt; 
-   @@color:green;
-Tu me tiens au courant ? @@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Tu me tiens au courant ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;div id=&quot;10&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black; 
-Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.@@
+Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.
 &lt;/div&gt;
 &lt;div id=&quot;11&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Tu as maintenant une décision à prendre : soit tu vas voir [[Camille|choix du genre]], soit tu décides de prendre un peu de temps pour revoir l&#39;ensemble de ton travail et [[identifier les points les plus problématiques|révision]]
@@ -1547,44 +1562,51 @@ As-tu encore besoin d&#39;une [[dernière révision]] ?
 &lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Tu fais part de tes doutes sur le droit de reproduire cette image comme telle à Camille en lui envoyant un message sur ton téléphone. $prc ne met que quelques secondes à te répondre.
 &lt;/div&gt;
+
 &lt;div id=&quot;1&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
-Effectivement quand tu utilises une image dans un travail universitaire tu dois citer l’auteur au même titre que tous les autres documents que tu utilises dans tes travaux@@
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Effectivement quand tu utilises une image dans un travail universitaire tu dois citer l’auteur au même titre que tous les autres documents que tu utilises dans tes travaux
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
+
 &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 tu peux m&#39;envoyer l&#39;image stp ?
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+
 &lt;div id=&quot;3&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 &lt;img src=&quot;images/microplastiques_photo2.jpg&quot; width=&quot;300px&quot;&gt;
 &lt;/div&gt;
 &lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Tu l&#39;as trouvée où cette image ?
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
+
 &lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
-Je ne sais plus, comment je pourrais faire pour retrouver la page où elle a été publiée, c&#39;est possible déjà ?@@
+Je ne sais plus, comment je pourrais faire pour retrouver la page où elle a été publiée, c&#39;est possible déjà ?
 &lt;/div&gt;
+
 &lt;div id=&quot;6&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-@@color:green;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Oui, bien sûr, tu peux utiliser la recherche inverse d&#39;images pour ça
-@@
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
+
 &lt;div id=&quot;7&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
-????@@
+????
 &lt;/div&gt;
+
 &lt;div id=&quot;8&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
    &lt;iframe width=&quot;720&quot; height=&quot;530&quot; src=&quot;https://video.univ-rennes1.fr/permalink/v12688a2cf90fdq6k73v/iframe/&quot; allowfullscreen=&quot;allowfullscreen&quot; allow=&quot;autoplay&quot;&gt;
    &lt;/iframe&gt;
+   &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
+
 &lt;div id=&quot;9&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-@@color:black;
 [[ah, ok, je vois|source_image2]]
-@@
 &lt;/div&gt;
 
 &lt;&lt;set $score to $score+1&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="source_image2" tags="bibliotheque" position="1150,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
@@ -1616,17 +1638,12 @@ Oui, bien sûr, tu peux utiliser la recherche inverse d&#39;images pour ça
 &lt;/script&gt;
 
 
-
 &lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
-Procède comme te l&#39;as montré Camille. A partir de l&#39;image que tu as dans ton devoir (pour la télécharger clique sur le bouton ci-dessous)
-&lt;/div&gt;
-
-&lt;div id=&quot;1&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Procède comme te l&#39;as montré Camille. A partir de l&#39;image que tu as dans ton devoir (pour la télécharger clique sur le bouton ci-dessous). l&#39;image va s&#39;ouvrir dans un nouvel onglet.
   &lt;a href=&quot;images/microplastiques_photo2.jpg&quot; download target=&quot;_blank&quot;&gt;faire un clic droit et télécharger sur le bureau&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;div id=&quot;2&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
+&lt;div id=&quot;1&quot; class=&quot;question-box&quot; style=&quot;display:none&quot;&gt;
 Dans quel journal trouve t-on cette image publiée pour la première fois ?
 - National Geographic
 - [[Le Figaro|mauvais journal]]
@@ -1674,7 +1691,8 @@ A moins que tu n&#39;aies le temps pour une [[ultime révision|dernière révisi
 &lt;/script&gt;
 
 &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-Maintenant il faudrait que tu vérifies tous les appels de citation dans ton document.
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Maintenant il faudrait que tu vérifies tous les appels de citation dans ton document.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
@@ -1688,7 +1706,8 @@ Camille est peu sensible à ton accablement. Visiblement son esprit regarde [[d�
   &lt;/div&gt;
 &lt;&lt;else&gt;&gt;
   &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-Bon, il y a aussi tous ces passages qui ont été repérés par Plagiator comme étant des emprunts. J&#39;en ai vu un particulièrement qui était du pur plagiat. Franchement tu aurais pu t&#39;y prendre autrement. Attends, [[où c&#39;était déjà|révision]]
+ &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt; 
+Bon, il y a aussi tous ces passages qui ont été repérés par Plagiator comme étant des emprunts. J&#39;en ai vu un particulièrement qui était du pur plagiat. Franchement tu aurais pu t&#39;y prendre autrement. Attends, [[où c&#39;était déjà|révision]]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
   &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1753,38 +1772,50 @@ Tu en es là de tes réflexions, lorsque tu entends une voix face à toi qui dem
 &lt;/div&gt;
 
 &lt;div id=&quot;4&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Salut, désolé d&#39;interrompre tes pensées, mais comme depuis deux minutes, tu pense tout haut et que ça me dérange un peu, je préfère qu&#39;on règle ça ensemble si tu as un problème avec ton travail, là
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Hein ? ah, euh ouais, pardon, je me rendais pas compte. 
 C&#39;est juste que je dois mettre la source d&#39;une image, là, avant de passer le devoir à Plagiator
 &lt;/div&gt;
 &lt;div id=&quot;6&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Je peux voir une minute ?
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;7&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Pas de problème. Attends, je scrolle pour afficher le bon passage. Tiens, c&#39;est là
 &lt;/div&gt;.
 &lt;div id=&quot;8&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Aïe!
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;9&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Quoi ?
 &lt;/div&gt;
 &lt;div id=&quot;10&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Cette photo est protégée par le droit d&#39;auteur ; tu ne peux pas la reproduire sans l&#39;accord du photographe ou de son agence. Il va falloir que tu leur écrives pour leur demander l&#39;autorisation de la mettre à cet endroit. 
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;11&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Est-ce que je ne pourrais pas simplement mettre le nom du photographe et la mention &quot;tous droits réservés&quot; et basta ?
 &lt;/div&gt;
 &lt;div id=&quot;12&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Plagiator est relié à une gigantesque base de données répertoriant toutes les oeuvres couvertes par le droit d&#39;auteur. Si tu n&#39;agis pas conformément au réglement pour cette image, l&#39;ayant droit risque d&#39;être mis au courant et pourra demander le retrait de l&#39;image à l&#39;enseignant correcteur
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;13&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Oh non, mais qu&#39;est-ce que je peux faire alors ?
 &lt;/div&gt;
 &lt;div id=&quot;14&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Changer la photo et en choisir une qui a été placée sous licence libre
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;15&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Chutt!!! &lt;br&gt;
@@ -1825,8 +1856,9 @@ Alex se lance dans un exposé sur le droit d&#39;auteur appliqué aux images ; t
 &lt;/div&gt;
 
 &lt;div id=&quot;1&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Par licences libres, on fait souvent référence à des licences que des auteurs choisissent pour favoriser le partage, sous certaines conditions, de leurs oeuvres,, qu&#39;il s&#39;agisse de texte, de sons, d&#39;images ou de films. 
-Dès lors qu&#39;on observe ces conditions, on n&#39;a pas besoin de leur demander l&#39;autorisation de reproduire leurs oeuvres dans nos propres travaux, elle nous est donnée à priori
+Dès lors qu&#39;on observe ces conditions, on n&#39;a pas besoin de leur demander l&#39;autorisation de reproduire leurs oeuvres dans nos propres travaux, elle nous est donnée à priori &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 
 &lt;div id=&quot;2&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
@@ -1834,8 +1866,9 @@ Et quelles sont ces conditions ?
 &lt;/div&gt;
 
 &lt;div id=&quot;3&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Et bien, pour les licences qu&#39;on appelle Creative Commons, par exemple, il convient dans tous les cas de citer l&#39;auteur ; c&#39;est la base de la licence : **CC-by** 
-CC (Comme Creative Commons), by (par) pour indiquer qui est l&#39;auteur de l&#39;oeuvre.
+CC (Comme Creative Commons), by (par) pour indiquer qui est l&#39;auteur de l&#39;oeuvre. &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 
 &lt;div id=&quot;4&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
@@ -1843,7 +1876,8 @@ Et où est-ce que je trouve des photos de ce genre
 &lt;/div&gt;
 
 &lt;div id=&quot;5&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
-Attends ! Ce n&#39;est pas tout. Parfois certains auteurs, souhaitent que leur oeuvre soit partagée sous la même licence par toi si tu la réutilises. Ils l&#39;indiquent par un SA (Share-Alike = partage sous les mêmes conditions). Par exemple, tout le contenu de Wikipédia est partagé sous la licence CC-by-sa. Bien sûr comme l&#39;encyclopédie est rédigée par des auteurs sous pseudonymes, on se contente d&#39;indiquer la source (Wikipédia). Tu dois reproduire les images provenant de Wikipédia avec la même licence, sans oublier le SA
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Attends ! Ce n&#39;est pas tout. Parfois certains auteurs, souhaitent que leur oeuvre soit partagée sous la même licence par toi si tu la réutilises. Ils l&#39;indiquent par un SA (Share-Alike = partage sous les mêmes conditions). Par exemple, tout le contenu de Wikipédia est partagé sous la licence CC-by-sa. Bien sûr comme l&#39;encyclopédie est rédigée par des auteurs sous pseudonymes, on se contente d&#39;indiquer la source (Wikipédia). Tu dois reproduire les images provenant de Wikipédia avec la même licence, sans oublier le SA. &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 
 &lt;div id=&quot;6&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
@@ -1851,37 +1885,53 @@ Ok, je vois. Il y en a encore beaucoup des conditions comme celles-ci
 &lt;/div&gt;
 
 &lt;div id=&quot;7&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Il n&#39;y en a plus que deux : 
-- NC pour &quot;non commercial&quot;. Tu ne pourras pas réutiliser la photo placée sous cette licence pour éditer un livre que tu comptes vendre. 
+- NC pour &quot;non commercial&quot;. Tu ne pourras pas réutiliser la photo placée sous cette licence pour éditer un livre que tu comptes vendre. &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+
 &lt;div id=&quot;8&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 On parle d&#39;un devoir à faire scanner par Plagiator, là. Pas d&#39;un bouquin
 &lt;/div&gt;
+
 &lt;div id=&quot;9&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
-Oui, c&#39;était juste pour être complet. Il y a enfin ND -et là ça peut peut-être te concerner : ND signifie &quot;Non Derivative&quot;. Concernant une image cela signifie que tu dois la reproduire telle qu&#39;artiste l&#39;a publiée. Tu ne peux pas par exemple la retailler ou n&#39;en reproduire qu&#39;une partie.  
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Oui, c&#39;était juste pour être complet. Il y a enfin ND -et là ça peut peut-être te concerner : ND signifie &quot;Non Derivative&quot;. Concernant une image cela signifie que tu dois la reproduire telle qu&#39;artiste l&#39;a publiée. Tu ne peux pas par exemple la retailler ou n&#39;en reproduire qu&#39;une partie.  &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+
 &lt;div id=&quot;10&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 D&#39;accord, merci pour ces infos. Et est-ce que tu peux me dire comment on trouve des images en créative...machin, là ? Désolé$prp2, hein, je suis un peu pressé$prp2
 &lt;/div&gt;
+
 &lt;div id=&quot;11&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
-Pas de problème, je comprends. Il y a des bases de données sur le web qui permettent d&#39;accéder à des images sous licences libres : Pixabay, unsplash, wikimedia commons.
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Pas de problème, je comprends. Il y a des bases de données sur le web qui permettent d&#39;accéder à des images sous licences libres : &lt;a href=&quot;https://pixabay.com/&quot; target=&quot;_blank&quot; alt=&quot;lien vers Pixabay&quot;&gt;Pixabay&lt;/a&gt;, &lt;a href=&quot;https://unsplash.com/fr&quot; target=&quot;_blank&quot; alt=&quot;lien vers unsplash&quot;&gt;Unsplash&lt;/a&gt;, &lt;a href=&quot;https://commons.wikimedia.org/wiki/Accueil&quot; target=&quot;_blank&quot; alt=&quot;lien vers Wikimédia Commons&quot;&gt;Wikimedia Commons&lt;/a&gt;.
 Tu peux aussi utiliser le filtre &quot;toutes les licences creative commons&quot; de ton moteur de recherche favori, Google par exemple. Tu trouveras sans peine des images sous licences libres sur les microplastiques. 
 Allez-je te laisse, je dois terminer ce bouquin, je vais devoir le restituer aujourd&#39;hui
-Salut !
+Salut ! &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+
 &lt;div id=&quot;12&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Ouais, Salut ! Merci beaucoup pour le coup de main !
 Au fait , tu t&#39;appelles comment ?
 &lt;/div&gt;
+
 &lt;div id=&quot;13&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
-Moi c&#39;est Alex, je suis en master de Philo, et toi ? 
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
+Moi c&#39;est Alex, je suis en master de Philo, et toi ?
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
+
 &lt;div id=&quot;14&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Je m&#39;appelle $name. Merci encore
 &lt;/div&gt;
+
 &lt;div id=&quot;15&quot; class=&quot;alex-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/alex.jpg&quot; alt=&quot;portrait d&#39;Alex&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Pas de quoi $name, et bon courage !
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
+
 &lt;div id=&quot;16&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Alex quitte la salle. Il ne te reste plus qu&#39;à exploiter les informations qu&#39;il t&#39;a données pour trouver une image en creative commons correspondant au sujet des microplastiques. [[C&#39;est parti|sélection_image]]
 &lt;/div&gt;
@@ -1972,13 +2022,17 @@ $prc5 voici d&#39;ailleurs qui arrive, d&#39;un bon pas, l&#39;air réjoui. La r
 Camille entre et met un certain temps à repérer la banquette où tu as pris place. Enfin elle vient te rejoindre en dessinant une ellipse qui touche le comptoir où $prc commande un café noir avant de s&#39;assoir sur la banquette où tu es assis$prp2.
 &lt;/div&gt;
 &lt;div id=&quot;2&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 Alors ? Est-ce que tu as eu le temps de revoir tout ce qu&#39;on avait listé comme problèmes dans ton devoir ? 
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;3&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 ça m&#39;a pris toute la journée, mais je pense que j&#39;y suis arrivé$prp2, Je t&#39;attendais pour soumettre le travail à Plagiator. 
 &lt;/div&gt;
 &lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
 D&#39;accord, merci. On n&#39;a pas le temps de vérifier une dernière fois. J&#39;espère que tu as bien suivi mes indications. Car une fois soumis à Plagiator, on ne peux plus rien modifier. Le système ne prévoit pas de troisième chance. 
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
 Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus qu&#39;à appuyer sur le bouton soumettre. J&#39;y vais ? Allez, je clique ici...
@@ -1993,7 +2047,9 @@ Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus
   &lt;&lt;/nobr&gt;&gt;
  &lt;/div&gt;
  &lt;div id=&quot;7&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
+ &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
    [[C&#39;est parti! |Go !]]
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
    &lt;/div&gt;
 
 
@@ -2034,7 +2090,9 @@ Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus
 &lt;/script&gt;  
   
  &lt;div id=&quot;0&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
- Alors ? Qu&#39;est-ce que ça donne ?
+ &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
+ Quel son horrible ! Alors ? Qu&#39;est-ce que ça donne ?
+ &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
  &lt;/div&gt;
  &lt;&lt;if $score gte 5&gt;&gt;
      &lt;div id=&quot;1&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
