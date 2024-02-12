@@ -511,7 +511,6 @@ Quel genre souhaites-tu donner à Camille?
 &lt;script&gt;
 (function () {
   var i = 0;
-  var totalDivs = 7;
 
   $(document).keyup(function (e) {
     var currentDiv = document.getElementById(i.toString()); // Convert the number to string
@@ -520,9 +519,7 @@ Quel genre souhaites-tu donner à Camille?
       currentDiv.style.display = &quot;block&quot;;
       scrollToDiv(i.toString());
       i++;
-            if (i &gt;= totalDivs) {
-                i = 0; 
-          }
+    
     }
   });
 
