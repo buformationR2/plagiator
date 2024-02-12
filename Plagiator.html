@@ -511,6 +511,7 @@ Quel genre souhaites-tu donner à Camille?
 &lt;script&gt;
 (function () {
   var i = 0;
+  var totalDivs = 7;
 
   $(document).keyup(function (e) {
     var currentDiv = document.getElementById(i.toString()); // Convert the number to string
@@ -519,6 +520,9 @@ Quel genre souhaites-tu donner à Camille?
       currentDiv.style.display = &quot;block&quot;;
       scrollToDiv(i.toString());
       i++;
+            if (i &gt;= totalDivs) {
+                i = 0; 
+          }
     }
   });
 
@@ -563,9 +567,7 @@ Quel genre souhaites-tu donner à Camille?
  &lt;div id=&quot;7&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 [[continuer|Camille_rendez-vous1]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="guillemets" tags="gyres" position="150,175" size="100,100">&lt;&lt;if $appel_citation_ok eq true&gt;&gt;
-
-&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="guillemets" tags="gyres" position="150,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 0;
@@ -593,6 +595,8 @@ Quel genre souhaites-tu donner à Camille?
 }());
 &lt;/script&gt;
 
+
+&lt;&lt;if $appel_citation_ok eq true&gt;&gt;
 &lt;div id=&quot;0&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Camille hoche la tête d&#39;un air satisfait. 
 C&#39;est bien ainsi qu&#39;il fallait procéder
@@ -1211,7 +1215,7 @@ A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 
-[[continuer|Blue Monday]]
+&lt;button data-passage=&quot;Blue Monday&quot;&gt;Continuer&lt;/button&gt;
 
 
 </tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="hideui chinese_room" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
@@ -1377,7 +1381,7 @@ Ok OK, disons alors... rendez-vous au Café Le Négociant, vers 17h30... ça te 
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;4&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
-Tu acquièces après quoi Camille disparaît rapidement de ta vue, te laissant seul$pr2 face à ton désarroi. 
+Tu acquièces après quoi Camille disparaît rapidement de ta vue, te laissant seul$prp2 face à ton désarroi. 
 Il ne te reste plus qu&#39;à relire ton travail avec les instructions qu&#39;$prp t&#39;a laissées et à tout remettre d&#39;aplomb. 
 
 Avec l&#39;emploi du temps que tu as ce matin, ça ne sera pas possible avant [[14h|bibliothèque]]
@@ -2261,7 +2265,9 @@ Cette image n&#39;est pas placée sous Creative Commons, le droit d&#39;auteur p
 
 
 
-[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="900,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="" position="1400,425" size="100,100">!Crédits
+[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="900,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="" position="1400,425" size="100,100">&lt;button data-passage=&quot;end&quot;&gt;Terminer le jeu&lt;/button&gt;
+
+!Crédits
 
 !!Images
 
@@ -2383,6 +2389,11 @@ Le portrait de l&#39;étudiant &quot;iel&quot; a été généré depuis &lt;a hr
    Un jeu sérieux sur le plagiat conçu par les bibliothèques de l&#39;Université de Rennes et de Rennes 2
 &lt;br&gt;
 &lt;button data-passage=&quot;début&quot;&gt;Commencer&lt;/button&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="end" tags="" position="1025,550" size="100,100">
+&lt;div class=&quot;shadow&quot;&gt;Merci d&#39;avoir joué à Plagiator&lt;/div&gt;
+&lt;div class=&quot;presentation&quot;&gt;
+ Pour citer le jeu : 
+Collectif. « Plagiator », bloc d&#39;apprentissage RESOUDRE. Rennes: Services Communs de la Documentation de l’Université de Rennes et Rennes 2, janvier 2024.
 &lt;/div&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
