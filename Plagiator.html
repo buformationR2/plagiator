@@ -103,7 +103,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 }
 
 td {
-  text-align: center;
+  text-align: left;
 }
 
 th {
@@ -247,22 +247,26 @@ body[data-tags~="admin"] a:hover { color: lime; }
     border: 0px solid #ccc; /* Add a border for visual separation */
     border-radius: 10px; /* Optional: Add rounded corners */
     display: flex;
+  	margin-right: 100px;
 }
 
 .alex-box {
     background-color: #FFC300 ; /* Set the background color */
-    color: #000;
+    text-align: left;
+  	color: #000;
     padding: 10px; /* Add some padding for spacing */
     border: 0px solid #ccc; /* Add a border for visual separation */
     border-radius: 10px; /* Optional: Add rounded corners */
     display: inline-block; /* Display as inline-block to fit content width */
     text-align: left; /* Align the contents to the left */
+  	margin-left: 100px;
 }
 
 
 
 .right-box {
   	background-color: #b1f8f8;
+  	text-align: left;
     color: #000; /* Set the background color */
     padding: 10px; /* Add some padding for spacing */
     border: 0px solid #ccc; /* Add a border for visual separation */
@@ -335,31 +339,7 @@ body[data-tags~="admin"] a:hover { color: lime; }
   text-align: center;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">l10nStrings.restartTitle = "Recommencer";  // French (fr)
 l10nStrings.savesTitle = "Sauvegarder";  // French (fr)
-
-
-var i = 0;
-
-addEventListener("keyup", (event) => {
-        var currentDiv = document.getElementById(i.toString()); // Convert the number to string
-        console.log("div i==",i);
-        if (currentDiv !== null) {
-          currentDiv.style.display = "block";
-          scrollToDiv(i.toString());
-          i++;
-        }
-});
-
-
-function scrollToDiv(divId) {
-    var targetElement = document.getElementById(divId);
-
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  }</script><tw-tag name="admin" color="green"></tw-tag><tw-tag name="cafeteria" color="none"></tw-tag><tw-tag name="bibliotheque" color="none"></tw-tag><tw-tag name="hideui" color="purple"></tw-tag><tw-passagedata pid="1" name="début" tags="" position="25,50" size="100,100"> &lt;div class=&quot;row&quot;&gt;
+</script><tw-tag name="admin" color="green"></tw-tag><tw-tag name="cafeteria" color="none"></tw-tag><tw-tag name="bibliotheque" color="none"></tw-tag><tw-tag name="hideui" color="purple"></tw-tag><tw-passagedata pid="1" name="début" tags="" position="25,50" size="100,100"> &lt;div class=&quot;row&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
     &lt;br&gt;
         &lt;img src=&quot;images/université.jpg&quot; alt=&quot;photo de l&#39;entrée d&#39;une université&quot; width=&quot;400px&quot;&gt;
@@ -425,9 +405,13 @@ Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><t
    &lt;/div&gt;
    &lt;div class=&quot;column&quot;&gt;
 Quel genre souhaites-tu donner à Camille?
- &lt;&lt;checkbox &quot;$camille_feminin&quot; false true autocheck&gt;&gt; Féminin ?
- &lt;&lt;checkbox &quot;$camille_masculin&quot; false true autocheck&gt;&gt; Masculin ?
- &lt;&lt;checkbox &quot;$camille_iel&quot; false true autocheck&gt;&gt; Va pour iel !
+ &lt;&lt;radiobutton &quot;$camille_feminin&quot; &quot;female&quot;&gt;&gt; Féminin ?
+ &lt;&lt;radiobutton &quot;$camille_masculin&quot; &quot;male&quot;&gt;&gt; Masculin ?
+ &lt;&lt;radiobutton &quot;$camille_iel&quot; &quot;iel&quot;&gt;&gt; Va pour iel !
+ 
+ &lt;&lt;if $camille_feminin is undefined and $camille_masculin is undefined and $camille_iel is undefined&gt;&gt;
+            &lt;&lt;set $camille_feminin to true&gt;&gt;
+ &lt;&lt;/if&gt;&gt;
    &lt;/div&gt;
 &lt;/div&gt;   
 [[continuer|genre]] 
@@ -509,7 +493,7 @@ Quel genre souhaites-tu donner à Camille?
 
 
 
-</tw-passagedata><tw-passagedata pid="5" name="appel_camille" tags="cafeteria hideui" position="275,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="5" name="appel_camille" tags="cafeteria" position="275,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 18;
@@ -665,7 +649,7 @@ Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé
 - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
 
 &lt;&lt;/linkreplace&gt;&gt; 
-</tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room hideui" position="275,425" size="100,100">&lt;&lt;if $son eq true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room" position="275,425" size="100,100">&lt;&lt;if $son eq true&gt;&gt;
 &lt;&lt;audio &quot;flute&quot; volume 1 fadeout&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -792,7 +776,7 @@ ou bien l&#39;une de celles-ci :
 « Les plastiques, dont l’essor a débuté vers le milieu du XXème siècle, sont des matériaux techniques nécessaires au fonctionnement des sociétés industrialisées. Cependant, au début des années 2000, des particules de plastique de l’ordre de la dizaine de microns sont observées dans des échantillons d’eau de mer. Ce sont des  “microplastiques”. »  [[(Pollutions du milieu littoral par les microplastiques : Méthodes d’évaluation par Mikaël Kedzierski, publié en 2017)|formulation3]]. 
 &lt;/div&gt;
 
-&lt;!-- div 52 to 56 --&gt;</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="chinese_room hideui" position="400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 52 to 56 --&gt;</tw-passagedata><tw-passagedata pid="12" name="auteur_manque" tags="chinese_room" position="400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 35;
@@ -839,7 +823,7 @@ Là on vient de travailler sur les appels de citation, est-ce que tu vois ce que
 &lt;&lt;set $visite_auteur_manque to true&gt;&gt;
 &lt;&lt;set $score to $score+2&gt;&gt;
 
-&lt;!-- div 35 to 37 --&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="chinese_room hideui" position="400,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 35 to 37 --&gt;</tw-passagedata><tw-passagedata pid="13" name="citation_italique" tags="chinese_room" position="400,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 38;
@@ -918,7 +902,7 @@ Non, ça n’est pas nécessaire de mentionner ici le titre du document. Je pens
 - [[Faut-il préciser le type du document d’où j’ai extrait la citation ?|preciser_type]]
 &lt;/div&gt;
 
-&lt;!-- div 40 to 41 --&gt;</tw-passagedata><tw-passagedata pid="15" name="preciser_type" tags="chinese_room hideui" position="400,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 40 to 41 --&gt;</tw-passagedata><tw-passagedata pid="15" name="preciser_type" tags="chinese_room" position="400,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 42;
@@ -1004,7 +988,7 @@ sinon, [[laisse la continuer|suite_camille]], elle est vraiment capable de t&#39
   
   
 
-</tw-passagedata><tw-passagedata pid="17" name="note_page_faux" tags="chinese_room hideui" position="525,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="17" name="note_page_faux" tags="chinese_room" position="525,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 45;
@@ -1047,7 +1031,7 @@ Comme ça tu peux faire le lien entre une assertion de ton texte et le document 
 Je vois. On peut dire du coup que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]
 &lt;/div&gt;
 
-&lt;!-- div 45 to 47 --&gt;</tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="chinese_room hideui" position="525,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 45 to 47 --&gt;</tw-passagedata><tw-passagedata pid="18" name="lien_biblio" tags="chinese_room" position="525,300" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 48;
@@ -1084,7 +1068,7 @@ Oui c&#39;est un lien vers la biblio à la fin de ton texte. mais ce n&#39;est p
 On peut dire aussi que [[c’est une façon abrégée de mentionner la source de la citation quand j’écris|appel_citation_ok]]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 
-&lt;!-- div 48 to 49 --&gt;</tw-passagedata><tw-passagedata pid="19" name="date_faux" tags="chinese_room hideui" position="525,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 48 to 49 --&gt;</tw-passagedata><tw-passagedata pid="19" name="date_faux" tags="chinese_room" position="525,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 50;
@@ -1124,7 +1108,7 @@ mais ce n&#39;est pas la seule fonction de l&#39;appel de citation. Normalement 
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
-&lt;!--div 50 to 51 --&gt;</tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="hideui" position="25,175" size="100,100">
+&lt;!--div 50 to 51 --&gt;</tw-passagedata><tw-passagedata pid="20" name="ton pseudo" tags="" position="25,175" size="100,100">
 &lt;&lt;set $name to prompt(&quot;Choisis ton pseudo&quot;, &quot;Mimi&quot;)&gt;&gt;
 &lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;column&quot;&gt;
@@ -1132,8 +1116,11 @@ mais ce n&#39;est pas la seule fonction de l&#39;appel de citation. Normalement 
    &lt;/div&gt;
    &lt;div class=&quot;column&quot;&gt;
 En parlant de toi, on dit plutôt
-&lt;&lt;checkbox &quot;$pseudo_feminin&quot; false true autocheck&gt;&gt; Elle?
-&lt;&lt;checkbox &quot;$pseudo_masculin&quot; false true autocheck&gt;&gt; Il/Lui?
+&lt;&lt;radiobutton &quot;$pseudo_feminin&quot; &quot;female1&quot;&gt;&gt; Elle?
+&lt;&lt;radiobutton &quot;$pseudo_masculin&quot; &quot;male1&quot;&gt;&gt; Il/Lui?
+
+ &lt;&lt;if $pseudo_feminin is undefined and $pseudo_masculin is undefined&gt;&gt;
+            &lt;&lt;set $pseudo_feminin to true&gt;&gt;
 
 Si tu ne veux pas choisir, le reste de l&#39;histoire se fera au féminin neutre.
 
@@ -1237,7 +1224,7 @@ A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 &lt;!-- div 0 to 2 --&gt;
 
 
-</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="hideui chinese_room" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="22" name="formulation1" tags="chinese_room" position="775,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 65;
@@ -1276,7 +1263,7 @@ Oui, mais tu as vu : le style bibliographique que tu as adopté dans le reste de
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 
-&lt;!-- div 65 to 66 --&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="hideui chinese_room" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 65 to 66 --&gt;</tw-passagedata><tw-passagedata pid="23" name="formulation2" tags="chinese_room" position="775,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 67;
@@ -1411,7 +1398,7 @@ Il ne te reste plus qu&#39;à relire ton travail avec les instructions qu&#39;$p
 Avec l&#39;emploi du temps que tu as ce matin, ça ne sera pas possible avant [[14h|bibliothèque]]
 &lt;/div&gt;
 
-&lt;!-- div 72 to 76 --&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque hideui" position="900,175" size="100,100">&lt;&lt;if $son eq true&gt;&gt;
+&lt;!-- div 72 to 76 --&gt;</tw-passagedata><tw-passagedata pid="26" name="bibliothèque" tags="bibliotheque" position="900,175" size="100,100">&lt;&lt;if $son eq true&gt;&gt;
 &lt;&lt;audio &quot;bibliotheque&quot; volume 1 fadeout&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1470,7 +1457,7 @@ Plagiator te signale donc un problème lié à des &quot;droits de reproduction&
 
 
 
-</tw-passagedata><tw-passagedata pid="27" name="Blue Monday" tags="cafeteria hideui" position="25,425" size="100,100">&lt;&lt;if $son eq true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="27" name="Blue Monday" tags="cafeteria" position="25,425" size="100,100">&lt;&lt;if $son eq true&gt;&gt;
 &lt;&lt;audio &quot;cafeteria&quot; volume 1 fadeout&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1509,44 +1496,32 @@ Amalith, un étudiant du même groupe que le tien avance à grands pas vers toi 
 &lt;div id=&quot;4&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt; 
   &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;Hey salut $name ! T’as déposé sur l’espace cours de Madame Green ton devoir sur les microplastiques ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
-&lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;  
-Oui, je l’ai déposé, mais je ne comprends pas, j’ai reçu un mail de la prof pour me dire que le logiciel anti-plagiat de l’université, Plagiator, avait détecté du plagiat sur mon devoir. 
+&lt;div id=&quot;5&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;Oui, je l’ai déposé, mais je ne comprends pas, j’ai reçu un mail de la prof pour me dire que le logiciel anti-plagiat de l’université, Plagiator, avait détecté du plagiat sur mon devoir. 
 &lt;/div&gt;     
 &lt;div id=&quot;6&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
-Ah bon, mais qu’est-ce que ça veut dire ? Tu as copié ou tu n’as pas cité tes sources ? Mais alors, tu n’auras pas la moyenne ?”&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;Ah bon, mais qu’est-ce que ça veut dire ? Tu as copié ou tu n’as pas cité tes sources ? Mais alors, tu n’auras pas la moyenne ?”&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div id=&quot;7&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-Je ne sais pas trop, la prof me laisse 24 heures pour me rattraper et retravailler le devoir.
+&lt;div id=&quot;7&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;Je ne sais pas trop, la prof me laisse 24 heures pour me rattraper et retravailler le devoir.
 &lt;/div&gt;
 &lt;div id=&quot;8&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
-Ouah, le stress. Tu vas devoir refaire tout le travail en fait ? J&#39;aimerais pas être à ta place...&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;Ouah, le stress. Tu vas devoir refaire tout le travail en fait ? J&#39;aimerais pas être à ta place...&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div id=&quot;9&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
- @@color:black;
-Oui, bon si tu n&#39;as rien de plus constructif à me dire, autant qu&#39;on en reste là... Merci beaucoup, je suis bien flippé$prp2 maintenant.@@
+&lt;div id=&quot;9&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;Oui, bon si tu n&#39;as rien de plus constructif à me dire, autant qu&#39;on en reste là... Merci beaucoup, je suis bien flippé$prp2 maintenant.
 &lt;/div&gt;
 &lt;div id=&quot;10&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
-&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
-Attends je voulais pas en rajouter, mais c&#39;est vrai que c&#39;est chaud et il te reste plus beaucoup de temps. Tiens, je pense que, tu devrais en parler à Camille. C&#39;est LA personne qui pourrait t&#39;aider à gérer ça. Sur un truc de ce genre, je l&#39;ai fait l&#39;an dernier et ça m&#39;a carrément sauvé la mise.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;Attends je voulais pas en rajouter, mais c&#39;est vrai que c&#39;est chaud et il te reste plus beaucoup de temps. Tiens, je pense que, tu devrais en parler à Camille. C&#39;est LA personne qui pourrait t&#39;aider à gérer ça. Sur un truc de ce genre, je l&#39;ai fait l&#39;an dernier et ça m&#39;a carrément sauvé la mise.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div id=&quot;11&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt; 
-
-Ouais, merci pour le tuyau; je vais voir. 
+&lt;div id=&quot;11&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;Ouais, merci pour le tuyau; je vais voir. 
 &lt;/div&gt;
 &lt;div id=&quot;12&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt; 
-&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
-Tu me tiens au courant ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; src=&quot;images/amalith.png&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;Tu me tiens au courant ?&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;div id=&quot;13&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.
+&lt;div id=&quot;13&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;Ouais, ouais, j&#39;ai ton mail. Je vais voir, merci et Ciao.
 &lt;/div&gt;
-&lt;div id=&quot;14&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
-Tu as maintenant une décision à prendre : soit tu vas voir [[Camille|choix du genre]], soit tu décides de prendre un peu de temps pour revoir l&#39;ensemble de ton travail et [[identifier les points les plus problématiques|révision]]
+&lt;div id=&quot;14&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;Tu as maintenant une décision à prendre : soit tu vas voir [[Camille|choix du genre]], soit tu décides de prendre un peu de temps pour revoir l&#39;ensemble de ton travail et [[identifier les points les plus problématiques|révision]]
 &lt;/div&gt;
 
-&lt;!--div 3 to 14 --&gt;</tw-passagedata><tw-passagedata pid="28" name="image proposition 2" tags="bibliotheque hideui" position="1025,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!--div 3 to 14 --&gt;</tw-passagedata><tw-passagedata pid="28" name="image proposition 2" tags="bibliotheque" position="1025,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 97;
@@ -1582,7 +1557,7 @@ Tu scrutes l&#39;image de la page 18
 Qu&#39;est-ce qui peut bien [[poser problème dans cette image|probleme_image2]] ? 
 &lt;/div&gt;
 
-&lt;!-- div 97 to 98 --&gt;</tw-passagedata><tw-passagedata pid="29" name="probleme_image2" tags="bibliotheque hideui" position="1025,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 97 to 98 --&gt;</tw-passagedata><tw-passagedata pid="29" name="probleme_image2" tags="bibliotheque" position="1025,175" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 99;
@@ -1816,7 +1791,7 @@ Bon, il y a aussi tous ces passages qui ont été repérés par Plagiator comme 
 &lt;&lt;/if&gt;&gt;
 
 &lt;!-- div 61 to 64 --&gt;
-</tw-passagedata><tw-passagedata pid="35" name="genialy" tags="hideui" position="650,425" size="100,100">
+</tw-passagedata><tw-passagedata pid="35" name="genialy" tags="" position="650,425" size="100,100">
 [[retour|suite_camille]]
 
 Tu peux cliquer sur le schéma de Camille pour faire apparaître certaines informations...
@@ -1829,7 +1804,7 @@ Manifestement c&#39;est une erreur, [[recommence|source_image2]].
 
 &lt;&lt;set $mauvaisjournal to true&gt;&gt;
 
-&lt;&lt;set $score to $score-1&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="courrier international" tags="bibliotheque hideui" position="1275,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;&lt;set $score to $score-1&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="courrier international" tags="bibliotheque" position="1275,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 112;
@@ -2046,7 +2021,7 @@ Alex quitte la salle. Il ne te reste plus qu&#39;à exploiter les informations q
 
 &lt;!-- div 80 to 96 --&gt;
 
-</tw-passagedata><tw-passagedata pid="39" name="sélection_image" tags="hideui" position="1150,425" size="100,100">Les différentes conditions de réutilisation des images placées sous creative commons sont symbolisées par des icônes. 
+</tw-passagedata><tw-passagedata pid="39" name="sélection_image" tags="" position="1150,425" size="100,100">Les différentes conditions de réutilisation des images placées sous creative commons sont symbolisées par des icônes. 
 Au bout d&#39;un certain temps, tu penses avoir compris quelle icône représente telle ou telle condition : par exemple une silhouette et CC indiquent que la seule condition pour réutiliser l&#39;image est de mentionner son auteur.  
 Faisons le point : es-tu capable d&#39;apparier chaque symbole à des conditions de réutilisation ?
 
@@ -2062,7 +2037,7 @@ Après quelques recherches sur le web, tu trouves sur des sites différents troi
 
 &lt;tr&gt;&lt;td&gt;image 2&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/microplastiques_wikimedia.jpg&quot; width=&quot;300px&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:%22microminimalism%22_or_%22the_secret_life_of_marine_microplastics_%22.jpg&quot; alt=&quot;photo de microplastiques disponible sur Wikimédia Commons&quot; target=&quot;_blank&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
-&lt;tr&gt;&lt;td&gt;image 3&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/bouteille_plastique.jpg&quot; width=&quot;300px&quot; alt=&quot;photo de détritus en plastique flottant dans les eaux&quot; target=&quot;_blank&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.innovationnewsnetwork.com/australasian-countries-join-pact-for-innovation-in-plastic/4764/&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;image 3&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;images/bouteille_plastique.jpg&quot; width=&quot;300px&quot; alt=&quot;photo de détritus en plastique flottant dans les eaux&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.innovationnewsnetwork.com/australasian-countries-join-pact-for-innovation-in-plastic/4764/&quot; target=&quot;_blank&quot;&gt;lien&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 
 &lt;/table&gt;
 
@@ -2094,7 +2069,7 @@ Quand tu as terminé cette tâche, rends-toi sans plus tarder au Café [[où tu 
 
 
 
-</tw-passagedata><tw-passagedata pid="41" name="soumettre" tags="coffee_shop hideui" position="1400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+</tw-passagedata><tw-passagedata pid="41" name="soumettre" tags="coffee_shop" position="1400,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 132;
@@ -2169,7 +2144,7 @@ Bon, voilà. Je suis sur le site. J&#39;ai uploadé mon devoir. Il ne reste plus
     &lt;&lt;else&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;!-- div 132 to 139 --&gt;</tw-passagedata><tw-passagedata pid="42" name="Go !" tags="plagiator hideui" position="1275,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
+&lt;!-- div 132 to 139 --&gt;</tw-passagedata><tw-passagedata pid="42" name="Go !" tags="plagiator" position="1275,425" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;
 &lt;script&gt;
 (function () {
   var i = 128;
@@ -2332,7 +2307,7 @@ Cette image n&#39;est pas placée sous Creative Commons, le droit d&#39;auteur p
 
 
 
-[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="900,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="" position="1400,425" size="100,100">&lt;button data-passage=&quot;end&quot;&gt;Terminer le jeu&lt;/button&gt;
+[[crédits images|crédits]]</tw-passagedata><tw-passagedata pid="48" name="StorySubtitle" tags="" position="525,550" size="100,100">Un jeu sérieux sur le plagiat</tw-passagedata><tw-passagedata pid="49" name="StoryCaption" tags="" position="150,550" size="100,100">Score: $score</tw-passagedata><tw-passagedata pid="50" name="crédits" tags="" position="1400,425" size="100,100">&lt;button data-passage=&quot;end&quot;&gt;Terminer le jeu&lt;/button&gt;
 
 !Crédits
 
@@ -2450,7 +2425,7 @@ Le portrait de l&#39;étudiant &quot;iel&quot; a été généré depuis &lt;a hr
 
 
 
-</tw-passagedata><tw-passagedata pid="53" name="rouge" tags="" position="525,550" size="100,100">[[retour|règles]]</tw-passagedata><tw-passagedata pid="54" name="bleu" tags="" position="650,550" size="100,100">[[retour|règles]]</tw-passagedata><tw-passagedata pid="55" name="lien" tags="" position="775,550" size="100,100">[[retour|règles]]</tw-passagedata><tw-passagedata pid="56" name="start" tags="plagiator hideui" position="25,550" size="100,100">
+</tw-passagedata><tw-passagedata pid="53" name="rouge" tags="" position="775,550" size="100,100">[[retour|règles]]</tw-passagedata><tw-passagedata pid="54" name="bleu" tags="" position="650,550" size="100,100">[[retour|règles]]</tw-passagedata><tw-passagedata pid="55" name="lien" tags="" position="900,550" size="100,100">[[retour|règles]]</tw-passagedata><tw-passagedata pid="56" name="start" tags="plagiator hideui" position="25,550" size="100,100">
     &lt;div class=&quot;shadow&quot;&gt;@@font-size:72px;Plagiator@@&lt;br&gt;&lt;i&gt;le vertige du nain perché sur les épaules du géant&lt;/i&gt;&lt;/div&gt;
 &lt;div class=&quot;presentation&quot;&gt;
    Un jeu sérieux sur le plagiat conçu par les bibliothèques de l&#39;Université de Rennes et de Rennes 2
