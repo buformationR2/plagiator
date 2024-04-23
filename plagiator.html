@@ -98,10 +98,13 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="plagiator" startnode="54" creator="Twine" creator-version="2.8.1" format="SugarCube" format-version="2.36.1" ifid="314F63F5-43D0-4C3D-BCFA-0EF44E556D91" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<tw-storydata name="plagiator" startnode="54" creator="Twine" creator-version="2.8.1" format="SugarCube" format-version="2.36.1" ifid="314F63F5-43D0-4C3D-BCFA-0EF44E556D91" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* taille de la police dans l'ensemble de l'histoire */
+body {
   font-size: 150%;
 }
 
+
+/* caractéristiques des bulles pendant les dialogues*/
 td {
   text-align: left;
 }
@@ -115,13 +118,13 @@ table {
   border-spacing: 10px;
 }
 
-
+/*images d'arrière plan de différentes scènes */
 
 body[data-tags~="plagiator"]{
   background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2pldWdtc2d4OHQ3ZmQ5cHZqcG9xeTk1MGUwaThpMmdma3pzcmZmZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H7llxoUnid1u27TkaH/giphy.gif");
   background-attachment: fixed; 
   background-repeat: no-repeat;
-  background-size: cover; /* maybe contain, based on the image and goals */
+  background-size: cover; 
 }
 
 
@@ -211,91 +214,87 @@ body[data-tags~="chinese_room"]{
     position: absolute;
 } 
 
-body[data-tags~="admin"]{
-    background-color: #fef1da;
-    color: #000000;
-}
-
-body[data-tags~="admin"] a { color: #4633ff; }
-body[data-tags~="admin"] a:hover { color: lime; }
-
+/* Cellules du tableau */
 
 .column {
   float: left;
   width: 50%;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
+/* image incrustée dans la bulle de dialogue */
 .inline-image {
-    /* Styles specific to the inline image */
+  
   height: 100px;  
-  width: 100px; /* Ensure the image doesn't exceed its container */
-  border-radius: 50px; /* Example: Add rounded corners to the image */ 
+  width: 100px; /* s'assure que l'image ne dépasse les limites de la bulle de dialogue */
+  border-radius: 50px; /* règle les coins des bulles de dialogues */ 
   flex: 0;
    
 }
 
+/* bulles de dialogues interlocuteurs Amalith, Camille */
 
 .left-box {
-    background-color: #fff; /* Set the background color */
+    background-color: #fff; /* couleur du fonds de la bulle */
     color: green;
-    padding: 10px; /* Add some padding for spacing */
-    border: 0px solid #ccc; /* Add a border for visual separation */
-    border-radius: 10px; /* Optional: Add rounded corners */
+    padding: 10px; /* espacement */
+    border: 0px solid #ccc; /* bordure (0px = pas de bordure) */
+    border-radius: 10px; /* coins arrondis */
     display: flex;
   	margin-right: 100px;
 }
 
+/* bulles de dialogue Alex */
 .alex-box {
     background-color: #FFC300 ; /* Set the background color */
     text-align: left;
   	color: #000;
-    padding: 10px; /* Add some padding for spacing */
-    border: 0px solid #ccc; /* Add a border for visual separation */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    display: inline-block; /* Display as inline-block to fit content width */
-    text-align: left; /* Align the contents to the left */
-  	margin-left: 100px;
+    padding: 10px; /* espacement */
+    border: 0px solid #ccc; /* bordure (0px = pas de bordure) */
+    border-radius: 10px; /* coins arrondis */
+    display: inline-block; /* ajustement de l'image par rapport au conteneur (bulle de dialogue) */
+    text-align: left; /* alignement des contenus à gauche */
+  	margin-left: 100px; /* espacement par rapport à la marge de gauche */
 }
 
 
-
+/* bulles de dialogue joueur ou joueuse */
 .right-box {
   	background-color: #b1f8f8;
   	text-align: left;
-    color: #000; /* Set the background color */
-    padding: 10px; /* Add some padding for spacing */
-    border: 0px solid #ccc; /* Add a border for visual separation */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    display: inline-block; /* Display as inline-block to fit content width */
-    margin-left: 200px; /* Add space to the left of the right box */
+    color: #000; /* couleur de fonds */
+    padding: 10px; /* espacement */
+    border: 0px solid #ccc; /* bordure (0px = pas de bordure) */
+    border-radius: 10px; /* coins arrondis */
+    display: inline-block; /* ajustement de l'image par rapport au conteneur (bulle de dialogue) */
+    margin-left: 200px; /* espacement par rapport à la marge de gauche */
 }
 
-
+/* bulles comportant des questions */
 .question-box {
   	background-color: #fff2c3;
-    color: #000; /* Set the background color */
-    padding: 10px; /* Add some padding for spacing */
-    border: 0px solid #ccc; /* Add a border for visual separation */
+    color: #000; /* couleur de fonds */
+    padding: 10px; /* espacement */
+    border: 0px solid #ccc; /* bordure (0px = pas de bordure) */
     border-radius: 10px; /* Optional: Add rounded corners */
-    display: inline-block; /* Display as inline-block to fit content width */
-    margin-left: 100px; /* Add space to the left of the right box */
+    display: inline-block; /* ajustement de l'image par rapport au conteneur (bulle de dialogue) */
+    margin-left: 100px; /* espacement par rapport à la marge de gauche */
 }
 
+/* bulles de narration (éléments noirs) */
 .history-box {
   	background-color: #000;
-    color: #fff; /* Set the background color */
-    padding: 10px; /* Add some padding for spacing */
-    border: 0px solid #ccc; /* Add a border for visual separation */
-    border-radius: 0px; /* Optional: Add rounded corners */
-    display: inline-block; /* Display as inline-block to fit content width */
-    margin-left: 200px; /* Add space to the left of the right box */
+    color: #fff; /* couleur de fonds */
+    padding: 10px; /* espacement */
+    border: 0px solid #ccc; /* bordure (0px = pas de bordure) */
+    border-radius: 0px; /* coins arrondis */
+    display: inline-block; /* ajustement de l'image par rapport au conteneur (bulle de dialogue) */
+    margin-left: 200px; /* espacement par rapport à la marge de gauche */
 }
 
 /* balise destinée à cacher la sidebar*/
@@ -303,6 +302,8 @@ body[data-tags~="admin"] a:hover { color: lime; }
 .hideui #ui-bar {
 	display: none;
 }
+
+/* effets suspendus
 
 .blink {
     -webkit-animation: blinker 1s step-end infinite;
@@ -314,7 +315,9 @@ body[data-tags~="admin"] a:hover { color: lime; }
 @keyframes blinker {
     50% { visibility: hidden; }
 }
+*/
 
+/* cartel de présentation */
 .shadow {
 	
   background-color: #000;
@@ -339,7 +342,9 @@ body[data-tags~="admin"] a:hover { color: lime; }
   margin-right: 300px;
   justify-content: left;
   text-align: center;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">l10nStrings.restartTitle = "Recommencer";  // French (fr)
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">l10nStrings.restartTitle = "Recommencer";  // French (fr)
 l10nStrings.savesTitle = "Sauvegarder";  // French (fr)
 </script><tw-tag name="admin" color="green"></tw-tag><tw-tag name="cafeteria" color="none"></tw-tag><tw-tag name="bibliotheque" color="none"></tw-tag><tw-tag name="hideui" color="purple"></tw-tag><tw-passagedata pid="1" name="début" tags="" position="25,50" size="100,100"> &lt;div class=&quot;row&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
@@ -631,23 +636,55 @@ N&#39;aurais-tu pas un meilleur choix à faire ?
 
 -  [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre guillemets ?|guillemets]]
 - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
-- [[Prendre une phrase au hasard et demander à ChatGPT qui l&#39;a écrite|ChatGPT]]</tw-passagedata><tw-passagedata pid="9" name="ChatGPT" tags="" position="150,50" size="100,100">Tu prends au hasard une phrase du texte et tu demandes à ChatGPT qui l&#39;a écrite : 
+- [[Prendre une phrase au hasard et demander à ChatGPT qui l&#39;a écrite|ChatGPT]]</tw-passagedata><tw-passagedata pid="9" name="ChatGPT" tags="" position="150,50" size="100,100">&lt;script src=&quot;https://code.jquery.com/jquery-3.6.4.min.js&quot;&gt;    
+    &lt;script&gt;
+(function () {
+  var i = 130;
 
--qui a écrit la phrase suivante : &quot;Dans l&#39;environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique&quot; ?
+  $(document).keyup(function (e) {
+    var currentDiv = document.getElementById(i.toString()); // Convert the number to string
 
- &lt;&lt;linkreplace &quot;...&quot; t8n&gt;&gt;\ 
+    if (currentDiv !== null) {
+      currentDiv.style.display = &quot;block&quot;;
+      scrollToDiv(i.toString());
+      i++;
+    }
+  });
+
+  function scrollToDiv(divId) {
+    var targetElement = document.getElementById(divId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: &#39;smooth&#39;,
+        block: &#39;start&#39;
+      });
+    }
+  }
+}());
+&lt;/script&gt;
+
+&lt;div id=&quot;130&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
+Tu prends au hasard une phrase du texte et tu demandes à ChatGPT qui l&#39;a écrite : 
+
+- qui a écrit la phrase suivante : &quot;Dans l&#39;environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique&quot; ?
+&lt;/div&gt;
+
+&lt;div id=&quot;131&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 L&#39;intelligence artificielle générative ne met qu&#39;une seconde avant de t&#39;envoyer sa réponse : 
 
 - La phrase &quot;Dans l&#39;environnement, ces détritus plastiques subissent une lente dégradation photochimique, physique et/ou biologique&quot; ne peut être attribuée à un auteur spécifique, car elle décrit un processus scientifique généralement accepté. Elle pourrait être le résultat de la synthèse d&#39;informations provenant de différents chercheurs, scientifiques, ou experts dans le domaine de la pollution plastique et de la dégradation environnementale.
-&lt;&lt;/linkreplace&gt;&gt; 
-&lt;&lt;linkreplace &quot;...&quot; t8n&gt;&gt;\
+&lt;/div&gt;
+
+&lt;div id=&quot;132&quot; class=&quot;history-box&quot; style=&quot;display:none&quot;&gt;
 Tu te rends compte qu&#39;il va falloir trouver une autre tactique, as-tu pensé aux autres solutions existantes : 
 
 - [[faire une recherche dans Google sur les gyres piégeurs de déchet ?|recherche_simple]]
 -  [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre guillemets ?|guillemets]]
 - [[faire une recherche dans Google à partir d&#39;une phrase du texte mise entre crochets ?|crochets]]
+&lt;/div&gt;
 
-&lt;&lt;/linkreplace&gt;&gt; 
+&lt;!-- div 130 to 132 --&gt;
 </tw-passagedata><tw-passagedata pid="10" name="Camille_rendez-vous1" tags="chinese_room" position="275,425" size="100,100">&lt;&lt;if $son eq true&gt;&gt;
 &lt;&lt;audio &quot;flute&quot; volume 1 fadeout&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -2058,9 +2095,11 @@ En face de cette URL ( https://doi.org/10.1016/j.cnd.2022.03.001 ) Plagiator a a
 [URL is not ref. information missing : authors, title, issue (vol, n°), container (i.e serial title) see bibliographical conventions]
 
 Bref, il semble qu&#39;il va falloir reconstituer la référence (et dans le bon ordre) avec les éléments qui apparaissent quand tu cliques sur le lien. A toi de jouer !
+
 &lt;&lt;nobr&gt;&gt;
 &lt;iframe width=&quot;672&quot; height=&quot;627&quot; src=&quot;https://damienbelveze.github.io/plagiator/article_microplastiques.html&quot; frameBorder=&quot;0&quot; scrolling=&quot;no&quot; styles=&quot;width:100%&quot;&gt;&lt;/iframe&gt;
 &lt;&lt;/nobr&gt;&gt;
+
 Quand tu as terminé cette tâche, rends-toi sans plus tarder au Café [[où tu as donné rendez-vous à Camille|soumettre]]
 
 
@@ -2111,7 +2150,7 @@ Alors ? Est-ce que tu as eu le temps de revoir tout ce qu&#39;on avait listé co
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; 
 &lt;/div&gt;
 &lt;div id=&quot;135&quot; class=&quot;right-box&quot; style=&quot;display:none&quot;&gt;
-ça m&#39;a pris toute la journée, mais je pense que j&#39;y suis arrivé$prp2, Je t&#39;attendais pour soumettre le travail à Plagiator. 
+ça m&#39;a pris toute la journée, mais je pense que j&#39;y suis arrivé$prp2. Je t&#39;attendais pour soumettre le travail à Plagiator. 
 &lt;/div&gt;
 &lt;div id=&quot;136&quot; class=&quot;left-box&quot; style=&quot;display:none&quot;&gt;
 &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img class=&quot;inline-image&quot; @src=&quot;$img&quot; alt=&quot;portrait de l&#39;interlocuteur&quot;&gt;&lt;/td&gt;&lt;td&gt;
