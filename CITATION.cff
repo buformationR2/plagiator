@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Services Communs de Documentation de l'Université de Rennes  et de Rennes 2
+  - family-names: Belvèze
+    given-names: Damien
+    orcid: 0000-0001-9020-2148
+  - given-names: Ribourg
+    given-names: Lucie
+title: "Plagiator, un jeu sérieux sur le plagiat"
+version: 1.0
+identifiers:
+  - type: URL
+    value: https://damienbelveze.github.io/plagiator/plagiator.html
+date-released: 2024-04-23
