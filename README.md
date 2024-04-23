@@ -2,7 +2,7 @@ Plagiator est un jeu sérieux sur la propriété intellectuelle et le plagiat à
 
 Il a été conçu dans le cadre du bloc d'apprentissage RESOUDRE au moyen du logiciel libre [Twine](https://twinery.org). 
 
-**Pour jouer au jeu, cliquer sur [ce lien](https://damienbelveze.github.io/plagiator/Plagiator.html)**
+**Pour jouer au jeu, cliquer sur [ce lien](https://damienbelveze.github.io/plagiator/plagiator.html)**
 
 Pour envoyer des commentaires sur le jeu aller dans la page [commentaires et propositions](commentaires-et-propositions-de-modifications.md)
 
