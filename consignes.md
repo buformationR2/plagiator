@@ -10,16 +10,17 @@ Le jeu est placé sous licence libre (CC-by 4:0)
 
 ### Comment éditer ce document
 
-:pushpin: Le document principal est [plagiator.html](plagiator.html)
+Le document principal est [plagiator.html](plagiator.html)
 Ce document est éditable avec le logiciel Twine en ligne ou avec l'éditeur Twine téléchargé sur votre machine. Nous vous recommandons la deuxième solution. 
 Pour télécharger Twine, aller sur [le site de cet éditeur](https://twinery.org/).
+
 Pour charger l'histoire dans Twine, aller sur Bibliothèque > import > importer le fichier plagiator.html là où vous l'avez téléchargé. 
 Attention Twine utilise par défaut le dialecte Harlowe. Plagiator a été conçu avec le dialecte SugarCube dont [la documentation est en ligne](https://www.motoslave.net/sugarcube/2/docs/)
 Pour changer le dialecte dans l'éditeur Twine. Ouvrir Plagiator dans Twine, aller sur Histoire > Détails > dans le menu déroulant, sélectionner "wSugarCube".
 
 ### Quels sont les codes informatiques utilisés dans cette histoire?
 
-:gem: L'essentiel du document est écrit dans la syntaxe de SugarCube. 
+L'essentiel du document est écrit dans la syntaxe de SugarCube. 
 Les passages peuvent contenir du Javascript, du html et du CSS.
 Pour mettre en forme certains passages, nous avons utilisé le fichier CSS (\#feuille de style) rattaché à l'histoire. Les différentes classes CSS sont commentées pour être plus facilement modifiées. 
 
@@ -57,7 +58,7 @@ Nous avons fait figurer ce script au début de la plupart des passages :
 </script>
 
 ```
-:fish: La variable *i* correspond aux "divs" (morceaux de textes, présents en html dans les passages et qui apparaissent lorsque le joueur ou la joueuse frappe n'importe quelle touche). 
+La variable *i* correspond aux "divs" (morceaux de textes, présents en html dans les passages et qui apparaissent lorsque le joueur ou la joueuse frappe n'importe quelle touche). 
 Cette variable est incrémentale. Le jeu comporte environ 130 *divs* numérotées. 
 Lorsque ces *divs* ne sont pas incrémentées d'un passage à l'autre, il arrive qu'au début d'un passage, des divs s'affichent alors que les précédentes n'ont pas encore été déclenchées par l'utilisateurice. Nous avons donc décidé en dépit de la contrainte que cela représente et faut d'alternative à notre disposition d'incrémenter ces "divs" sur l'ensemble du jeu (pas de possibilité de procéder par tranches ou de laisser des espaces vacants dans cette énumération) Nous sommes à la recherche de développeurs connaissant le Javascript qui nous permettraient d'améliorer ce code.
 
@@ -65,7 +66,7 @@ Lorsque ces *divs* ne sont pas incrémentées d'un passage à l'autre, il arrive
 
 ### Sons et images
 
-:gem: Les répertoires *sons*, *gifs* et *images* contiennent les sons, gifs et images qui sont utilisés dans le jeu. 
+Les répertoires *sons*, *gifs* et *images* contiennent les sons, gifs et images qui sont utilisés dans le jeu. 
 Au début du jeu, il est demandé à l'utilisateurice si iel souhaite jouer la version sonore ou muette du jeu. 
 Si le fichier *plagiator.html* est ouvert dans le navigateur séparémment de ces dossiers, ni les sons, ni les images ou les gifs ne pourront apparaître.
 Les sons sont appelés depuis le passage fonctionnel *StoryInit* dans les différents passages où ils sont joués.
@@ -73,7 +74,7 @@ Les crédits de ces sons et images sont disponibles dans le passage "Crédits".
 
 ### activités h5p
 
-:gem: Les activités h5p sont sans effet sur la conduite du récit. Les tentatives des joueur/joueuses ne sont pas conservées. Ces activités ne comptent pas dans le score. Elles sont uniquement dévolues à ajouter de l'interactivité dans les passages.
+Les activités h5p sont sans effet sur la conduite du récit. Les tentatives des joueur/joueuses ne sont pas conservées. Ces activités ne comptent pas dans le score. Elles sont uniquement dévolues à ajouter de l'interactivité dans les passages.
 
 Sous le dossier *H5P* on trouve des fichiers h5p qui correspondent aux différentes activités h5p proposées dans cette aventure Twine. Pour éditer, ces fichiers, on peut utiliser le logiciel [Logiquiz](https://ladigitale.dev/logiquiz/#telecharger) de la Digitale
 Le dossier *Lib* contient les fichiers nécessaires à l'affichage des activités h5p dans des pages web. Le code emabarqué issu de ces pages webs (une page par activité) est ensuite chargé sous la forme d'un *iframe* dans le passage pertinent de Twine. Voir exemple ci-dessous:
@@ -94,7 +95,7 @@ Github permet de fournir les pages web dans leur forme voulue au moyen de son in
 
 # Comment l'installer dans Moodle
 
-:gem: Téléchargez l'archive du présent répertoire et dézippez. 
+Téléchargez l'archive du présent répertoire et dézippez. 
 Dans l'espace-cours Moodle où vous souhaitez déposer le jeu, créez une activité "fichier"(file)
 A l'intérieur créez trois dossiers : 
 - images
@@ -105,7 +106,7 @@ A la racine du dépôt Moodle, glisser-déposez le fichier plagiator.html et ind
 
 # Comment le cloner depuis Github
 
-:gem: Connectez-vous à votre compte sur Github
+Connectez-vous à votre compte sur Github
 Dans cet entrepôt, cliquez sur "use this template" (bouton vert en haut à droite)
 Faites les modifications qui conviennent (chemins absolus dans les *iframes*, voir plus haut)
 
