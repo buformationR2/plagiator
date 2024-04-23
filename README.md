@@ -8,3 +8,5 @@ Vous pouvez évaluer ce jeu en répondant à notre [formulaire de test](https://
 Merci d'avance pour vos retours, ils nous seront très précieux pour améliorer le jeu.
 
 Pour savoir comment réutiliser ce répertoire, intégrer le jeu dans Moodle ou le charger dans votre propre répertoire Github, suivez nos [consignes](https://damienbelveze.github.io/plagiator/consignes.html)
+
+[![DOI](https://zenodo.org/badge/716280905.svg)](https://zenodo.org/doi/10.5281/zenodo.11048361)
