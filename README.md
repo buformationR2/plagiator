@@ -2,19 +2,9 @@ Plagiator est un jeu sérieux sur la propriété intellectuelle et le plagiat à
 
 Il a été conçu dans le cadre du bloc d'apprentissage RESOUDRE au moyen du logiciel libre [Twine](https://twinery.org). 
 
-**Pour jouer au jeu, cliquer sur [ce lien](https://damienbelveze.github.io/plagiator/plagiator.html)**
+**Pour jouer au jeu, cliquer sur [ce lien](plagiator.html)**
 
-Pour envoyer des commentaires sur le jeu aller dans la page [commentaires et propositions](commentaires-et-propositions-de-modifications.md)
+Vous pouvez évaluer ce jeu en répondant à notre [formulaire de test](https://enquetes.univ-rennes2.fr/limesurvey/index.php/461972?lang=fr). 
+Merci d'avance pour vos retours, ils nous seront très précieux pour améliorer le jeu.
 
-# Charger le jeu dans Moodle
-
-Téléchargez l'archive du présent répertoire et dézippez. 
-Dans l'espace-cours Moodle où vous souhaitez déposer le jeu, créez une activité "fichier"(file)
-A l'intérieur créez trois dossiers : 
-- images
-- sons
-- gifs
-Faites glisser depuis votre explorateur le contenu des trois dossiers correspondants vers leur emplacement sur Moodle. 
-A la racine du dépôt Moodle, glisser-déposez le fichier plagiator.html et indiquez-le comme fichier principal
-
-
+Pour savoir comment réutiliser ce répertoire, intégrer le jeu dans Moodle ou le charger dans votre propre répertoire Github, suivez nos [consignes](consignes.html)
