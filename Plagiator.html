@@ -359,7 +359,7 @@ choisis [[ton pseudo]]
 
 
  </tw-passagedata><tw-passagedata pid="2" name="genre" tags="" position="275,175" size="100,100">&lt;&lt;nobr&gt;&gt;
-  &lt;&lt;if $camille_feminin&gt;&gt;
+  &lt;&lt;if $camille_genre eq &quot;female&quot; &gt;&gt;
     &lt;&lt;set $prc to &quot;elle&quot;&gt;&gt;
     &lt;&lt;set $prc2 to &quot;e&quot;&gt;&gt;
     &lt;&lt;set $prc3 to &quot;celle-ci&quot;&gt;&gt;
@@ -369,7 +369,7 @@ choisis [[ton pseudo]]
     &lt;&lt;set $img to &quot;images/camille_female.PNG&quot;&gt;&gt;
     &lt;img src=&quot;images/camille_female.PNG&quot; width=300px &gt;
     /* image générée par &quot;this person does-not exist */
-  &lt;&lt;elseif $camille_masculin&gt;&gt;
+  &lt;&lt;elseif $camille_genre eq &quot;male&quot;&gt;&gt;
     &lt;&lt;set $prc to &quot;il&quot;&gt;&gt;
     &lt;&lt;set $prc2 to &quot;&quot;&gt;&gt;
     &lt;&lt;set $prc3 to &quot;celui-ci&quot;&gt;&gt;
@@ -379,7 +379,7 @@ choisis [[ton pseudo]]
     &lt;&lt;set $img to &quot;images/camille_male.PNG&quot;&gt;&gt;
     &lt;img src=&quot;images/camille_male.PNG&quot; width=300px &gt;
     /* image générée par &quot;this person does-not exist */
-   &lt;&lt;elseif $camille_iel&gt;&gt;
+   &lt;&lt;elseif $camille_genre eq &quot;iel&quot;&gt;&gt;
     &lt;&lt;set $prc to &quot;iel&quot;&gt;&gt;
     &lt;&lt;set $prc2 to &quot;.e&quot;&gt;&gt;
     &lt;&lt;set $prc3 to &quot;cellui-ci&quot;&gt;&gt;
@@ -407,13 +407,10 @@ Tu décides de l&#39;[[appeler|appel_camille]] sans attendre.</tw-passagedata><t
    &lt;/div&gt;
    &lt;div class=&quot;column&quot;&gt;
 Quel genre souhaites-tu donner à Camille?
- &lt;&lt;radiobutton &quot;$camille_feminin&quot; &quot;female&quot;&gt;&gt; Féminin ?
- &lt;&lt;radiobutton &quot;$camille_masculin&quot; &quot;male&quot;&gt;&gt; Masculin ?
- &lt;&lt;radiobutton &quot;$camille_iel&quot; &quot;iel&quot;&gt;&gt; Va pour iel !
+&lt;&lt;radiobutton &quot;$camille_genre&quot; &quot;female&quot; checked &gt;&gt; Féminin?
+ &lt;&lt;radiobutton &quot;$camille_genre&quot; &quot;male&quot;&gt;&gt; Masculin?
+ &lt;&lt;radiobutton &quot;$camille_genre&quot; &quot;iel&quot;&gt;&gt; Va pour iel?
  
- &lt;&lt;if $camille_feminin is undefined and $camille_masculin is undefined and $camille_iel is undefined&gt;&gt;
-            &lt;&lt;set $camille_feminin to true&gt;&gt;
- &lt;&lt;/if&gt;&gt;
    &lt;/div&gt;
 &lt;/div&gt;   
 [[continuer|genre]] 
@@ -1118,12 +1115,8 @@ mais ce n&#39;est pas la seule fonction de l&#39;appel de citation. Normalement 
    &lt;/div&gt;
    &lt;div class=&quot;column&quot;&gt;
 En parlant de toi, on dit plutôt
-&lt;&lt;radiobutton &quot;$pseudo_feminin&quot; &quot;female1&quot;&gt;&gt; Elle?
-&lt;&lt;radiobutton &quot;$pseudo_masculin&quot; &quot;male1&quot;&gt;&gt; Il/Lui?
-
- &lt;&lt;if $pseudo_feminin is undefined and $pseudo_masculin is undefined&gt;&gt;
-            &lt;&lt;set $pseudo_feminin to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;radiobutton &quot;$pseudo_genre&quot; &quot;female&quot; checked&gt;&gt; Elle?
+&lt;&lt;radiobutton &quot;$pseudo_genre&quot; &quot;male&quot;&gt;&gt; Il/Lui?
 
 Si tu ne veux pas choisir, le reste de l&#39;histoire se fera au féminin neutre.
 
@@ -1202,13 +1195,13 @@ Le jeu peut être joué avec ou sans le son
 
 A présent, appuie sur le lien &quot;continuer&quot; en bas de l&#39;écran
 &lt;&lt;nobr&gt;&gt;
-&lt;&lt;if $pseudo_feminin eq true&gt;&gt;
+&lt;&lt;if $pseudo_genre eq &quot;female&quot;&gt;&gt;
     &lt;&lt;set $prp to &quot;elle&quot;&gt;&gt;
     &lt;&lt;set $prp2 to &quot;e&quot;&gt;&gt;
     &lt;&lt;set $prp3 to &quot;celle-ci&quot;&gt;&gt;
     &lt;&lt;set $prp4 to &quot;ve&quot;&gt;&gt;
     &lt;&lt;set $prp5 to &quot;ère&quot;&gt;&gt;
-&lt;&lt;elseif $pseudo_masculin&gt;&gt;
+&lt;&lt;elseif $pseudo_genre eq &quot;male&quot;&gt;&gt;
     &lt;&lt;set $prp to &quot;il&quot;&gt;&gt;
     &lt;&lt;set $prp2 to &quot;&quot;&gt;&gt;
     &lt;&lt;set $prp3 to &quot;celui-ci&quot;&gt;&gt;

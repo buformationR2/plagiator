@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+      <title>Mémoire Camille</title>
+</head>
+<body>
+    <div id="h5p-container-8"></div>
+    <script>
+        (function() {
+        let h5pContainer = document.getElementById("h5p-container-8"); 
+        let h5pJsonPath = 'H5P/memoire_camille'; 
+    
+        if (!document.getElementById('h5p-bundle-js')) {
+            let script = document.createElement('script');
+            script.id = 'h5p-bundle-js';
+            script.src = 'libs/h5p/main.bundle.js';
+            h5pContainer.parentNode.insertBefore(script, h5pContainer.nextSibling);
+        }
+    
+        window.addEventListener("load", function() {
+            const options = {
+            h5pJsonPath: h5pJsonPath,
+            frameJs: 'libs/h5p/frame.bundle.js',
+            frameCss: 'libs/h5p/styles/h5p.css',
+            frame: true,
+            export: true,
+            icon: true,
+            downloadUrl: 'H5P/memoire_camille_original.h5p',
+            fullScreen: true, 
+            embed: true,
+            embedCode:'<iframe width=":w" height=":h" src="https://damienbelveze.github.io/plagiator/memoire_camille.html" frameBorder="0" scrolling="no" styles="width:100%"></iframe>',
+            }
+            new H5PStandalone.H5P(h5pContainer, options);
+        });
+        }) ();
+    </script>
+  </body>
