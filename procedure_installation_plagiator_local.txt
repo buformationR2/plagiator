@@ -1,0 +1,13 @@
+Procédure installation Plagiator en local pour modification via VS CODE
+
+    1. Télécharger VS CODE
+    2. Télécharger Git
+    3. Créer un dossier workspace n’importe où.
+    4. Ouvrir dans VS CODE un terminal Git bash (chevron à doite du « + ») puis sélectionner Git bash
+    5. Dans le terminal, aller dans le workspace créé à l’étape 3.
+    6. Quelques commandes LINUX pour aller dans le bon répertoire :	
+        1. pwd + entrée pour voir où vous êtes
+        2. ls + entrée pour visualiser tout ce qui se trouve dans le répertoire (dossiers + fichiers)
+        3. cd + nom du répertoire (ou tab) + entrée  (exemple : cd workspace_plagiator)
+    7. Il faut clôner le projet en local : git clone + aller sur git hub chercher l’url.	
+       Pour trouver l’url sur git hub, il faut cliquer sur le bouton code + copier l’url  (https://github.com/buformationR2/plagiator.git)

@@ -1,0 +1,16 @@
+
+Procédure modification Plagiator avec VS CODE et Twine + commit and push via Git sur Git Hub
+
+Contexte :
+Le projet Plagiator est déjà dans un workspace en local.
+
+    1. Faire les modifications sur Twine
+    2. Cliquer dans le menu « Build » puis sur le bouton « Publier dans un fichier » et enregistrer le fichier plagiator.html dans le workspace Plagiator. Il faut écraser l’existant.
+    3. Ouvrir VS Code et cliquer sur « Source control » dans la menu à gauche. 
+    4. On voit le fichier plagiator.html dans « Changes »
+    5. On peut vérifier les modifications effectuées (cf. dans la barre de droite)
+    6. Cliquer sur le bouton « + » (Stage Changes) qui apparaît quand on npasse le curseur sur le titre du fichier. Le fichier se retouve dans « Staged changes »
+    7. Indiquer un message de commit = le type de modification effectuées
+    8. Cliquer le chevron qui se trouve à droite du gros bouton intiutlé « Commit » puis sur l’option «  Commit & Push »
+    9. Aller vérifier sur https://github.com/buformationR2/plagiator que le commit s’est bien déroulé. Il faut attendre quelques minutes pour laisser le temps que les modifications soient déployées.
+    10. Tester
